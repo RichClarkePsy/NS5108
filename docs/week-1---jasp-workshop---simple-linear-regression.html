@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 4 Week 1 - JASP Workshop - Simple linear Regression | NS5108 handbook</title>
+<meta name="author" content="Dr Richard Clarke">
+<meta name="description" content="JASP is a free, open-source statistical software package with a user-friendly, point-and-click interface suitable for research in psychology. It offers a wide range of statistical analyses, from...">
+<meta name="generator" content="bookdown 0.31 with bs4_book()">
+<meta property="og:title" content="Chapter 4 Week 1 - JASP Workshop - Simple linear Regression | NS5108 handbook">
+<meta property="og:type" content="book">
+<meta property="og:description" content="JASP is a free, open-source statistical software package with a user-friendly, point-and-click interface suitable for research in psychology. It offers a wide range of statistical analyses, from...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 4 Week 1 - JASP Workshop - Simple linear Regression | NS5108 handbook">
+<meta name="twitter:description" content="JASP is a free, open-source statistical software package with a user-friendly, point-and-click interface suitable for research in psychology. It offers a wide range of statistical analyses, from...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.0/transition.js"></script><script src="libs/bs3compat-0.4.0/tabs.js"></script><script src="libs/bs3compat-0.4.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<link rel="stylesheet" href="www/webex.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">NS5108 handbook</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> Welcome</a></li>
+<li><a class="" href="introduction.html"><span class="header-section-number">2</span> Introduction</a></li>
+<li><a class="" href="simple-linear-regression.html"><span class="header-section-number">3</span> Simple linear regression</a></li>
+<li><a class="active" href="week-1---jasp-workshop---simple-linear-regression.html"><span class="header-section-number">4</span> Week 1 - JASP Workshop - Simple linear Regression</a></li>
+<li><a class="" href="multiple-regression.html"><span class="header-section-number">5</span> Multiple regression</a></li>
+</ul>
+
+        <div class="book-extra">
+          
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="week-1---jasp-workshop---simple-linear-regression" class="section level1" number="4">
+<h1>
+<span class="header-section-number">4</span> Week 1 - JASP Workshop - Simple linear Regression<a class="anchor" aria-label="anchor" href="#week-1---jasp-workshop---simple-linear-regression"><i class="fas fa-link"></i></a>
+</h1>
+<p>JASP is a free, open-source statistical software package with a user-friendly, point-and-click interface suitable for research in psychology. It offers a wide range of statistical analyses, from basic descriptive statistics to advanced methods like regression and ANOVA.</p>
+<p>JASP is available on most of the university computers, however, we recommend that you also install a personal version for your own laptop or desktop computer so that you can continue learning outside of class time.</p>
+<p>JASP can be downloaded here: <a href="https://jasp-stats.org/">www.jasp-stats.org/</a></p>
+<div id="simple-linear-regression---example-analysis" class="section level2" number="4.1">
+<h2>
+<span class="header-section-number">4.1</span> Simple linear regression - example analysis<a class="anchor" aria-label="anchor" href="#simple-linear-regression---example-analysis"><i class="fas fa-link"></i></a>
+</h2>
+<p>In this video I go through the analysis and answers for <strong>Simple Linear Regression Exercise 1</strong>. If you would like to follow along (or have a go at the exercise yourself first) the question sheet and data can be found in the Week 1 module area for NS5108.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/nMGzfe00sj4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+</iframe>
+</div>
+<div id="where-to-click-guide---simple-linear-regression-analysis" class="section level2" number="4.2">
+<h2>
+<span class="header-section-number">4.2</span> "Where to click" guide - simple linear regression analysis<a class="anchor" aria-label="anchor" href="#where-to-click-guide---simple-linear-regression-analysis"><i class="fas fa-link"></i></a>
+</h2>
+<p>The following is a step by step guide for performing a correlation and simple linear regression analysis in JASP. Watch the video above for more context related to these steps.</p>
+<div id="correlation" class="section level3" number="4.2.1">
+<h3>
+<span class="header-section-number">4.2.1</span> Correlation<a class="anchor" aria-label="anchor" href="#correlation"><i class="fas fa-link"></i></a>
+</h3>
+<ol style="list-style-type: decimal">
+<li><p>Open JASP.</p></li>
+<li><p><strong>Load the Data</strong>: click on the <strong>File tab</strong> at the top left and select <strong>Open</strong>. Then navigate to the folder containing your data file and open it.</p></li>
+<li><p><strong>Visualise the data</strong>: Identify the two variables you want to run your correlation on. Click <strong>Descriptives</strong> and move the two variables over to the <em>Variables</em> box. Below, in the <strong>Customizable plots</strong> drop down tick the <strong>Scatter plots</strong>. You may want to click none for the graphs above and to the right (to make your plot clearer). Also change that regression line (line of best fit) to linear.</p></li>
+<li><p><strong>Identify outliers</strong>: Also in the <strong>customizable plots</strong> drop down, select boxplots. Tick label outliers if they show any dots outside of the wihiskers for the box plots. Note and interpret any outliers.</p></li>
+<li><p><strong>Calculate correlation coefficent</strong>: click <strong>Regression</strong> -&gt; <strong>Correlation</strong> from the top bar. Pick the variables you are interested in running a correlation on. Extract and interpret the Pearson's <span class="math inline">\(r\)</span> and <em>p</em>-value.</p></li>
+</ol>
+</div>
+<div id="simple-linear-regression-2" class="section level3" number="4.2.2">
+<h3>
+<span class="header-section-number">4.2.2</span> Simple linear regression<a class="anchor" aria-label="anchor" href="#simple-linear-regression-2"><i class="fas fa-link"></i></a>
+</h3>
+<ol start="6" style="list-style-type: decimal">
+<li><p><strong>Check normality (of residuals)</strong>: Click <strong>Regression</strong> -&gt; <strong>Linear Regression</strong> from the top bar. Pick your criterion variable (the variable you are aiming to predict) and place this in the <em>Dependent variable</em> box. Pick your predictor and place that in the <em>Covariates</em> box. In the <strong>Plots</strong> drop down select <strong>Residuals histogram</strong>. Visually interpret this histogram for an indication of this assumption check.</p></li>
+<li><p><strong>Check Homoscedasiticity</strong>: Also in the <strong>Plots</strong> drop down, select <strong>Residuals vs. predicted</strong>. Visually interpret this plot to assess Homoscedasiticity.</p></li>
+<li><p><strong>Extract the <span class="math inline">\(R^2\)</span> value</strong>: This should be in the first table of the Linear Regression section.</p></li>
+<li><p><strong>Determine the significance of the model</strong>: This can be obtained though the ANOVA table. F(df,df)=F-value, <em>p</em>=<em>p</em>-value.</p></li>
+<li><p><strong>Extract values for your model regression equation</strong>: H1 intercept = <span class="math inline">\(c\)</span>, H1 variable = <span class="math inline">\(m\)</span></p></li>
+</ol>
+</div>
+</div>
+<div id="jasp-lab-exercises" class="section level2" number="4.3">
+<h2>
+<span class="header-section-number">4.3</span> JASP lab exercises<a class="anchor" aria-label="anchor" href="#jasp-lab-exercises"><i class="fas fa-link"></i></a>
+</h2>
+<p>There are two additional exercises on Moodle. Each exercise <strong>question sheet</strong> comes with a <strong>dataset</strong> and <strong>answers sheet</strong>. Work through the question and then check your answers with the answer sheet.</p>
+</div>
+<div id="apa-style-guide" class="section level2" number="4.4">
+<h2>
+<span class="header-section-number">4.4</span> APA style guide<a class="anchor" aria-label="anchor" href="#apa-style-guide"><i class="fas fa-link"></i></a>
+</h2>
+<p><em>Here is an example of a hypothesis for a correlational analysis:</em></p>
+<blockquote>
+<p><strong>Null Hypothesis (H0)</strong>: There is no correlation between participants' age and their scores on a cognitive ability test.</p>
+</blockquote>
+<blockquote>
+<p><strong>Alternative Hypothesis (H1)</strong>: There is a correlation between participants' age and their scores on a cognitive ability test.</p>
+</blockquote>
+<p><em>Here is an example of a correlation analysis reported in APA style:</em></p>
+<blockquote>
+<p>A Pearson correlation was conducted to assess the relationship between participants' age and their scores on a cognitive ability test. Assumptions checks were performed to ensure no violation of the assumptions of normality, linearity, and homoscedasticity. There was a significant negative correlation between age and cognitive ability scores, r(98) = -.45, <em>p</em> &lt; .001, with older participants tending to have lower scores on the cognitive ability test. As such, the null hypothesis can be rejected.</p>
+</blockquote>
+<p><em>Here is an example of a hypothesis for a simple linear regression analysis:</em></p>
+<blockquote>
+<p><strong>Null Hypothesis (H0)</strong>: The number of study hours is not a significant predictor of test scores.</p>
+</blockquote>
+<blockquote>
+<p><strong>Alternative Hypothesis (H1)</strong>: The number of study hours is a significant predictor of test scores.</p>
+</blockquote>
+<p><em>Here is an example of a simple linear regression analysis reported in APA style:</em></p>
+<blockquote>
+<p>A simple linear regression was conducted to predict test scores based on the number of study hours. The assumptions of linearity, independence, and normality were checked and met.</p>
+</blockquote>
+<blockquote>
+<p>The regression equation was found to be: Test Score = 50.2 + 6.7 * Study Hours.</p>
+</blockquote>
+<blockquote>
+<p>The results indicated that there was a significant relationship between the number of study hours and test scores, F(1, 98) = 34.5, <em>p</em> &lt; .001. As such, the null hypothesis can be rejected The R² value was .26, indicating that approximately 26% of the variance in test scores can be explained by the number of study hours.</p>
+</blockquote>
+<blockquote>
+<p>For each additional hour of study, there was an increase of 6.7 points in the test score. The intercept value of 50.2 indicates that a student who does not study at all (0 hours) is expected to score 50.2 points on the test.</p>
+</blockquote>
+
+</div>
+</div>
+<script>
+
+/* update total correct if #webex-total_correct exists */
+update_total_correct = function() {
+  console.log("webex: update total_correct");
+
+  if (t = document.getElementById("webex-total_correct")) {
+    var correct = document.getElementsByClassName("webex-correct").length;
+    var solvemes = document.getElementsByClassName("webex-solveme").length;
+    var radiogroups = document.getElementsByClassName("webex-radiogroup").length;
+    var selects = document.getElementsByClassName("webex-select").length;
+    
+    t.innerHTML = correct + " of " + (solvemes + radiogroups + selects) + " correct";
+  }
+}
+
+/* webex-solution button toggling function */
+b_func = function() {
+  console.log("webex: toggle hide");
+  
+  var cl = this.parentElement.classList;
+  if (cl.contains('open')) {
+    cl.remove("open");
+  } else {
+    cl.add("open");
+  }
+}
+
+/* function for checking solveme answers */
+solveme_func = function(e) {
+  console.log("webex: check solveme");
+
+  var real_answers = JSON.parse(this.dataset.answer);
+  var my_answer = this.value;
+  var cl = this.classList;
+  if (cl.contains("ignorecase")) {
+    my_answer = my_answer.toLowerCase();
+  }
+  if (cl.contains("nospaces")) {
+    my_answer = my_answer.replace(/ /g, "")
+  }
+
+  if (my_answer == "") {
+    cl.remove("webex-correct");
+    cl.remove("webex-incorrect");
+  } else if (real_answers.includes(my_answer)) {
+    cl.add("webex-correct");
+    cl.remove("webex-incorrect");
+  } else {
+    cl.add("webex-incorrect");
+    cl.remove("webex-correct");
+  }
+
+  // match numeric answers within a specified tolerance
+  if(this.dataset.tol > 0){
+    var tol = JSON.parse(this.dataset.tol);
+    var matches = real_answers.map(x => Math.abs(x - my_answer) < tol)
+    if (matches.reduce((a, b) => a + b, 0) > 0) {
+      cl.add("webex-correct");
+    } else {
+      cl.remove("webex-correct");
+    }
+  }
+
+  // added regex bit
+  if (cl.contains("regex")){
+    answer_regex = RegExp(real_answers.join("|"))
+    if (answer_regex.test(my_answer)) {
+      cl.add("webex-correct");
+    }
+  }
+
+  update_total_correct();
+}
+
+/* function for checking select answers */
+select_func = function(e) {
+  console.log("webex: check select");
+  
+  var cl = this.classList
+  
+  /* add style */
+  cl.remove("webex-incorrect");
+  cl.remove("webex-correct");
+  if (this.value == "answer") {
+    cl.add("webex-correct");
+  } else if (this.value != "blank") {
+    cl.add("webex-incorrect");
+  }
+  
+  update_total_correct();
+}
+
+/* function for checking radiogroups answers */
+radiogroups_func = function(e) {
+  console.log("webex: check radiogroups");
+
+  var checked_button = document.querySelector('input[name=' + this.id + ']:checked');
+  var cl = checked_button.parentElement.classList;
+  var labels = checked_button.parentElement.parentElement.children;
+  
+  /* get rid of styles */
+  for (i = 0; i < labels.length; i++) {
+    labels[i].classList.remove("webex-incorrect");
+    labels[i].classList.remove("webex-correct");
+  }
+  
+  /* add style */
+  if (checked_button.value == "answer") {
+    cl.add("webex-correct");
+  } else {
+    cl.add("webex-incorrect");
+  }
+  
+  update_total_correct();
+}
+
+window.onload = function() {
+  console.log("onload");
+  /* set up solution buttons */
+  var buttons = document.getElementsByTagName("button");
+
+  for (var i = 0; i < buttons.length; i++) {
+    if (buttons[i].parentElement.classList.contains('webex-solution')) {
+      buttons[i].onclick = b_func;
+    }
+  }
+
+  /* set up webex-solveme inputs */
+  var solveme = document.getElementsByClassName("webex-solveme");
+
+  for (var i = 0; i < solveme.length; i++) {
+    /* make sure input boxes don't auto-anything */
+    solveme[i].setAttribute("autocomplete","off");
+    solveme[i].setAttribute("autocorrect", "off");
+    solveme[i].setAttribute("autocapitalize", "off");
+    solveme[i].setAttribute("spellcheck", "false");
+    solveme[i].value = "";
+
+    /* adjust answer for ignorecase or nospaces */
+    var cl = solveme[i].classList;
+    var real_answer = solveme[i].dataset.answer;
+    if (cl.contains("ignorecase")) {
+      real_answer = real_answer.toLowerCase();
+    }
+    if (cl.contains("nospaces")) {
+      real_answer = real_answer.replace(/ /g, "");
+    }
+    solveme[i].dataset.answer = real_answer;
+
+    /* attach checking function */
+    solveme[i].onkeyup = solveme_func;
+    solveme[i].onchange = solveme_func;
+  }
+  
+  /* set up radiogroups */
+  var radiogroups = document.getElementsByClassName("webex-radiogroup");
+  for (var i = 0; i < radiogroups.length; i++) {
+    radiogroups[i].onchange = radiogroups_func;
+  }
+  
+  /* set up selects */
+  var selects = document.getElementsByClassName("webex-select");
+  for (var i = 0; i < selects.length; i++) {
+    selects[i].onchange = select_func;
+  }
+
+  update_total_correct();
+}
+
+</script><div class="chapter-nav">
+<div class="prev"><a href="simple-linear-regression.html"><span class="header-section-number">3</span> Simple linear regression</a></div>
+<div class="next"><a href="multiple-regression.html"><span class="header-section-number">5</span> Multiple regression</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#week-1---jasp-workshop---simple-linear-regression"><span class="header-section-number">4</span> Week 1 - JASP Workshop - Simple linear Regression</a></li>
+<li><a class="nav-link" href="#simple-linear-regression---example-analysis"><span class="header-section-number">4.1</span> Simple linear regression - example analysis</a></li>
+<li>
+<a class="nav-link" href="#where-to-click-guide---simple-linear-regression-analysis"><span class="header-section-number">4.2</span> "Where to click" guide - simple linear regression analysis</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#correlation"><span class="header-section-number">4.2.1</span> Correlation</a></li>
+<li><a class="nav-link" href="#simple-linear-regression-2"><span class="header-section-number">4.2.2</span> Simple linear regression</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#jasp-lab-exercises"><span class="header-section-number">4.3</span> JASP lab exercises</a></li>
+<li><a class="nav-link" href="#apa-style-guide"><span class="header-section-number">4.4</span> APA style guide</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>NS5108 handbook</strong>" was written by Dr Richard Clarke. It was last built on 2023-08-15.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>
