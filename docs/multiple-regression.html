@@ -4,19 +4,19 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 5 Multiple regression | NS5108 handbook</title>
+<title>Chapter 5 Multiple regression | Regression handbook</title>
 <meta name="author" content="Dr Richard Clarke">
 <meta name="description" content="Multiple regression is a method that helps us predict an outcome variable based on several independent variables. It is a technique that tells us which variables are the most important for...">
-<meta name="generator" content="bookdown 0.31 with bs4_book()">
-<meta property="og:title" content="Chapter 5 Multiple regression | NS5108 handbook">
+<meta name="generator" content="bookdown 0.26 with bs4_book()">
+<meta property="og:title" content="Chapter 5 Multiple regression | Regression handbook">
 <meta property="og:type" content="book">
 <meta property="og:description" content="Multiple regression is a method that helps us predict an outcome variable based on several independent variables. It is a technique that tells us which variables are the most important for...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 5 Multiple regression | NS5108 handbook">
+<meta name="twitter:title" content="Chapter 5 Multiple regression | Regression handbook">
 <meta name="twitter:description" content="Multiple regression is a method that helps us predict an outcome variable based on several independent variables. It is a technique that tells us which variables are the most important for...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.0/transition.js"></script><script src="libs/bs3compat-0.4.0/tabs.js"></script><script src="libs/bs3compat-0.4.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
     
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
@@ -31,7 +31,7 @@
 
     <div class="d-flex align-items-start justify-content-between">
       <h1>
-        <a href="index.html" title="">NS5108 handbook</a>
+        <a href="index.html" title="">Regression handbook</a>
       </h1>
       <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
     </div>
@@ -43,11 +43,15 @@
 
       <nav aria-label="Table of contents"><h2>Table of contents</h2>
         <ul class="book-toc list-unstyled">
-<li><a class="" href="index.html"><span class="header-section-number">1</span> Welcome</a></li>
-<li><a class="" href="introduction.html"><span class="header-section-number">2</span> Introduction</a></li>
+<li><a class="" href="index.html"><span class="header-section-number">1</span> Welcome to the NS5108 Regression Handbook</a></li>
+<li><a class="" href="introduction-to-regression-analysis.html"><span class="header-section-number">2</span> Introduction to Regression analysis</a></li>
 <li><a class="" href="simple-linear-regression.html"><span class="header-section-number">3</span> Simple linear regression</a></li>
-<li><a class="" href="week-1---jasp-workshop---simple-linear-regression.html"><span class="header-section-number">4</span> Week 1 - JASP Workshop - Simple linear Regression</a></li>
+<li><a class="" href="jasp-workshop---simple-linear-regression.html"><span class="header-section-number">4</span> JASP Workshop - Simple linear Regression</a></li>
 <li><a class="active" href="multiple-regression.html"><span class="header-section-number">5</span> Multiple regression</a></li>
+<li><a class="" href="statistical-assumption-checks-for-multiple-regression.html"><span class="header-section-number">6</span> Statistical assumption checks for multiple regression</a></li>
+<li><a class="" href="jasp-workshop---multiple-regression.html"><span class="header-section-number">7</span> JASP Workshop - Multiple regression</a></li>
+<li><a class="" href="logistic-regression.html"><span class="header-section-number">8</span> Logistic regression</a></li>
+<li><a class="" href="further-reading.html"><span class="header-section-number">9</span> further reading</a></li>
 </ul>
 
         <div class="book-extra">
@@ -60,40 +64,169 @@
 <span class="header-section-number">5</span> Multiple regression<a class="anchor" aria-label="anchor" href="#multiple-regression"><i class="fas fa-link"></i></a>
 </h1>
 <p>Multiple regression is a method that helps us predict an outcome variable based on several independent variables. It is a technique that tells us which variables are the most important for predicting an outcome, and how such predictor variables interact. By building a prediction model, multiple regression allows us to understand how variables are connected and helps us make powerful data-informed decisions.</p>
-<div id="shared-variance-with-mulitple-variables" class="section level2" number="5.1">
+<div id="shared-variance-with-multiple-variables" class="section level2" number="5.1">
 <h2>
-<span class="header-section-number">5.1</span> Shared variance with mulitple variables<a class="anchor" aria-label="anchor" href="#shared-variance-with-mulitple-variables"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.1</span> Shared variance with multiple variables<a class="anchor" aria-label="anchor" href="#shared-variance-with-multiple-variables"><i class="fas fa-link"></i></a>
 </h2>
-<p>In the previous chapter on simple linear regression, we suggested that one predictor variable (<em>exercise</em>) shared variance with another variable (<em>well-being</em>). Visually, this can be represented using a Venn diagram with two circles: one for <em>exercise</em> and one for <em>well-being</em>.</p>
-<p>The overlap between these two circles represents the shared variance, or the extent to which variations in <em>exercise</em> can explain variations in <em>well-being</em>. This shared variance can be represented numerically as the square of the correlation coefficient between the two variables. In this hypothetical example <em>exercise</em> is correlated with <em>well-being</em> with a correlation coefficent of r=0.46 (i.e. a moderate-positive correlation) and, as such, it can be said that <em>exercise</em> explains 21% of the variance in <em>well-being</em> (<span class="math inline">\(R^2\)</span>=0.21)</p>
-<div class="inline-figure"><img src="Images/Multiple%20regression%201.png" width="75%" style="display: block; margin: auto;"></div>
-<p>In a multiple regression analysis, we use two or more independent variables to predict the value of a dependent variable (also referred to as the criterion variable). In doing so, each independent variable may share some variance with the dependent variable, but also share variance among the other independent variables. Understanding this shared variance is crucial for interpreting the results of a multiple regression analysis.</p>
+<p>In the previous chapter on simple linear regression, we suggested that one predictor variable (<em>exercise</em>) shared variance with another variable (<em>well-being</em>). Visually, this can be represented using a Venn diagram with two circles: one for <em>exercise</em> and one for <em>well-being</em>.
+The overlap between these two circles represents the shared variance, or the extent to which variations in <em>exercise</em> can explain variations in <em>well-being</em>. This shared variance can be represented numerically as the square of the correlation coefficient between the two variables. In this hypothetical example <em>exercise</em> is correlated with <em>well-being</em> with a correlation coefficient of r=0.307 (i.e. a moderate-positive correlation) and, as such, it can be said that <em>exercise</em> explains 9.4% of the variance in <em>well-being</em> (<span class="math inline">\(R^2\)</span>=0.094)</p>
+<div class="inline-figure"><img src="Images/Multiple%20regression%201.png" width="100%" style="display: block; margin: auto;"></div>
+<p>In a multiple regression analysis, we use two or more independent variables to predict the value of a dependent variable. In doing so, each independent variable may share some variance with the dependent variable, but also shares variance among the other independent variables. Understanding this shared variance is crucial for interpreting the results of a multiple regression analysis.</p>
 <p>For instance, let's say we're using three independent variables to predict <em>well-being</em>: <em>exercise</em>, <em>age</em>, and <em>income</em>. Each of these variables could contribute to the variance of <em>well-being</em>.</p>
-<p>When we add the variables one-by-one, the overlap of each independent variable circle with the <em>well-being</em> circle represents the unique variance each variable contributes to <em>well-being</em>.</p>
-<p>Adding <em>age</em> data for each participant, we might see significant correlations for the three different relationships. Perhaps a positive correlation between <em>exercise</em> and <em>well-being</em>, and negative correlations between <em>age</em> and <em>well-being</em> (older people may deal with more health issues that reduce their well-being), and another negative correlation between <em>age</em> and <em>exercise</em> (older people may exercise less).</p>
-<div class="inline-figure"><img src="Images/Multiple%20regression%202.png" width="75%" style="display: block; margin: auto;"></div>
-<p>Both age and exercise now explain some of the variability in well-being, and since they are also related to each other, some of the variance they explain overlaps.</p>
-<p>Finally, when we add <em>income</em> we can see that the variable shares variance with both <em>age</em> and <em>well-being</em>. Adding more variance explained to our model but also overlapping with some of the variance explained by <em>age</em></p>
-<div class="inline-figure"><img src="Images/Multiple%20regression%203.png" width="75%" style="display: block; margin: auto;"></div>
-<p>The outcome of this being that each variable that we add here allowed us to better explain our concept of <em>well-being</em>. And as such, if we were to know a person's amount of <em>exercise</em>, <em>age</em>, and <em>income</em> we could predict their well-being to a greater degree than if we just know their amount of <em>exercise</em>.</p>
+<p>When we add the variables one-by-one, the overlap of each independent variable circle with the <em>well-being</em> circle represents the unique shared variance each variable contributes to <em>well-being</em>.</p>
+<p>When adding our samples <em>age</em> data, to help us explain well-being, we see significant correlations for the three different relationships.
+1. a positive correlation exists between <em>exercise</em> and <em>well-being</em>,
+2. a negative correlations exist between <em>age</em> and <em>well-being</em>
+3. a negative correlation between <em>age</em> and <em>exercise</em>.</p>
+<div class="webex-solution">
+<button>
+Why are the <span class="math inline">\(R^2\)</span> positive for negative correlations?
+</button>
+<p>Because the <span class="math inline">\(R^2\)</span> is derived from squaring an <em>r</em> value, and when you square any negative value, it loses its negative sign.</p>
 </div>
-<div id="the-regression-equasion" class="section level2" number="5.2">
+<div class="inline-figure"><img src="Images/Multiple%20regression%202.png" width="100%" style="display: block; margin: auto;"></div>
+<p>Both age and exercise now explain some of the variability in well-being, and since they are also related to each other, some of the variance they explain overlaps.</p>
+<p>Finally, when we add <em>income</em>, we find that the variable shares variance with both <em>age</em> and <em>well-being</em>. <em>Income</em> therefore adds more variance explained to our model while also overlapping with some of the variance explained by <em>age</em></p>
+<div class="inline-figure"><img src="Images/Multiple%20regression%203.png" width="100%" style="display: block; margin: auto;"></div>
+<p>The outcome of this is that each variable that we add here allowed us to better explain our concept of <em>well-being</em>. And as such, <strong>if we were to know a person's amount of <em>exercise</em>, <em>age</em>, and <em>income</em> we could predict their well-being to a greater degree than if we just know their amount of <em>exercise</em>.</strong></p>
+<div class="webex-solution">
+<button>
+Extra detail on overlaping variance
+</button>
+<p>It's important to understand that the Venn diagrams in this guide offer a simplified representation of variance explained by predictor variables in a regression model. In reality, when two predictor variables have overlapping variance, this shared variance can contribute more to the model than what the individual variables might suggest. This occurs due to interaction effects, where the combined influence of two predictors can explain more variance in the dependent variable than the sum of their individual effects. When looking at the Venn diagrams, remember that this additional explained variance from interactions isn't explicitly depicted, but it's crucial to consider when interpreting regression results.</p>
+<p>This is why, as you'll see later on, the final <span class="math inline">\(R^2\)</span> is greater than the sum of all the simple (univariate) regressions.</p>
+</div>
+</div>
+<div id="the-regression-equation" class="section level2" number="5.2">
 <h2>
-<span class="header-section-number">5.2</span> The Regression Equasion<a class="anchor" aria-label="anchor" href="#the-regression-equasion"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.2</span> The Regression Equation<a class="anchor" aria-label="anchor" href="#the-regression-equation"><i class="fas fa-link"></i></a>
 </h2>
-<p>As you've probably realized, using Venn diagrams to illustrate the relationships among multiple variables can get quite confusing, especially when there are numerous variables that all have some degree of correlation with each other. That's where the regression equation comes in handy.</p>
-<p>The regression equation is a mathematical representation of the relationships among the variables in a multiple regression analysis. It shows how the outcome variable (also called the dependent variable) is predicted by the independent variables. In its simplest form, the regression equation can be written as:</p>
+<p>As you've probably realised, using Venn diagrams to illustrate the relationships among multiple variables can get quite confusing, especially when there are numerous variables that all have some degree of correlation with each other. That's where the regression equation comes in handy.</p>
+<p>The regression equation is a mathematical representation of the relationships among the variables in a multiple regression analysis. It shows how the dependent variable is predicted by the independent variables. In its abstract form, the regression equation can be written as:</p>
 <p><span class="math display">\[ y = \beta_0 + \beta_1x_1 + \beta_2x_2 + \ldots + \beta_kx_k + \varepsilon \]</span></p>
-<p>Here, <span class="math inline">\(y\)</span> is the dependent variable, <span class="math inline">\(x_1\)</span>, <span class="math inline">\(x_2\)</span>,...,<span class="math inline">\(x_k\)</span> are the independent variables, <span class="math inline">\(\beta_0\)</span> is the intercept, <span class="math inline">\(\beta_1\)</span>, <span class="math inline">\(\beta_2\)</span>,...,<span class="math inline">\(\beta_k\)</span> are the coefficients for the independent variables, and <span class="math inline">\(\varepsilon\)</span> is the error term, representing the unexplained variability in the dependent variable (i.e. the left over white space in the Venn diagram figure above).</p>
-<p>The coefficients (all the <span class="math inline">\(\beta\)</span> values) represent the average change in the dependent variable for a one-unit change in the respective independent variable, holding all other variables constant.</p>
-<p>The intercept <span class="math inline">\(\beta_0\)</span> represents the value of the dependent variable when all independent variables are zero (just like in the equation of the line from last week)</p>
-<p>Running our regression analysis allowed us to substituent number sof all the coefficients to the degree that all we are left with are <span class="math inline">\(x\)</span>'s that we can use to sub in our data.</p>
-<p>Explain how shared variance workes for multiple variables</p>
-<p>Explain how the regression equasion changes</p>
-<p>explain how to interprate the results of the regression model</p>
-<p>Full explaner of resudials and their role in assumption checks</p>
-<p>show an example multiple regression from a health or environmental psych paper</p>
-
+<p>Here, <span class="math inline">\(y\)</span> is the dependent variable, <span class="math inline">\(x_1\)</span>, <span class="math inline">\(x_2\)</span>,...,<span class="math inline">\(x_k\)</span> are the independent variables (i.e. the amount of <em>exercise</em>, <em>age</em>, and <em>income</em> of the participants), <span class="math inline">\(\beta_0\)</span> is the intercept, <span class="math inline">\(\beta_1\)</span>, <span class="math inline">\(\beta_2\)</span>,...,<span class="math inline">\(\beta_k\)</span> are the coefficients for the independent variables, and <span class="math inline">\(\varepsilon\)</span> is the error term, representing the unexplained variability in the dependent variable (i.e. the left over white space in the Venn diagram figure above).</p>
+<p>The intercept <span class="math inline">\(\beta_0\)</span> represents the value of the dependent variable when all independent variables are zero. This <span class="math inline">\(\beta_0\)</span> is equivalent to the intercept, <span class="math inline">\(c\)</span>, value in the equation from last week.</p>
+<p>The coefficients (all the remaining <span class="math inline">\(\beta\)</span> values) represent the average change in the dependent variable for a one-unit change in the respective independent variable, holding all other variables constant. Just like the gradient of the line <span class="math inline">\(m\)</span> value in the equation from last week. The "..." and the <span class="math inline">\(k\)</span>'s are just a way of saying "add in as many beta values as you have variables in your model".</p>
+<p>Running our regression analysis allowed us to substituent numbers for all of the coefficients to the degree that all we are left with are <span class="math inline">\(x\)</span>'s, that we can use to sub in our data.</p>
+</div>
+<div id="interpreting-a-regression-model" class="section level2" number="5.3">
+<h2>
+<span class="header-section-number">5.3</span> Interpreting a regression model<a class="anchor" aria-label="anchor" href="#interpreting-a-regression-model"><i class="fas fa-link"></i></a>
+</h2>
+<p>I will explain the steps for running a regression model, in full, in this weeks JASP workshop. For now, I want us just to focus on the interpretation. Here is the JASP output for a model that uses the variables <em>exercise</em>, <em>age</em> and <em>income</em> to predict <em>well-being</em> scores.</p>
+<div class="inline-figure"><img src="Images/Multiple%20regression%204.png" width="100%" style="display: block; margin: auto;"></div>
+<p>Let's break this down by table.</p>
+<div id="descriptive-statistics" class="section level3" number="5.3.1">
+<h3>
+<span class="header-section-number">5.3.1</span> Descriptive statistics<a class="anchor" aria-label="anchor" href="#descriptive-statistics"><i class="fas fa-link"></i></a>
+</h3>
+<p>The descriptive statistics are useful for context. This detail isn't given here but I can tell you that in this dataset (N=1000), the <em>well-being</em> score is out of 100, the <em>exercise</em> variable is based off of <em>number of hours of exercise a week</em>, <em>income</em> is in £GBP, and <em>age</em> is in years.</p>
+<div class="inline-figure"><img src="Images/Multiple%20regression%208.png" width="100%" style="display: block; margin: auto;"></div>
+</div>
+<div id="model-summary" class="section level3" number="5.3.2">
+<h3>
+<span class="header-section-number">5.3.2</span> Model Summary<a class="anchor" aria-label="anchor" href="#model-summary"><i class="fas fa-link"></i></a>
+</h3>
+<p>The Model Summary table provides an overview of the overall performance of the regression model. It contains key statistics that helps us assess how well the model fits the data.</p>
+<div class="inline-figure"><img src="Images/Multiple%20regression%205.png" width="100%" style="display: block; margin: auto;"></div>
+<p>The table contains two rows <span class="math inline">\(H_0\)</span> and <span class="math inline">\(H_1\)</span>. <span class="math inline">\(H_0\)</span> refers to the null model, a model that assumes that none of the predictors in the model have an effect on the dependent variable, meaning that the coefficients for all predictors are equal to zero. <span class="math inline">\(H_1\)</span> is our alternative model, the model containing our variables. This is the line that interests us.</p>
+<p>The main details of interest are:</p>
+<ul>
+<li><p><strong>The Adjusted</strong> <span class="math inline">\(R^2\)</span> <strong>Value</strong>: This is a modified version of <span class="math inline">\(R^2\)</span> that takes into account the number of independent variables in the model. It allows us to say how much variance in our dependent variable is explained by our predictor variables.</p></li>
+<li><p><strong>RMSE</strong>: RMSE stands for Root Mean Square Error. It is a measure of the differences between values predicted by a model and the values actually observed. RMSE is a measure of how spread out the residuals are. In other words, it tells you how concentrated the data is around the line of best fit. It is used as our <span class="math inline">\(\varepsilon\)</span> in the regression model.</p></li>
+</ul>
+<p>We will often take the Adjusted <span class="math inline">\(R^2\)</span> for multiple regression and the <span class="math inline">\(R^2\)</span> only for simple regression (regression with just one predictor variable). For our well-being model, the Adjusted <span class="math inline">\(R^2\)</span> of 0.469 tells us that our three variables together explain 46.9% of the variability in well-being. Which is pretty good.</p>
+</div>
+<div id="anova" class="section level3" number="5.3.3">
+<h3>
+<span class="header-section-number">5.3.3</span> ANOVA<a class="anchor" aria-label="anchor" href="#anova"><i class="fas fa-link"></i></a>
+</h3>
+<p>The ANOVA table provides information about the overall significance of the model. It shows whether the model is better at predicting the dependent variable than a model with no independent variables (i.e., the null model).</p>
+<div class="inline-figure"><img src="Images/Multiple%20regression%206.png" width="100%" style="display: block; margin: auto;"></div>
+<p>The findings from this table will need to be reported in our write-up, however, to interpret it, all we actually need is the <em>p</em>-value. A significant finding on this test tells us that our model is significantly better than the null model.</p>
+<div class="webex-solution">
+<button>
+What is an ANOVA
+</button>
+<p>ANOVA stands for <strong>AN</strong>alysis <strong>O</strong>f <strong>VA</strong>riance. We'll come back to ANOVA in week 4. For now, just think of it as a slightly fancier <em>t</em>-test, a test that compares across groups (rather than correlates). In this case it is comparing the null model to the alternative model and seeing if they are significantly different.</p>
+</div>
+</div>
+<div id="coefficients" class="section level3" number="5.3.4">
+<h3>
+<span class="header-section-number">5.3.4</span> Coefficients<a class="anchor" aria-label="anchor" href="#coefficients"><i class="fas fa-link"></i></a>
+</h3>
+<p>Finally, to understand the role of each variable in the model we need to look at the coefficients table.</p>
+<div class="inline-figure"><img src="Images/Multiple%20regression%207.png" width="100%" style="display: block; margin: auto;"></div>
+<p>This table provides detailed information about the individual variables in the model. It includes statistics for each independent variable and the intercept for the model.</p>
+<p>There are two columns that are key to our understanding of the model. The <strong>Unstandardized</strong> column and the <strong>p</strong> column.</p>
+<p>Starting with the <strong>p</strong> column, this is the probability of obtaining a <em>t</em>-value as extreme as the one observed if the null hypothesis is true. A small <em>p</em>-value indicates that the variable plays a statistically significant role in our model. It could be the case that we include a variable that is not related to our dependent variable or the variance it explains is accounted for by other variables in the model. In those cases, the <em>p</em>-value would be above 0.05. A <em>p</em>-value of &lt;.001 for all three of our variables indicates that they are all relevant to include in our model.</p>
+<p>The values in our <strong>Undstandardized</strong> column correspond to the <span class="math inline">\(\beta\)</span> values in our regression equation. They play the same role as the gradient of <em>the line of best fit</em> from simple regression last week. They represent the absolute change in the dependent variable for a one-unit change in the independent variable, holding all other variables constant.</p>
+<p>In our model, this table tells us that:</p>
+<ol style="list-style-type: decimal">
+<li><strong>For every 1 hour increase of exercise a week, well-being increases by 1.88 points.</strong></li>
+<li><strong>For every 1 year of ageing, well-being decreases by 1.09 points.</strong></li>
+<li><strong>For every £1 of income, well-being increased by 0.001 points.</strong></li>
+</ol>
+<p>That last finding is not as intuitive as it could be, so it makes sense to convert <em>income</em> into values of 1000's of pounds (i.e. if someone earns £32500 a year they can be said to earn 32.5 thousand pounds a year). To do this all I need to do is divide each of our income values by 1000 and run the model again.</p>
+<p>Doing so gives us this:</p>
+<div class="inline-figure"><img src="Images/Multiple%20regression%209.png" width="100%" style="display: block; margin: auto;"></div>
+<ol start="3" style="list-style-type: decimal">
+<li><strong>For every £1000 of income, well-being increases by 1.35 points.</strong></li>
+</ol>
+</div>
+</div>
+<div id="building-our-regression-equation-from-the-model" class="section level2" number="5.4">
+<h2>
+<span class="header-section-number">5.4</span> Building our regression equation from the model<a class="anchor" aria-label="anchor" href="#building-our-regression-equation-from-the-model"><i class="fas fa-link"></i></a>
+</h2>
+<p>From this we can now start building out our regression equation. We have three variables predicting well-being so all we need to do is fill in the <span class="math inline">\(\beta\)</span> values and the <span class="math inline">\(\varepsilon\)</span> in the following equation.</p>
+<p><span class="math display">\[ Wellbeing = \beta_0 + \beta_1income + \beta_2age + \beta_3exercise + \varepsilon \]</span></p>
+<p><span class="math inline">\(\beta_0\)</span> = The unstandardized (beta) value for the intercept of <span class="math inline">\(H_1\)</span> = 35.25</p>
+<p><span class="math inline">\(\beta_1\)</span> - <span class="math inline">\(\beta_3\)</span> = the unstandardized (beta) value of the three variables = 1.35, -1.09 and 1.88</p>
+<p><span class="math inline">\(\varepsilon\)</span> = the Root Mean Square Error (RMSE) of <span class="math inline">\(H_1\)</span> = 15.7</p>
+<p>This give us the following regression equation:</p>
+<p><span class="math display">\[ Wellbeing = 35.25 + 1.35income -1.09age + 1.88exercise + 15.7\]</span></p>
+<p>From this equation, if we knew an individual's <em>income</em>, <em>age</em> and how much <em>exercise they engaged in per week</em> we could estimate their <em>well-being</em> with a fairly high degree of accuracy.</p>
+<p>Alongside the equation it is important to note our Adjusted <span class="math inline">\(R^2\)</span> of 0.469, and indicate that this means that over half of the variability in well-being is not explained by the variables we have included in the model.</p>
+</div>
+<div id="so-what" class="section level2" number="5.5">
+<h2>
+<span class="header-section-number">5.5</span> So what?<a class="anchor" aria-label="anchor" href="#so-what"><i class="fas fa-link"></i></a>
+</h2>
+<p>What is the point of doing all this work? Well, if I'm wanting to increase the well-being of my local community this finding might put me off putting money into community exercise classes. While there all likely other benefits of such an intervention, there are only so many hours in a week and, based on this data, a 1.88 point increase in well-being (on a scale out of 100) for an extra hour of exercise might not be the most cost-effective way of spending my limited pool of money.</p>
+<p>Then again, it's not like we can stop someone from ageing, or increase their income. Perhaps further research that compares the effects of, for example, exercise, mindfulness and diet, while controlling for demographic factors, would be useful to inform what type of intervention might be more cost-effective.</p>
+</div>
+<div id="week-2---test-yourself-mcqs" class="section level2" number="5.6">
+<h2>
+<span class="header-section-number">5.6</span> Week 2 - Test yourself mcq’s<a class="anchor" aria-label="anchor" href="#week-2---test-yourself-mcqs"><i class="fas fa-link"></i></a>
+</h2>
+<ol style="list-style-type: decimal">
+<li>What is multiple regression?
+<div id="radio_EAGQEOMJWS" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_EAGQEOMJWS" value=""><span>Using a single categorical variable to predict the value of a dependent variable.</span></label><label><input type="radio" autocomplete="off" name="radio_EAGQEOMJWS" value=""><span>A method that helps predict an outcome variable based on one independent variable.</span></label><label><input type="radio" autocomplete="off" name="radio_EAGQEOMJWS" value="answer"><span>A method that helps predict an outcome variable based on several independent variables.</span></label><label><input type="radio" autocomplete="off" name="radio_EAGQEOMJWS" value=""><span>A measure of the association between two variables.</span></label>
+</div>
+</li>
+<li>What is the regression equation?
+<div id="radio_JAYFNCQTIR" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_JAYFNCQTIR" value=""><span>A graphical representation of the relationships among the variables.</span></label><label><input type="radio" autocomplete="off" name="radio_JAYFNCQTIR" value=""><span>A mathematical calculation of the shared variance.</span></label><label><input type="radio" autocomplete="off" name="radio_JAYFNCQTIR" value="answer"><span>A mathematical representation of the relationships among the variables in a multiple regression analysis.</span></label><label><input type="radio" autocomplete="off" name="radio_JAYFNCQTIR" value=""><span>An empirical observation of the relationships among the variables.</span></label>
+</div>
+</li>
+<li>In the regression equation, what do the β values represent?
+<div id="radio_FWBJPTBKHN" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_FWBJPTBKHN" value=""><span>The dependent variable.</span></label><label><input type="radio" autocomplete="off" name="radio_FWBJPTBKHN" value="answer"><span>The coefficients for the independent variables.</span></label><label><input type="radio" autocomplete="off" name="radio_FWBJPTBKHN" value=""><span>The error term.</span></label><label><input type="radio" autocomplete="off" name="radio_FWBJPTBKHN" value=""><span>The independent variables.</span></label>
+</div>
+</li>
+<li>What do the values in the Unstandardized column in the coefficients table represent?
+<div id="radio_UIZDXLFLLQ" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_UIZDXLFLLQ" value=""><span>the shared variance between the variables.</span></label><label><input type="radio" autocomplete="off" name="radio_UIZDXLFLLQ" value="answer"><span>the average change in the dependent variable for a one-unit change in the respective independent variable, holding all other variables constant.</span></label><label><input type="radio" autocomplete="off" name="radio_UIZDXLFLLQ" value=""><span>the correlation coefficient between the variables.</span></label><label><input type="radio" autocomplete="off" name="radio_UIZDXLFLLQ" value=""><span>the absolute value of the correlation coefficient between the variables.</span></label>
+</div>
+</li>
+<li>What does the Adjusted <span class="math inline">\(R^2\)</span> value tell us in a multiple regression analysis?
+<div id="radio_QHGWPWUCQC" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_QHGWPWUCQC" value=""><span>The strength of the linear relationship between the dependent variable and each independent variable.</span></label><label><input type="radio" autocomplete="off" name="radio_QHGWPWUCQC" value=""><span>The shared variance among the independent variables.</span></label><label><input type="radio" autocomplete="off" name="radio_QHGWPWUCQC" value="answer"><span>The percentage of variability in the dependent variable that is explained by the predictor variables.</span></label><label><input type="radio" autocomplete="off" name="radio_QHGWPWUCQC" value=""><span>The effect size of the independent variables on the dependent variable.</span></label>
+</div>
+</li>
+</ol>
 </div>
 </div>
 <script>
@@ -267,14 +400,25 @@ window.onload = function() {
 }
 
 </script><div class="chapter-nav">
-<div class="prev"><a href="week-1---jasp-workshop---simple-linear-regression.html"><span class="header-section-number">4</span> Week 1 - JASP Workshop - Simple linear Regression</a></div>
-<div class="empty"></div>
+<div class="prev"><a href="jasp-workshop---simple-linear-regression.html"><span class="header-section-number">4</span> JASP Workshop - Simple linear Regression</a></div>
+<div class="next"><a href="statistical-assumption-checks-for-multiple-regression.html"><span class="header-section-number">6</span> Statistical assumption checks for multiple regression</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
 <li><a class="nav-link" href="#multiple-regression"><span class="header-section-number">5</span> Multiple regression</a></li>
-<li><a class="nav-link" href="#shared-variance-with-mulitple-variables"><span class="header-section-number">5.1</span> Shared variance with mulitple variables</a></li>
-<li><a class="nav-link" href="#the-regression-equasion"><span class="header-section-number">5.2</span> The Regression Equasion</a></li>
+<li><a class="nav-link" href="#shared-variance-with-multiple-variables"><span class="header-section-number">5.1</span> Shared variance with multiple variables</a></li>
+<li><a class="nav-link" href="#the-regression-equation"><span class="header-section-number">5.2</span> The Regression Equation</a></li>
+<li>
+<a class="nav-link" href="#interpreting-a-regression-model"><span class="header-section-number">5.3</span> Interpreting a regression model</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#descriptive-statistics"><span class="header-section-number">5.3.1</span> Descriptive statistics</a></li>
+<li><a class="nav-link" href="#model-summary"><span class="header-section-number">5.3.2</span> Model Summary</a></li>
+<li><a class="nav-link" href="#anova"><span class="header-section-number">5.3.3</span> ANOVA</a></li>
+<li><a class="nav-link" href="#coefficients"><span class="header-section-number">5.3.4</span> Coefficients</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#building-our-regression-equation-from-the-model"><span class="header-section-number">5.4</span> Building our regression equation from the model</a></li>
+<li><a class="nav-link" href="#so-what"><span class="header-section-number">5.5</span> So what?</a></li>
+<li><a class="nav-link" href="#week-2---test-yourself-mcqs"><span class="header-section-number">5.6</span> Week 2 - Test yourself mcq’s</a></li>
 </ul>
 
       <div class="book-extra">
@@ -291,7 +435,7 @@ window.onload = function() {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>NS5108 handbook</strong>" was written by Dr Richard Clarke. It was last built on 2023-08-15.</p>
+    <p>"<strong>Regression handbook</strong>" was written by Dr Richard Clarke. It was last built on 2023-09-05.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
@@ -304,7 +448,7 @@ window.onload = function() {
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

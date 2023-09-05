@@ -4,16 +4,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Page not found | Regression handbook</title>
+<title>Chapter 8 Logistic regression | Regression handbook</title>
 <meta name="author" content="Dr Richard Clarke">
-<meta name="description" content="The page you requested cannot be found (perhaps it was moved or renamed). You may want to try searching to find the page's new location, or use the table of contents to find the page you are...">
+<meta name="description" content="[Chapter currently under construction] In this chapter we'll look at our final regression technique, logistic regression. Unlike linear regression, which predicts a continuous outcome variable...">
 <meta name="generator" content="bookdown 0.26 with bs4_book()">
-<meta property="og:title" content="Page not found | Regression handbook">
+<meta property="og:title" content="Chapter 8 Logistic regression | Regression handbook">
 <meta property="og:type" content="book">
-<meta property="og:description" content="The page you requested cannot be found (perhaps it was moved or renamed). You may want to try searching to find the page's new location, or use the table of contents to find the page you are...">
+<meta property="og:description" content="[Chapter currently under construction] In this chapter we'll look at our final regression technique, logistic regression. Unlike linear regression, which predicts a continuous outcome variable...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Page not found | Regression handbook">
-<meta name="twitter:description" content="The page you requested cannot be found (perhaps it was moved or renamed). You may want to try searching to find the page's new location, or use the table of contents to find the page you are...">
+<meta name="twitter:title" content="Chapter 8 Logistic regression | Regression handbook">
+<meta name="twitter:description" content="[Chapter currently under construction] In this chapter we'll look at our final regression technique, logistic regression. Unlike linear regression, which predicts a continuous outcome variable...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -50,7 +50,7 @@
 <li><a class="" href="multiple-regression.html"><span class="header-section-number">5</span> Multiple regression</a></li>
 <li><a class="" href="statistical-assumption-checks-for-multiple-regression.html"><span class="header-section-number">6</span> Statistical assumption checks for multiple regression</a></li>
 <li><a class="" href="jasp-workshop---multiple-regression.html"><span class="header-section-number">7</span> JASP Workshop - Multiple regression</a></li>
-<li><a class="" href="logistic-regression.html"><span class="header-section-number">8</span> Logistic regression</a></li>
+<li><a class="active" href="logistic-regression.html"><span class="header-section-number">8</span> Logistic regression</a></li>
 <li><a class="" href="further-reading.html"><span class="header-section-number">9</span> further reading</a></li>
 </ul>
 
@@ -59,12 +59,32 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="page-not-found" class="section level1">
-<h1>Page not found<a class="anchor" aria-label="anchor" href="#page-not-found"><i class="fas fa-link"></i></a>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="logistic-regression" class="section level1" number="8">
+<h1>
+<span class="header-section-number">8</span> Logistic regression<a class="anchor" aria-label="anchor" href="#logistic-regression"><i class="fas fa-link"></i></a>
 </h1>
-<p>The page you requested cannot be found (perhaps it was moved or renamed).</p>
-<p>You may want to try searching to find the page's new location, or use
-the table of contents to find the page you are looking for.</p>
+<p>[Chapter currently under construction]</p>
+<p>In this chapter we'll look at our final regression technique, logistic regression. Unlike linear regression, which predicts a continuous outcome variable based on one or more predictor variables, logistic regression is used when the outcome variable is categorical. The most common form of logistic regression is binary logistic regression, where the outcome is limited to two categories such as <code>Yes</code> or <code>No</code>, <code>Diagnosis</code> or <code>No Diagnosis</code>, or <code>1</code> or <code>0</code>.</p>
+<p>For instance, imagine you're interested in exploring factors that predict whether individuals are likely to have high blood pressure. While linear regression could help you predict something continuous like systolic blood pressure measurments, logistic regression would help you predict whether someone is likely to have a diagnosis of hypertention (high blood pressure) or not.</p>
+<p>Logistic regression uses a mathematical function that transforms linear input into a probability between 0 and 1. The logistic function has an "S" shape, allowing it to smoothly transition between the two extremes.</p>
+<div id="modelling-a-logistic-function" class="section level2" number="8.1">
+<h2>
+<span class="header-section-number">8.1</span> Modelling a logistic function<a class="anchor" aria-label="anchor" href="#modelling-a-logistic-function"><i class="fas fa-link"></i></a>
+</h2>
+<p>The S-curve in logistic regression is essentially plotting the probability of an event occurring across the range of a predictor variable. In the example below I have plotted stress level (on a scale between 0 and 50) against the probability of an individual relapsing for a particular damaging behaviour (i.e, drug taking, smoking etc).</p>
+<div class="inline-figure"><img src="Images/logistic1.png" width="75%" style="display: block; margin: auto;"></div>
+<p>The curve that we add to such a relationship works similarly to the line of best fit between the datapoints that we first used in the simple regression chapters. If we want to work out the chance of relaps for an individual that scores a 30 on the stress variable all we need to do is trace the point from 30 to the line and then read off the corresponding y-axis point. In this case the value is around 0.6 indicating that, according to out model, a scores of 30 on the scale indicates that an individual has a 85% estimated probability of experiencing a relapse.</p>
+</div>
+<div id="understanding-odds-ratios-in-the-context-of-logistic-regression" class="section level2" number="8.2">
+<h2>
+<span class="header-section-number">8.2</span> Understanding odds ratios in the context of logistic regression<a class="anchor" aria-label="anchor" href="#understanding-odds-ratios-in-the-context-of-logistic-regression"><i class="fas fa-link"></i></a>
+</h2>
+<p>In the previous section we talked about the probability of an event (probabilities being between 0 and 1) however we can also talk about the same data in terms of odds, particularly how the odds of an relaps event increase as a function of an increase in the stress variable.</p>
+<p>Odds ratios are calculated from the coefficients (<span class="math inline">\(\beta\)</span>) in the logistic regression model (JASP calculates them automatically if you tick the odds ration button so I wont go into the maths here). An odds ratio greater than 1 indicates that as the predictor variable increases, the odds of the outcome occurring also increase. Conversely, an odds ratio less than 1 indicates that as the predictor increases, the odds of the outcome occurring decrease.</p>
+<p>In the case of our current model our odds ratio is 1.29 indicating that for every unit increase in stress the chance of relaps increases by 29%.</p>
+<p>Possible data set: <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0255683#sec019" class="uri">https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0255683#sec019</a></p>
+<p>[Chapter currently under construction]</p>
+</div>
 </div>
 <script>
 
@@ -237,10 +257,23 @@ window.onload = function() {
 }
 
 </script><div class="chapter-nav">
-<div class="empty"></div>
-<div class="empty"></div>
+<div class="prev"><a href="jasp-workshop---multiple-regression.html"><span class="header-section-number">7</span> JASP Workshop - Multiple regression</a></div>
+<div class="next"><a href="further-reading.html"><span class="header-section-number">9</span> further reading</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
-    </div>
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#logistic-regression"><span class="header-section-number">8</span> Logistic regression</a></li>
+<li><a class="nav-link" href="#modelling-a-logistic-function"><span class="header-section-number">8.1</span> Modelling a logistic function</a></li>
+<li><a class="nav-link" href="#understanding-odds-ratios-in-the-context-of-logistic-regression"><span class="header-section-number">8.2</span> Understanding odds ratios in the context of logistic regression</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          
+        </ul>
+</div>
+    </nav>
+</div>
 
 </div>
 </div> <!-- .container -->
