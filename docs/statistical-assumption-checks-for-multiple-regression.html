@@ -79,7 +79,7 @@
 </h2>
 <p>Multicollinearity occurs when two or more independent variables in a regression model are closely related, making it difficult to disentangle their individual effects on the dependent variable. This can lead to unstable coefficient estimates, as small changes in the data can result in significant changes in the estimates. You can assess multicollinearity by creating a correlation matrix of the independent variables and looking for variables with a correlation coefficient greater than 0.7 or less than -0.7. However, this is not a strict rule, just an indication of a strong correlation.</p>
 <div class="inline-figure"><img src="Images/multicollinearity.PNG" width="100%" style="display: block; margin: auto;"></div>
-<p>In the table above, suppose we use these five personality constructs to predict a behavior, such as recidivism. Checking the correlation coefficients, the largest value is -0.368, indicating that multicollinearity is not likely an issue in this case. Be mindful not to confuse correlation coefficients with p-values, as it's an easy mistake to make.</p>
+<p>In the table above, suppose we use these five personality constructs to predict a behaviour, such as recidivism. Checking the correlation coefficients, the largest value is -0.368, indicating that multicollinearity is not likely an issue in this case. Be mindful not to confuse correlation coefficients with p-values, as it's an easy mistake to make.</p>
 <p>While multicollinearity can make interpretation challenging, it's not necessarily a deal-breaker. In some cases, the focus may be on predicting the outcome rather than interpreting the individual contributions of each predictor. For a more in-depth discussion on multicollinearity and its implications see <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4888898/">Vatcheva et al (2016)</a>.</p>
 </div>
 <div id="check-for-outliers" class="section level2" number="6.3">
@@ -108,7 +108,7 @@
 </h3>
 <p>The assumption of normality of residuals is important for hypothesis testing in linear regression. It ensures that the standard errors of the coefficients are unbiased and that the significant testing for the coefficients are valid. This, in turn, helps us make valid inferences about the relationships between the variables.</p>
 <p>In contrast, checking for <em>normality of the individual variables</em> is <strong>not required</strong> for linear regression. Instead, the focus is on the distribution of the residuals, which should be normally distributed if the model's assumptions are met. The residuals represent the differences between the observed and predicted values of the dependent variable, and their distribution tells us about the model's fit and the relationships between the variables.</p>
-<p>If you're working on a program where you can calculate the residuals then you can check the normality of the residuals using the Shaperio Wilks test or by assessing the skewness and kurtosis. In JASP the only means of checking the normality of residuals is through the <em>normality of residuals</em> plot option.</p>
+<p>If you're working on a program where you can calculate the residuals, then you can check the normality of the residuals using the Shaperio Wilks test or by assessing the skewness and kurtosis. In JASP the only means of checking the normality of residuals is through the <em>normality of residuals</em> plot option.</p>
 <div class="inline-figure"><img src="Images/residuals3&amp;4.png" width="100%" style="display: block; margin: auto;"></div>
 </div>
 <div id="check-for-homoscedasticity" class="section level3" number="6.4.2">
@@ -120,7 +120,7 @@
 <li><p>"Homos": Greek for "same" or "equal." In the context of homoscedasticity, it refers to the equality or sameness of the variances.</p></li>
 <li><p>"Skedasis": Greek word related to the concept of dispersion or spreading out. In statistics, it is associated with the variance or scatter of data points.</p></li>
 </ul>
-<p>The scatter plots below demonstrate how such data might look. Hetroscedasticity (i.e. different spreadness) means that the line of best fit becomes less reliable at different points in the model.</p>
+<p>The scatter plots below demonstrate how such data might look. Heteroscedasticity (i.e. different "spreadness") means that the line of best fit becomes less reliable at different points in the model.</p>
 <div class="inline-figure"><img src="Images/residuals5&amp;6.png" width="100%" style="display: block; margin: auto;"></div>
 <p>In this context, what we're looking for an equal distribution of data points along the line of best fit, avoiding a funnel-shaped pattern. When dealing with regression analyses that involve more than two predictor variables, it's often not feasible to visualise the data. In such cases, a plot of predicted variables against residuals can be used to check for homoscedasticity. In this plot, we are, again, looking for the absence of a funnel shape in the points.</p>
 <p>This check can also be performed using z-scores of the predicted values against the residuals; a level line in this context would indicate homoscedasticity (a uniform spread of the residuals). This method is used in software like SPSS for checking homoscedasticity, so you may see some other guides talking about this if you read wider on the topic.</p>

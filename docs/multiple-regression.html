@@ -91,7 +91,7 @@ Why are the <span class="math inline">\(R^2\)</span> positive for negative corre
 <p>The outcome of this is that each variable that we add here allowed us to better explain our concept of <em>well-being</em>. And as such, <strong>if we were to know a person's amount of <em>exercise</em>, <em>age</em>, and <em>income</em> we could predict their well-being to a greater degree than if we just know their amount of <em>exercise</em>.</strong></p>
 <div class="webex-solution">
 <button>
-Extra detail on overlaping variance
+Extra detail on overlapping variance
 </button>
 <p>It's important to understand that the Venn diagrams in this guide offer a simplified representation of variance explained by predictor variables in a regression model. In reality, when two predictor variables have overlapping variance, this shared variance can contribute more to the model than what the individual variables might suggest. This occurs due to interaction effects, where the combined influence of two predictors can explain more variance in the dependent variable than the sum of their individual effects. When looking at the Venn diagrams, remember that this additional explained variance from interactions isn't explicitly depicted, but it's crucial to consider when interpreting regression results.</p>
 <p>This is why, as you'll see later on, the final <span class="math inline">\(R^2\)</span> is greater than the sum of all the simple (univariate) regressions.</p>
@@ -160,7 +160,7 @@ What is an ANOVA
 <p>This table provides detailed information about the individual variables in the model. It includes statistics for each independent variable and the intercept for the model.</p>
 <p>There are two columns that are key to our understanding of the model. The <strong>Unstandardized</strong> column and the <strong>p</strong> column.</p>
 <p>Starting with the <strong>p</strong> column, this is the probability of obtaining a <em>t</em>-value as extreme as the one observed if the null hypothesis is true. A small <em>p</em>-value indicates that the variable plays a statistically significant role in our model. It could be the case that we include a variable that is not related to our dependent variable or the variance it explains is accounted for by other variables in the model. In those cases, the <em>p</em>-value would be above 0.05. A <em>p</em>-value of &lt;.001 for all three of our variables indicates that they are all relevant to include in our model.</p>
-<p>The values in our <strong>Undstandardized</strong> column correspond to the <span class="math inline">\(\beta\)</span> values in our regression equation. They play the same role as the gradient of <em>the line of best fit</em> from simple regression last week. They represent the absolute change in the dependent variable for a one-unit change in the independent variable, holding all other variables constant.</p>
+<p>The values in our <strong>Unstandardized</strong> column correspond to the <span class="math inline">\(\beta\)</span> values in our regression equation. They play the same role as the gradient of <em>the line of best fit</em> from simple regression last week. They represent the absolute change in the dependent variable for a one-unit change in the independent variable, holding all other variables constant.</p>
 <p>In our model, this table tells us that:</p>
 <ol style="list-style-type: decimal">
 <li><strong>For every 1 hour increase of exercise a week, well-being increases by 1.88 points.</strong></li>
@@ -202,28 +202,28 @@ What is an ANOVA
 </h2>
 <ol style="list-style-type: decimal">
 <li>What is multiple regression?
-<div id="radio_EAGQEOMJWS" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_EAGQEOMJWS" value=""><span>Using a single categorical variable to predict the value of a dependent variable.</span></label><label><input type="radio" autocomplete="off" name="radio_EAGQEOMJWS" value=""><span>A method that helps predict an outcome variable based on one independent variable.</span></label><label><input type="radio" autocomplete="off" name="radio_EAGQEOMJWS" value="answer"><span>A method that helps predict an outcome variable based on several independent variables.</span></label><label><input type="radio" autocomplete="off" name="radio_EAGQEOMJWS" value=""><span>A measure of the association between two variables.</span></label>
+<div id="radio_WBOXGDNNIV" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_WBOXGDNNIV" value=""><span>Using a single categorical variable to predict the value of a dependent variable.</span></label><label><input type="radio" autocomplete="off" name="radio_WBOXGDNNIV" value=""><span>A method that helps predict an outcome variable based on one independent variable.</span></label><label><input type="radio" autocomplete="off" name="radio_WBOXGDNNIV" value="answer"><span>A method that helps predict an outcome variable based on several independent variables.</span></label><label><input type="radio" autocomplete="off" name="radio_WBOXGDNNIV" value=""><span>A measure of the association between two variables.</span></label>
 </div>
 </li>
 <li>What is the regression equation?
-<div id="radio_JAYFNCQTIR" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_JAYFNCQTIR" value=""><span>A graphical representation of the relationships among the variables.</span></label><label><input type="radio" autocomplete="off" name="radio_JAYFNCQTIR" value=""><span>A mathematical calculation of the shared variance.</span></label><label><input type="radio" autocomplete="off" name="radio_JAYFNCQTIR" value="answer"><span>A mathematical representation of the relationships among the variables in a multiple regression analysis.</span></label><label><input type="radio" autocomplete="off" name="radio_JAYFNCQTIR" value=""><span>An empirical observation of the relationships among the variables.</span></label>
+<div id="radio_YQSJWAFXTW" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_YQSJWAFXTW" value=""><span>A graphical representation of the relationships among the variables.</span></label><label><input type="radio" autocomplete="off" name="radio_YQSJWAFXTW" value=""><span>A mathematical calculation of the shared variance.</span></label><label><input type="radio" autocomplete="off" name="radio_YQSJWAFXTW" value="answer"><span>A mathematical representation of the relationships among the variables in a multiple regression analysis.</span></label><label><input type="radio" autocomplete="off" name="radio_YQSJWAFXTW" value=""><span>An empirical observation of the relationships among the variables.</span></label>
 </div>
 </li>
 <li>In the regression equation, what do the β values represent?
-<div id="radio_FWBJPTBKHN" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_FWBJPTBKHN" value=""><span>The dependent variable.</span></label><label><input type="radio" autocomplete="off" name="radio_FWBJPTBKHN" value="answer"><span>The coefficients for the independent variables.</span></label><label><input type="radio" autocomplete="off" name="radio_FWBJPTBKHN" value=""><span>The error term.</span></label><label><input type="radio" autocomplete="off" name="radio_FWBJPTBKHN" value=""><span>The independent variables.</span></label>
+<div id="radio_GDXXXWXGIX" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_GDXXXWXGIX" value=""><span>The dependent variable.</span></label><label><input type="radio" autocomplete="off" name="radio_GDXXXWXGIX" value="answer"><span>The coefficients for the independent variables.</span></label><label><input type="radio" autocomplete="off" name="radio_GDXXXWXGIX" value=""><span>The error term.</span></label><label><input type="radio" autocomplete="off" name="radio_GDXXXWXGIX" value=""><span>The independent variables.</span></label>
 </div>
 </li>
 <li>What do the values in the Unstandardized column in the coefficients table represent?
-<div id="radio_UIZDXLFLLQ" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_UIZDXLFLLQ" value=""><span>the shared variance between the variables.</span></label><label><input type="radio" autocomplete="off" name="radio_UIZDXLFLLQ" value="answer"><span>the average change in the dependent variable for a one-unit change in the respective independent variable, holding all other variables constant.</span></label><label><input type="radio" autocomplete="off" name="radio_UIZDXLFLLQ" value=""><span>the correlation coefficient between the variables.</span></label><label><input type="radio" autocomplete="off" name="radio_UIZDXLFLLQ" value=""><span>the absolute value of the correlation coefficient between the variables.</span></label>
+<div id="radio_RGCGKFIRAF" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_RGCGKFIRAF" value=""><span>the shared variance between the variables.</span></label><label><input type="radio" autocomplete="off" name="radio_RGCGKFIRAF" value="answer"><span>the average change in the dependent variable for a one-unit change in the respective independent variable, holding all other variables constant.</span></label><label><input type="radio" autocomplete="off" name="radio_RGCGKFIRAF" value=""><span>the correlation coefficient between the variables.</span></label><label><input type="radio" autocomplete="off" name="radio_RGCGKFIRAF" value=""><span>the absolute value of the correlation coefficient between the variables.</span></label>
 </div>
 </li>
 <li>What does the Adjusted <span class="math inline">\(R^2\)</span> value tell us in a multiple regression analysis?
-<div id="radio_QHGWPWUCQC" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_QHGWPWUCQC" value=""><span>The strength of the linear relationship between the dependent variable and each independent variable.</span></label><label><input type="radio" autocomplete="off" name="radio_QHGWPWUCQC" value=""><span>The shared variance among the independent variables.</span></label><label><input type="radio" autocomplete="off" name="radio_QHGWPWUCQC" value="answer"><span>The percentage of variability in the dependent variable that is explained by the predictor variables.</span></label><label><input type="radio" autocomplete="off" name="radio_QHGWPWUCQC" value=""><span>The effect size of the independent variables on the dependent variable.</span></label>
+<div id="radio_ZGVWYWXHWH" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_ZGVWYWXHWH" value=""><span>The strength of the linear relationship between the dependent variable and each independent variable.</span></label><label><input type="radio" autocomplete="off" name="radio_ZGVWYWXHWH" value=""><span>The shared variance among the independent variables.</span></label><label><input type="radio" autocomplete="off" name="radio_ZGVWYWXHWH" value="answer"><span>The percentage of variability in the dependent variable that is explained by the predictor variables.</span></label><label><input type="radio" autocomplete="off" name="radio_ZGVWYWXHWH" value=""><span>The effect size of the independent variables on the dependent variable.</span></label>
 </div>
 </li>
 </ol>

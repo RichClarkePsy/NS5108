@@ -11,7 +11,7 @@ correlation-as-a-statistical-test
 statistical-assumptions-of-correlation
 simple-linear-regression-1
 the-line-of-best-fit
-the-equasion-of-a-line
+the-equation-of-a-line
 is-this-a-good-model
 shared-variance
 week-1---test-yourself-mcqs

@@ -119,8 +119,8 @@ Assumption checks for correlation analysis
 <p>For correlation analyse the the following assumptions should be checked and assessed:</p>
 <ul>
 <li><p><strong>Linearity</strong>: Both variables should have a linear relationship, which means that when you plot them on a scatterplot, the distribution of data points should roughly form a straight line.</p></li>
-<li><p><strong>Normality of Residuals</strong>: The data pairs should be bivariately normally distributed, meaning both variables being analysed should be approximately normally distributed when considered together. We do this by checking the normality of the residuals.</p></li>
-<li><p><strong>Homoscedasticity</strong>: The the spread (variance) of the residuals are constant across all values of the variable on the x-axis. i.e. data points shouldn't start of clustered and the widen out (like a funnel) further along in the correlation.</p></li>
+<li><p><strong>Normality of Residuals</strong>: The data pairs should be normally distributed, meaning both variables being analysed should be approximately normally distributed when considered together. We do this by checking the normality of the residuals.</p></li>
+<li><p><strong>Homoscedasticity</strong>: The spread (variance) of the residuals are constant across all values of the variable on the x-axis. i.e. data points shouldn't start of clustered and the widen out (like a funnel) further along in the correlation.</p></li>
 <li><p><strong>Absence of Outliers</strong>: Outliers can disproportionately influence the correlation coefficient. So, it's important to check for and consider the impact of any outliers in the data. Outliers can be checked through the use of a boxplot or calculated manually.</p></li>
 </ul>
 </div>
@@ -136,7 +136,7 @@ Assumption checks for correlation analysis
 <h3>
 <span class="header-section-number">3.2.1</span> The line of best fit<a class="anchor" aria-label="anchor" href="#the-line-of-best-fit"><i class="fas fa-link"></i></a>
 </h3>
-<p>In the scatter plot below, you'll see data points representing the hours of sleep and test performance for various participants. Notice how the data points are positively correlated? We can capture this trend by drawing a straight line through the data. This line, which we call the "line of best fit," gives us a simplified representation of the relationship between hours of sleep and test performance.The optimal line of best fit is the one that minimises the total distance between itself and all the individual data points on the plot.</p>
+<p>In the scatter plot below, you'll see data points representing the hours of sleep and test performance for various participants. Notice how the data points are positively correlated? We can capture this trend by drawing a straight line through the data. This line, which we call the "line of best fit," gives us a simplified representation of the relationship between hours of sleep and test performance. The optimal line of best fit is the one that minimises the total distance between itself and all the individual data points on the plot.</p>
 <div class="webex-solution">
 <button>
 The Concept of Residuals
@@ -165,9 +165,9 @@ Hint
 <p>That is the test score that our model suggest for a participant that has 7 hours of sleep.</p>
 </div>
 </div>
-<div id="the-equasion-of-a-line" class="section level3" number="3.2.2">
+<div id="the-equation-of-a-line" class="section level3" number="3.2.2">
 <h3>
-<span class="header-section-number">3.2.2</span> The equasion of a line<a class="anchor" aria-label="anchor" href="#the-equasion-of-a-line"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.2.2</span> The equation of a line<a class="anchor" aria-label="anchor" href="#the-equation-of-a-line"><i class="fas fa-link"></i></a>
 </h3>
 <p>Every straight line on a scatter plot can be written as a simple formula:</p>
 <p><span class="math display">\[ Y = mX + c \]</span></p>
@@ -181,7 +181,7 @@ Hint
 <p>To make the formula for our previous scatter plot all we need is to work out how much the blue line "goes up" by how far it "goes along", and where the line crosses our y-axis.</p>
 <p>The below scatter plot is the same data but with each axes going to zero this time. This allows us to get our <span class="math inline">\(c\)</span> value, 50, and by taking any two points on the line we can work out our <span class="math inline">\(m\)</span> value, in this case 10 (60/6).</p>
 <div class="inline-figure"><img src="Images/best%20fit%202.png" width="100%" style="display: block; margin: auto;"></div>
-<p>This give us the following equasion of our line:</p>
+<p>This give us the following equation of our line:</p>
 <p><span class="math display">\[ y = 10x + 50 \]</span></p>
 <p>Look back at the question from before. All we need to do now is sub in the number 7 and we get our predicted test score: (10*7) + 50 = 120</p>
 </div>
@@ -213,7 +213,7 @@ Hint
 <div class="inline-figure"><img src="Images/shared%20variance.png" width="75%" style="display: block; margin: auto;"></div>
 <p>When we say two variables share a certain percentage of variance, it's a indication of the strength and utility of the relationship. However, while a high shared variance can be promising, it's essential to remember that correlation does not imply causation. Other underlying factors, third variables, or even coincidences could create correlations.</p>
 <p>In practical terms, understanding shared variance is critical for researchers. When a significant shared variance exists, the predictor variable becomes valuable in understanding, predicting, or even potentially influencing the outcome variable. However, the unexplained variance might also prompt researchers to consider additional predictors or factors that weren't initially in the model.</p>
-<p>Next week we'll start looking at multiple regression modeling, which as the name suggest involves multiple variables sharing variance with a dependent variable.</p>
+<p>Next week we'll start looking at multiple regression modelling, which as the name suggest involves multiple variables sharing variance with a dependent variable.</p>
 </div>
 </div>
 <div id="week-1---test-yourself-mcqs" class="section level2" number="3.3">
@@ -221,36 +221,36 @@ Hint
 <span class="header-section-number">3.3</span> Week 1 - Test yourself mcq’s<a class="anchor" aria-label="anchor" href="#week-1---test-yourself-mcqs"><i class="fas fa-link"></i></a>
 </h2>
 <strong>1. Which of the following best describes correlation?</strong>
-<div id="radio_EASBRVLYRK" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_EASBRVLYRK" value=""><span>The probability of one event occurring given another has occurred.</span></label><label><input type="radio" autocomplete="off" name="radio_EASBRVLYRK" value=""><span>The relationship between the means of two groups.</span></label><label><input type="radio" autocomplete="off" name="radio_EASBRVLYRK" value="answer"><span>The strength and direction of a linear relationship between two variables.</span></label><label><input type="radio" autocomplete="off" name="radio_EASBRVLYRK" value=""><span>A statistical test to determine significance.</span></label>
+<div id="radio_CUMERAWTCQ" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_CUMERAWTCQ" value=""><span>The probability of one event occurring given another has occurred.</span></label><label><input type="radio" autocomplete="off" name="radio_CUMERAWTCQ" value=""><span>The relationship between the means of two groups.</span></label><label><input type="radio" autocomplete="off" name="radio_CUMERAWTCQ" value="answer"><span>The strength and direction of a linear relationship between two variables.</span></label><label><input type="radio" autocomplete="off" name="radio_CUMERAWTCQ" value=""><span>A statistical test to determine significance.</span></label>
 </div>
 <strong>2. A negative correlation coefficient between two variables indicates:</strong>
-<div id="radio_BMJRKKCWJF" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_BMJRKKCWJF" value=""><span>there's no relationship between the two variables.</span></label><label><input type="radio" autocomplete="off" name="radio_BMJRKKCWJF" value="answer"><span>as one variable increases, the other decreases.</span></label><label><input type="radio" autocomplete="off" name="radio_BMJRKKCWJF" value=""><span>both variables increase together.</span></label><label><input type="radio" autocomplete="off" name="radio_BMJRKKCWJF" value=""><span>the data is scattered without any clear trend.</span></label>
+<div id="radio_KEOIIFJIEY" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_KEOIIFJIEY" value=""><span>there's no relationship between the two variables.</span></label><label><input type="radio" autocomplete="off" name="radio_KEOIIFJIEY" value="answer"><span>as one variable increases, the other decreases.</span></label><label><input type="radio" autocomplete="off" name="radio_KEOIIFJIEY" value=""><span>both variables increase together.</span></label><label><input type="radio" autocomplete="off" name="radio_KEOIIFJIEY" value=""><span>the data is scattered without any clear trend.</span></label>
 </div>
 <strong>3. Which statistical method is used to predict the value of one variable based on the value of another variable?</strong>
-<div id="radio_CYDMEZCTOB" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_CYDMEZCTOB" value=""><span>T-test.</span></label><label><input type="radio" autocomplete="off" name="radio_CYDMEZCTOB" value=""><span>ANOVA.</span></label><label><input type="radio" autocomplete="off" name="radio_CYDMEZCTOB" value="answer"><span>Simple linear regression.</span></label><label><input type="radio" autocomplete="off" name="radio_CYDMEZCTOB" value=""><span>Chi-square test.</span></label>
+<div id="radio_YLSDRIOUTB" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_YLSDRIOUTB" value=""><span>T-test.</span></label><label><input type="radio" autocomplete="off" name="radio_YLSDRIOUTB" value=""><span>ANOVA.</span></label><label><input type="radio" autocomplete="off" name="radio_YLSDRIOUTB" value="answer"><span>Simple linear regression.</span></label><label><input type="radio" autocomplete="off" name="radio_YLSDRIOUTB" value=""><span>Chi-square test.</span></label>
 </div>
 <strong>4. In the context of a correlation test, the p-value informs us:</strong>
-<div id="radio_XTFWYQGJYI" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_XTFWYQGJYI" value=""><span>about the strength of the correlation.</span></label><label><input type="radio" autocomplete="off" name="radio_XTFWYQGJYI" value=""><span>about the slope of the line of best fit.</span></label><label><input type="radio" autocomplete="off" name="radio_XTFWYQGJYI" value="answer"><span>whether the observed correlation is likely due to random chance.</span></label><label><input type="radio" autocomplete="off" name="radio_XTFWYQGJYI" value=""><span>about the effect size of the relationship.</span></label>
+<div id="radio_WBTPDRRTAU" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_WBTPDRRTAU" value=""><span>about the strength of the correlation.</span></label><label><input type="radio" autocomplete="off" name="radio_WBTPDRRTAU" value=""><span>about the slope of the line of best fit.</span></label><label><input type="radio" autocomplete="off" name="radio_WBTPDRRTAU" value="answer"><span>whether the observed correlation is likely due to random chance.</span></label><label><input type="radio" autocomplete="off" name="radio_WBTPDRRTAU" value=""><span>about the effect size of the relationship.</span></label>
 </div>
 <strong>5. What does the "line of best fit" represent in the scatter plot?</strong>
-<div id="radio_AHYBCPQMZZ" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_AHYBCPQMZZ" value=""><span>The line that maximizes the total distance between itself and the data points.</span></label><label><input type="radio" autocomplete="off" name="radio_AHYBCPQMZZ" value="answer"><span>The line that minimizes the total distance between itself and the data points.</span></label><label><input type="radio" autocomplete="off" name="radio_AHYBCPQMZZ" value=""><span>The line that represents the mean of the data points.</span></label><label><input type="radio" autocomplete="off" name="radio_AHYBCPQMZZ" value=""><span>The line that represents the mode of the data points.</span></label>
+<div id="radio_SMBPUDQDMO" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_SMBPUDQDMO" value=""><span>The line that maximizes the total distance between itself and the data points.</span></label><label><input type="radio" autocomplete="off" name="radio_SMBPUDQDMO" value="answer"><span>The line that minimizes the total distance between itself and the data points.</span></label><label><input type="radio" autocomplete="off" name="radio_SMBPUDQDMO" value=""><span>The line that represents the mean of the data points.</span></label><label><input type="radio" autocomplete="off" name="radio_SMBPUDQDMO" value=""><span>The line that represents the mode of the data points.</span></label>
 </div>
 <strong>6. In the formula <span class="math inline">\(Y=mX+c\)</span>, what does <span class="math inline">\(c\)</span> represent?</strong>
-<div id="radio_YNOTUYCJPY" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_YNOTUYCJPY" value=""><span>The slope of the line.</span></label><label><input type="radio" autocomplete="off" name="radio_YNOTUYCJPY" value=""><span>The predicted change in test performance for each additional hour of sleep.</span></label><label><input type="radio" autocomplete="off" name="radio_YNOTUYCJPY" value="answer"><span>Where the line intersects the Y-axis.</span></label><label><input type="radio" autocomplete="off" name="radio_YNOTUYCJPY" value=""><span>The independent variable.</span></label>
+<div id="radio_TDOAZYZWIU" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_TDOAZYZWIU" value=""><span>The slope of the line.</span></label><label><input type="radio" autocomplete="off" name="radio_TDOAZYZWIU" value=""><span>The predicted change in test performance for each additional hour of sleep.</span></label><label><input type="radio" autocomplete="off" name="radio_TDOAZYZWIU" value="answer"><span>Where the line intersects the Y-axis.</span></label><label><input type="radio" autocomplete="off" name="radio_TDOAZYZWIU" value=""><span>The independent variable.</span></label>
 </div>
 <strong>7. What is the shared variance in a simple linear regression?</strong>
-<div id="radio_BGGNUNSXOY" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_BGGNUNSXOY" value="answer"><span>The proportion of variation in one variable that can be predicted by another variable.</span></label><label><input type="radio" autocomplete="off" name="radio_BGGNUNSXOY" value=""><span>The difference in variance between two variables.</span></label><label><input type="radio" autocomplete="off" name="radio_BGGNUNSXOY" value=""><span>The total variance of both variables.</span></label><label><input type="radio" autocomplete="off" name="radio_BGGNUNSXOY" value=""><span>The square root of the variance of both variables.</span></label>
+<div id="radio_JODYVMSONC" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_JODYVMSONC" value="answer"><span>The proportion of variation in one variable that can be predicted by another variable.</span></label><label><input type="radio" autocomplete="off" name="radio_JODYVMSONC" value=""><span>The difference in variance between two variables.</span></label><label><input type="radio" autocomplete="off" name="radio_JODYVMSONC" value=""><span>The total variance of both variables.</span></label><label><input type="radio" autocomplete="off" name="radio_JODYVMSONC" value=""><span>The square root of the variance of both variables.</span></label>
 </div>
 <strong>8. How is the shared variance value derived?</strong>
-<div id="radio_WWQCGBZRFR" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_WWQCGBZRFR" value=""><span>By taking the cube of the correlation coefficient.</span></label><label><input type="radio" autocomplete="off" name="radio_WWQCGBZRFR" value=""><span>By taking the square root of the correlation coefficient.</span></label><label><input type="radio" autocomplete="off" name="radio_WWQCGBZRFR" value=""><span>By dividing the correlation coefficient by 2.</span></label><label><input type="radio" autocomplete="off" name="radio_WWQCGBZRFR" value="answer"><span>By taking the square of the correlation coefficient.</span></label>
+<div id="radio_YZQJTLSDKT" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_YZQJTLSDKT" value=""><span>By taking the cube of the correlation coefficient.</span></label><label><input type="radio" autocomplete="off" name="radio_YZQJTLSDKT" value=""><span>By taking the square root of the correlation coefficient.</span></label><label><input type="radio" autocomplete="off" name="radio_YZQJTLSDKT" value=""><span>By dividing the correlation coefficient by 2.</span></label><label><input type="radio" autocomplete="off" name="radio_YZQJTLSDKT" value="answer"><span>By taking the square of the correlation coefficient.</span></label>
 </div>
 
 </div>
@@ -441,7 +441,7 @@ window.onload = function() {
 <li>
 <a class="nav-link" href="#simple-linear-regression-1"><span class="header-section-number">3.2</span> Simple linear regression</a><ul class="nav navbar-nav">
 <li><a class="nav-link" href="#the-line-of-best-fit"><span class="header-section-number">3.2.1</span> The line of best fit</a></li>
-<li><a class="nav-link" href="#the-equasion-of-a-line"><span class="header-section-number">3.2.2</span> The equasion of a line</a></li>
+<li><a class="nav-link" href="#the-equation-of-a-line"><span class="header-section-number">3.2.2</span> The equation of a line</a></li>
 <li><a class="nav-link" href="#is-this-a-good-model"><span class="header-section-number">3.2.3</span> Is this a good model?</a></li>
 <li><a class="nav-link" href="#shared-variance"><span class="header-section-number">3.2.4</span> Shared Variance</a></li>
 </ul>
