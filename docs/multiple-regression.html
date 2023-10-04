@@ -7,7 +7,7 @@
 <title>Chapter 5 Multiple regression | Regression handbook</title>
 <meta name="author" content="Dr Richard Clarke">
 <meta name="description" content="Multiple regression is a method that helps us predict an outcome variable based on several independent variables. It is a technique that tells us which variables are the most important for...">
-<meta name="generator" content="bookdown 0.35 with bs4_book()">
+<meta name="generator" content="bookdown 0.31 with bs4_book()">
 <meta property="og:title" content="Chapter 5 Multiple regression | Regression handbook">
 <meta property="og:type" content="book">
 <meta property="og:description" content="Multiple regression is a method that helps us predict an outcome variable based on several independent variables. It is a technique that tells us which variables are the most important for...">
@@ -16,7 +16,7 @@
 <meta name="twitter:description" content="Multiple regression is a method that helps us predict an outcome variable based on several independent variables. It is a technique that tells us which variables are the most important for...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.5.1/transition.js"></script><script src="libs/bs3compat-0.5.1/tabs.js"></script><script src="libs/bs3compat-0.5.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.0/transition.js"></script><script src="libs/bs3compat-0.4.0/tabs.js"></script><script src="libs/bs3compat-0.4.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
     
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
@@ -70,7 +70,7 @@
 </h2>
 <p>In the previous chapter on simple linear regression, we suggested that one predictor variable (<em>exercise</em>) shared variance with another variable (<em>well-being</em>). Visually, this can be represented using a Venn diagram with two circles: one for <em>exercise</em> and one for <em>well-being</em>.
 The overlap between these two circles represents the shared variance, or the extent to which variations in <em>exercise</em> can explain variations in <em>well-being</em>. This shared variance can be represented numerically as the square of the correlation coefficient between the two variables. In this hypothetical example <em>exercise</em> is correlated with <em>well-being</em> with a correlation coefficient of r=0.307 (i.e. a moderate-positive correlation) and, as such, it can be said that <em>exercise</em> explains 9.4% of the variance in <em>well-being</em> (<span class="math inline">\(R^2\)</span>=0.094)</p>
-<div class="inline-figure"><img src="Images/multiple%20regression%201.png" width="100%" style="display: block; margin: auto;"></div>
+<div class="inline-figure"><img src="Images/Multiple%20regression%201.png" width="100%" style="display: block; margin: auto;"></div>
 <p>In a multiple regression analysis, we use two or more independent variables to predict the value of a dependent variable. In doing so, each independent variable may share some variance with the dependent variable, but also shares variance among the other independent variables. Understanding this shared variance is crucial for interpreting the results of a multiple regression analysis.</p>
 <p>For instance, let's say we're using three independent variables to predict <em>well-being</em>: <em>exercise</em>, <em>age</em>, and <em>income</em>. Each of these variables could contribute to the variance of <em>well-being</em>.</p>
 <p>When we add the variables one-by-one, the overlap of each independent variable circle with the <em>well-being</em> circle represents the unique shared variance each variable contributes to <em>well-being</em>.</p>
@@ -84,10 +84,10 @@ Why are the <span class="math inline">\(R^2\)</span> positive for negative corre
 </button>
 <p>Because the <span class="math inline">\(R^2\)</span> is derived from squaring an <em>r</em> value, and when you square any negative value, it loses its negative sign.</p>
 </div>
-<div class="inline-figure"><img src="Images/multiple%20regression%202.png" width="100%" style="display: block; margin: auto;"></div>
+<div class="inline-figure"><img src="Images/Multiple%20regression%202.png" width="100%" style="display: block; margin: auto;"></div>
 <p>Both age and exercise now explain some of the variability in well-being, and since they are also related to each other, some of the variance they explain overlaps.</p>
 <p>Finally, when we add <em>income</em>, we find that the variable shares variance with both <em>age</em> and <em>well-being</em>. <em>Income</em> therefore adds more variance explained to our model while also overlapping with some of the variance explained by <em>age</em></p>
-<div class="inline-figure"><img src="Images/multiple%20regression%203.png" width="100%" style="display: block; margin: auto;"></div>
+<div class="inline-figure"><img src="Images/Multiple%20regression%203.png" width="100%" style="display: block; margin: auto;"></div>
 <p>The outcome of this is that each variable that we add here allowed us to better explain our concept of <em>well-being</em>. And as such, <strong>if we were to know a person's amount of <em>exercise</em>, <em>age</em>, and <em>income</em> we could predict their well-being to a greater degree than if we just know their amount of <em>exercise</em>.</strong></p>
 <div class="webex-solution">
 <button>
@@ -114,21 +114,21 @@ Extra detail on overlapping variance
 <span class="header-section-number">5.3</span> Interpreting a regression model<a class="anchor" aria-label="anchor" href="#interpreting-a-regression-model"><i class="fas fa-link"></i></a>
 </h2>
 <p>I will explain the steps for running a regression model, in full, in this weeks JASP workshop. For now, I want us just to focus on the interpretation. Here is the JASP output for a model that uses the variables <em>exercise</em>, <em>age</em> and <em>income</em> to predict <em>well-being</em> scores.</p>
-<div class="inline-figure"><img src="Images/multiple%20regression%204.png" width="100%" style="display: block; margin: auto;"></div>
+<div class="inline-figure"><img src="Images/Multiple%20regression%204.png" width="100%" style="display: block; margin: auto;"></div>
 <p>Let's break this down by table.</p>
 <div id="descriptive-statistics" class="section level3" number="5.3.1">
 <h3>
 <span class="header-section-number">5.3.1</span> Descriptive statistics<a class="anchor" aria-label="anchor" href="#descriptive-statistics"><i class="fas fa-link"></i></a>
 </h3>
 <p>The descriptive statistics are useful for context. This detail isn't given here but I can tell you that in this dataset (N=1000), the <em>well-being</em> score is out of 100, the <em>exercise</em> variable is based off of <em>number of hours of exercise a week</em>, <em>income</em> is in £GBP, and <em>age</em> is in years.</p>
-<div class="inline-figure"><img src="Images/multiple%20regression%208.png" width="100%" style="display: block; margin: auto;"></div>
+<div class="inline-figure"><img src="Images/Multiple%20regression%208.png" width="100%" style="display: block; margin: auto;"></div>
 </div>
 <div id="model-summary" class="section level3" number="5.3.2">
 <h3>
 <span class="header-section-number">5.3.2</span> Model Summary<a class="anchor" aria-label="anchor" href="#model-summary"><i class="fas fa-link"></i></a>
 </h3>
 <p>The Model Summary table provides an overview of the overall performance of the regression model. It contains key statistics that helps us assess how well the model fits the data.</p>
-<div class="inline-figure"><img src="Images/multiple%20regression%205.png" width="100%" style="display: block; margin: auto;"></div>
+<div class="inline-figure"><img src="Images/Multiple%20regression%205.png" width="100%" style="display: block; margin: auto;"></div>
 <p>The table contains two rows <span class="math inline">\(H_0\)</span> and <span class="math inline">\(H_1\)</span>. <span class="math inline">\(H_0\)</span> refers to the null model, a model that assumes that none of the predictors in the model have an effect on the dependent variable, meaning that the coefficients for all predictors are equal to zero. <span class="math inline">\(H_1\)</span> is our alternative model, the model containing our variables. This is the line that interests us.</p>
 <p>The main details of interest are:</p>
 <ul>
@@ -142,7 +142,7 @@ Extra detail on overlapping variance
 <span class="header-section-number">5.3.3</span> ANOVA<a class="anchor" aria-label="anchor" href="#anova"><i class="fas fa-link"></i></a>
 </h3>
 <p>The ANOVA table provides information about the overall significance of the model. It shows whether the model is better at predicting the dependent variable than a model with no independent variables (i.e., the null model).</p>
-<div class="inline-figure"><img src="Images/multiple%20regression%206.png" width="100%" style="display: block; margin: auto;"></div>
+<div class="inline-figure"><img src="Images/Multiple%20regression%206.png" width="100%" style="display: block; margin: auto;"></div>
 <p>The findings from this table will need to be reported in our write-up, however, to interpret it, all we actually need is the <em>p</em>-value. A significant finding on this test tells us that our model is significantly better than the null model.</p>
 <div class="webex-solution">
 <button>
@@ -156,7 +156,7 @@ What is an ANOVA
 <span class="header-section-number">5.3.4</span> Coefficients<a class="anchor" aria-label="anchor" href="#coefficients"><i class="fas fa-link"></i></a>
 </h3>
 <p>Finally, to understand the role of each variable in the model we need to look at the coefficients table.</p>
-<div class="inline-figure"><img src="Images/multiple%20regression%207.png" width="100%" style="display: block; margin: auto;"></div>
+<div class="inline-figure"><img src="Images/Multiple%20regression%207.png" width="100%" style="display: block; margin: auto;"></div>
 <p>This table provides detailed information about the individual variables in the model. It includes statistics for each independent variable and the intercept for the model.</p>
 <p>There are two columns that are key to our understanding of the model. The <strong>Unstandardized</strong> column and the <strong>p</strong> column.</p>
 <p>Starting with the <strong>p</strong> column, this is the probability of obtaining a <em>t</em>-value as extreme as the one observed if the null hypothesis is true. A small <em>p</em>-value indicates that the variable plays a statistically significant role in our model. It could be the case that we include a variable that is not related to our dependent variable or the variance it explains is accounted for by other variables in the model. In those cases, the <em>p</em>-value would be above 0.05. A <em>p</em>-value of &lt;.001 for all three of our variables indicates that they are all relevant to include in our model.</p>
@@ -169,7 +169,7 @@ What is an ANOVA
 </ol>
 <p>That last finding is not as intuitive as it could be, so it makes sense to convert <em>income</em> into values of 1000's of pounds (i.e. if someone earns £32500 a year they can be said to earn 32.5 thousand pounds a year). To do this all I need to do is divide each of our income values by 1000 and run the model again.</p>
 <p>Doing so gives us this:</p>
-<div class="inline-figure"><img src="Images/multiple%20regression%209.png" width="100%" style="display: block; margin: auto;"></div>
+<div class="inline-figure"><img src="Images/Multiple%20regression%209.png" width="100%" style="display: block; margin: auto;"></div>
 <ol start="3" style="list-style-type: decimal">
 <li><strong>For every £1000 of income, well-being increases by 1.35 points.</strong></li>
 </ol>
@@ -202,28 +202,28 @@ What is an ANOVA
 </h2>
 <ol style="list-style-type: decimal">
 <li>What is multiple regression?
-<div id="radio_ZBOZSMTUGV" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_ZBOZSMTUGV" value=""><span>Using a single categorical variable to predict the value of a dependent variable.</span></label><label><input type="radio" autocomplete="off" name="radio_ZBOZSMTUGV" value=""><span>A method that helps predict an outcome variable based on one independent variable.</span></label><label><input type="radio" autocomplete="off" name="radio_ZBOZSMTUGV" value="answer"><span>A method that helps predict an outcome variable based on several independent variables.</span></label><label><input type="radio" autocomplete="off" name="radio_ZBOZSMTUGV" value=""><span>A measure of the association between two variables.</span></label>
+<div id="radio_LFYSZUZQJZ" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_LFYSZUZQJZ" value=""><span>Using a single categorical variable to predict the value of a dependent variable.</span></label><label><input type="radio" autocomplete="off" name="radio_LFYSZUZQJZ" value=""><span>A method that helps predict an outcome variable based on one independent variable.</span></label><label><input type="radio" autocomplete="off" name="radio_LFYSZUZQJZ" value="answer"><span>A method that helps predict an outcome variable based on several independent variables.</span></label><label><input type="radio" autocomplete="off" name="radio_LFYSZUZQJZ" value=""><span>A measure of the association between two variables.</span></label>
 </div>
 </li>
 <li>What is the regression equation?
-<div id="radio_BHJYEMENDI" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_BHJYEMENDI" value=""><span>A graphical representation of the relationships among the variables.</span></label><label><input type="radio" autocomplete="off" name="radio_BHJYEMENDI" value=""><span>A mathematical calculation of the shared variance.</span></label><label><input type="radio" autocomplete="off" name="radio_BHJYEMENDI" value="answer"><span>A mathematical representation of the relationships among the variables in a multiple regression analysis.</span></label><label><input type="radio" autocomplete="off" name="radio_BHJYEMENDI" value=""><span>An empirical observation of the relationships among the variables.</span></label>
+<div id="radio_UKQOWDIIXT" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_UKQOWDIIXT" value=""><span>A graphical representation of the relationships among the variables.</span></label><label><input type="radio" autocomplete="off" name="radio_UKQOWDIIXT" value=""><span>A mathematical calculation of the shared variance.</span></label><label><input type="radio" autocomplete="off" name="radio_UKQOWDIIXT" value="answer"><span>A mathematical representation of the relationships among the variables in a multiple regression analysis.</span></label><label><input type="radio" autocomplete="off" name="radio_UKQOWDIIXT" value=""><span>An empirical observation of the relationships among the variables.</span></label>
 </div>
 </li>
 <li>In the regression equation, what do the β values represent?
-<div id="radio_QCCBLVYOAX" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_QCCBLVYOAX" value=""><span>The dependent variable.</span></label><label><input type="radio" autocomplete="off" name="radio_QCCBLVYOAX" value="answer"><span>The coefficients for the independent variables.</span></label><label><input type="radio" autocomplete="off" name="radio_QCCBLVYOAX" value=""><span>The error term.</span></label><label><input type="radio" autocomplete="off" name="radio_QCCBLVYOAX" value=""><span>The independent variables.</span></label>
+<div id="radio_MUEGJZMGEB" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_MUEGJZMGEB" value=""><span>The dependent variable.</span></label><label><input type="radio" autocomplete="off" name="radio_MUEGJZMGEB" value="answer"><span>The coefficients for the independent variables.</span></label><label><input type="radio" autocomplete="off" name="radio_MUEGJZMGEB" value=""><span>The error term.</span></label><label><input type="radio" autocomplete="off" name="radio_MUEGJZMGEB" value=""><span>The independent variables.</span></label>
 </div>
 </li>
 <li>What do the values in the Unstandardized column in the coefficients table represent?
-<div id="radio_QUENXUUVUV" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_QUENXUUVUV" value=""><span>the shared variance between the variables.</span></label><label><input type="radio" autocomplete="off" name="radio_QUENXUUVUV" value="answer"><span>the average change in the dependent variable for a one-unit change in the respective independent variable, holding all other variables constant.</span></label><label><input type="radio" autocomplete="off" name="radio_QUENXUUVUV" value=""><span>the correlation coefficient between the variables.</span></label><label><input type="radio" autocomplete="off" name="radio_QUENXUUVUV" value=""><span>the absolute value of the correlation coefficient between the variables.</span></label>
+<div id="radio_JRYFMYDPMG" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_JRYFMYDPMG" value=""><span>the shared variance between the variables.</span></label><label><input type="radio" autocomplete="off" name="radio_JRYFMYDPMG" value="answer"><span>the average change in the dependent variable for a one-unit change in the respective independent variable, holding all other variables constant.</span></label><label><input type="radio" autocomplete="off" name="radio_JRYFMYDPMG" value=""><span>the correlation coefficient between the variables.</span></label><label><input type="radio" autocomplete="off" name="radio_JRYFMYDPMG" value=""><span>the absolute value of the correlation coefficient between the variables.</span></label>
 </div>
 </li>
 <li>What does the Adjusted <span class="math inline">\(R^2\)</span> value tell us in a multiple regression analysis?
-<div id="radio_PFYOISTMAL" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_PFYOISTMAL" value=""><span>The strength of the linear relationship between the dependent variable and each independent variable.</span></label><label><input type="radio" autocomplete="off" name="radio_PFYOISTMAL" value=""><span>The shared variance among the independent variables.</span></label><label><input type="radio" autocomplete="off" name="radio_PFYOISTMAL" value="answer"><span>The percentage of variability in the dependent variable that is explained by the predictor variables.</span></label><label><input type="radio" autocomplete="off" name="radio_PFYOISTMAL" value=""><span>The effect size of the independent variables on the dependent variable.</span></label>
+<div id="radio_JWCHZMNNVQ" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_JWCHZMNNVQ" value=""><span>The strength of the linear relationship between the dependent variable and each independent variable.</span></label><label><input type="radio" autocomplete="off" name="radio_JWCHZMNNVQ" value=""><span>The shared variance among the independent variables.</span></label><label><input type="radio" autocomplete="off" name="radio_JWCHZMNNVQ" value="answer"><span>The percentage of variability in the dependent variable that is explained by the predictor variables.</span></label><label><input type="radio" autocomplete="off" name="radio_JWCHZMNNVQ" value=""><span>The effect size of the independent variables on the dependent variable.</span></label>
 </div>
 </li>
 </ol>
@@ -435,7 +435,7 @@ window.onload = function() {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Regression handbook</strong>" was written by Dr Richard Clarke. It was last built on 2023-09-29.</p>
+    <p>"<strong>Regression handbook</strong>" was written by Dr Richard Clarke. It was last built on 2023-10-04.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
