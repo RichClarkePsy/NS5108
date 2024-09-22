@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 14 Simple linear regression | Regression handbook</title>
+<meta name="author" content="Dr Richard Clarke">
+<meta name="description" content="14.1 Recap of correlation At its core, correlation provides a measure of how data points on two variables are related to one another.  Positive Correlation: (top left figure) As one variable...">
+<meta name="generator" content="bookdown 0.40 with bs4_book()">
+<meta property="og:title" content="Chapter 14 Simple linear regression | Regression handbook">
+<meta property="og:type" content="book">
+<meta property="og:description" content="14.1 Recap of correlation At its core, correlation provides a measure of how data points on two variables are related to one another.  Positive Correlation: (top left figure) As one variable...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 14 Simple linear regression | Regression handbook">
+<meta name="twitter:description" content="14.1 Recap of correlation At its core, correlation provides a measure of how data points on two variables are related to one another.  Positive Correlation: (top left figure) As one variable...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.6.1/transition.js"></script><script src="libs/bs3compat-0.6.1/tabs.js"></script><script src="libs/bs3compat-0.6.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<link rel="stylesheet" href="www/webex.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">Regression handbook</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> Welcome to the NS5108 quantiatitve methods and analysis handbook</a></li>
+<li><a class="" href="introduction-to-difference-tests.html"><span class="header-section-number">2</span> Introduction to difference tests</a></li>
+<li><a class="" href="t-tests-theory-visualisation-and-calculation-by-hand.html"><span class="header-section-number">3</span> T-Tests: Theory, Visualisation, and Calculation (by hand)</a></li>
+<li><a class="" href="assumption-checks-of-t-tests-and-other-difference-tests.html"><span class="header-section-number">4</span> Assumption checks of t-tests and other difference tests</a></li>
+<li><a class="" href="jasp-workshop---conducting-t-tests-independent-and-paired.html"><span class="header-section-number">5</span> JASP Workshop - Conducting T-Tests (Independent and Paired)</a></li>
+<li><a class="" href="understanding-effect-size-and-power-in-psychological-research.html"><span class="header-section-number">6</span> Understanding Effect Size and Power in Psychological Research</a></li>
+<li><a class="" href="how-to-conduct-a-power-analysis.html"><span class="header-section-number">7</span> How to Conduct a Power Analysis</a></li>
+<li><a class="" href="introduction-to-anova.html"><span class="header-section-number">8</span> Introduction to ANOVA</a></li>
+<li><a class="" href="jasp-workshop-one-way-anova.html"><span class="header-section-number">9</span> JASP workshop – one way ANOVA</a></li>
+<li><a class="" href="factorial-anova-important-for-your-assignment.html"><span class="header-section-number">10</span> Factorial ANOVA (Important for your assignment)</a></li>
+<li><a class="" href="jasp-workship---factorial-anova.html"><span class="header-section-number">11</span> JASP workship - Factorial ANOVA</a></li>
+<li><a class="" href="advanced-anova-techniques.html"><span class="header-section-number">12</span> Advanced ANOVA techniques</a></li>
+<li><a class="" href="introduction-to-regression-analysis.html"><span class="header-section-number">13</span> Introduction to Regression analysis</a></li>
+<li><a class="active" href="simple-linear-regression.html"><span class="header-section-number">14</span> Simple linear regression</a></li>
+<li><a class="" href="jasp-workshop---simple-linear-regression.html"><span class="header-section-number">15</span> JASP Workshop - Simple linear Regression</a></li>
+<li><a class="" href="multiple-regression.html"><span class="header-section-number">16</span> Multiple regression</a></li>
+<li><a class="" href="statistical-assumption-checks-for-multiple-regression.html"><span class="header-section-number">17</span> Statistical assumption checks for multiple regression</a></li>
+<li><a class="" href="jasp-workshop---multiple-regression.html"><span class="header-section-number">18</span> JASP Workshop - Multiple regression</a></li>
+<li><a class="" href="logistic-regression.html"><span class="header-section-number">19</span> Logistic regression</a></li>
+<li><a class="" href="further-reading.html"><span class="header-section-number">20</span> further reading</a></li>
+</ul>
+
+        <div class="book-extra">
+          
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="simple-linear-regression" class="section level1" number="14">
+<h1>
+<span class="header-section-number">14</span> Simple linear regression<a class="anchor" aria-label="anchor" href="#simple-linear-regression"><i class="fas fa-link"></i></a>
+</h1>
+<div id="recap-of-correlation" class="section level2" number="14.1">
+<h2>
+<span class="header-section-number">14.1</span> Recap of correlation<a class="anchor" aria-label="anchor" href="#recap-of-correlation"><i class="fas fa-link"></i></a>
+</h2>
+<p>At its core, correlation provides a measure of how data points on two variables are related to one another.</p>
+<div class="inline-figure"><img src="Images/Correlation%201_2_3.png" width="100%" style="display: block; margin: auto;"></div>
+<ul>
+<li>
+<strong>Positive Correlation</strong>: (top left figure) As one variable increases, the other also increases.</li>
+<li>
+<strong>Negative Correlation</strong>: (top right figure) As one variable increases, the other decreases.</li>
+<li>
+<strong>No Correlation</strong>: (bottom figure) There is no discernible pattern in the relationship between the two variables.</li>
+</ul>
+<p>The strength and direction of the correlation are represented by the correlation coefficient, typically denoted as <span class="math inline">\(r\)</span>. The value of <span class="math inline">\(r\)</span> ranges from -1 to +1.</p>
+<div class="inline-figure"><img src="Images/Correlation%204.png" width="100%" style="display: block; margin: auto;"></div>
+<ul>
+<li>An <span class="math inline">\(r\)</span> value closer to +1 indicates a stronger positive correlation.</li>
+<li>An <span class="math inline">\(r\)</span> value closer to -1 indicates a stronger negative correlation.</li>
+<li>An <span class="math inline">\(r\)</span> value closer to 0 suggests little to no correlation.</li>
+</ul>
+<div class="inline-figure"><img src="Images/Correlation%205.png" width="100%" style="display: block; margin: auto;"></div>
+<div id="correlation-as-a-statistical-test" class="section level3" number="14.1.1">
+<h3>
+<span class="header-section-number">14.1.1</span> Correlation as a Statistical Test<a class="anchor" aria-label="anchor" href="#correlation-as-a-statistical-test"><i class="fas fa-link"></i></a>
+</h3>
+<p>Going beyond visualisation of relationships, correlation can also be used as a formal statistical test to determine if there's a <strong>significant</strong> linear relationship between two variables.</p>
+<p>When conducting a correlation test, the <em>p</em>-value informs us about the significance of our observed correlation coefficient (<span class="math inline">\(r\)</span>). If the <em>p</em>-value is below a predetermined threshold (commonly 0.05), we infer that the correlation in our sample is likely not due to random chance, and thus, there's a statistically significant relationship between the two variables.</p>
+<div class="webex-solution">
+<button>
+Reminder: what is a p-value
+</button>
+<p><strong>Surface Level Explanation:</strong></p>
+<p>A <em>p</em>-value is a number between 0 and 1 that tells us if the result of an experiment is likely due to chance or if there's something more going on. A small <em>p</em>-value (typically less than 0.05) suggests that the result is significant and not just a random occurrence.</p>
+<p><strong>Intermediate Explanation:</strong></p>
+<p>A <em>p</em>-value represents the probability of observing the data (or something more extreme) given that a specific null hypothesis is true. If we have a <em>p</em>-value less than a pre-decided threshold (like 0.05), we reject the null hypothesis in favour of the alternative hypothesis. This suggests that our observed data is unlikely under the assumption of the null hypothesis. However, a smaller <em>p</em>-value does not necessarily mean a result is "meaningful"; it just indicates it is statistically significant.</p>
+<p><strong>In-Depth Explanation:</strong></p>
+<p>Mathematically, the <em>p</em>-value is the probability of observing data as extreme as, or more extreme than, the observed data under the assumption that the null hypothesis is true. This is not a direct measure of the probability that either hypothesis is true. Instead, it's a measure of the extremity of the data relative to a specific model.</p>
+<p>Lower <em>p</em>-values suggest that the observed data are less likely under the null hypothesis, leading us to reject then null in favour of alternative hypothesis. However, it's crucial to understand that a <em>p</em>-value doesn't measure the size of an effect or the practical significance of a result. Furthermore, while a threshold of 0.05 is common, it's arbitrary and must be chosen with context and caution.</p>
+<p>Lastly, it's essential to remember the <em>p</em>-value is contingent on the correctness of the underlying statistical model and the level to which the data meet the statistical assumptions. Misunderstandings and misuse of <em>p</em>-values have led to various controversies in the scientific community (see the <a href="https://doi.org/10.1080/19466315.2020.1724560">replication crisis</a>). See Lakens (2022) <a href="https://lakens.github.io/statistical_inferences/01-pvalue.html"><em>Improving Your Statistical Inferences</em></a> for a comprehensive overview of <em>p</em>-values.</p>
+</div>
+</div>
+<div id="statistical-assumptions-of-correlation" class="section level3" number="14.1.2">
+<h3>
+<span class="header-section-number">14.1.2</span> Statistical assumptions of correlation<a class="anchor" aria-label="anchor" href="#statistical-assumptions-of-correlation"><i class="fas fa-link"></i></a>
+</h3>
+<p>In frequentist statistical analysis, we often aim to use parametric tests when the statistical assumptions underlying these tests are met, as these tests can be more sensitive to smaller effect sizes. For correlation analysis, Pearson's correlation is the most commonly used parametric test and Spearman's Rank correlation is the most commonly used non-parametric test.</p>
+<div class="webex-solution">
+<button>
+Assumption checks for correlation analysis
+</button>
+<p>In my experience of teaching regression, the assumption checks are often the part of statistics that confuse students the most. For now, I've put them safely away in this box, so as not to scare you off in the first week :-)</p>
+<p>We will do a fully refresh of the theory behind assumption check aspect next week when we cover multiple regression.</p>
+<p>For correlation analyse the the following assumptions should be checked and assessed:</p>
+<ul>
+<li><p><strong>Linearity</strong>: Both variables should have a linear relationship, which means that when you plot them on a scatterplot, the distribution of data points should roughly form a straight line.</p></li>
+<li><p><strong>Normality of Residuals</strong>: The data pairs should be normally distributed, meaning both variables being analysed should be approximately normally distributed when considered together. We do this by checking the normality of the residuals.</p></li>
+<li><p><strong>Homoscedasticity</strong>: The spread (variance) of the residuals are constant across all values of the variable on the x-axis. i.e. data points shouldn't start of clustered and the widen out (like a funnel) further along in the correlation.</p></li>
+<li><p><strong>Absence of Outliers</strong>: Outliers can disproportionately influence the correlation coefficient. So, it's important to check for and consider the impact of any outliers in the data. Outliers can be checked through the use of a boxplot or calculated manually.</p></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="simple-linear-regression-1" class="section level2" number="14.2">
+<h2>
+<span class="header-section-number">14.2</span> Simple linear regression<a class="anchor" aria-label="anchor" href="#simple-linear-regression-1"><i class="fas fa-link"></i></a>
+</h2>
+<p>The content in the sections above, likely reflects the extent to which you explored correlation in your first year here with us. Regression analysis is simply an extension of this knowledge. Central to this understanding is the concept of the <em>"line of best fit".</em></p>
+<p>While you might have previously used this line as a visual representation of the relationship between two variables, in linear regression, it takes on a more pivotal role.</p>
+<div id="the-line-of-best-fit" class="section level3" number="14.2.1">
+<h3>
+<span class="header-section-number">14.2.1</span> The line of best fit<a class="anchor" aria-label="anchor" href="#the-line-of-best-fit"><i class="fas fa-link"></i></a>
+</h3>
+<p>In the scatter plot below, you'll see data points representing the hours of sleep and test performance for various participants. Notice how the data points are positively correlated? We can capture this trend by drawing a straight line through the data. This line, which we call the "line of best fit," gives us a simplified representation of the relationship between hours of sleep and test performance. The optimal line of best fit is the one that minimises the total distance between itself and all the individual data points on the plot.</p>
+<div class="webex-solution">
+<button>
+The Concept of Residuals
+</button>
+<p>Even with the best possible straight line drawn through our data points, it's rare that the line will pass exactly through every point. The vertical distance between each data point and our line is called a "residual". For every data point, the residual is the difference between its actual value and what our line predicts the value should be. If our line of best fit is doing its job well, these residuals will be quite small, indicating that our predictions are close to the actual data. However, if the residuals are large, it suggests that our line might not be capturing the relationship between the two variables adequately.</p>
+<p>We talk more about residuals, in the context of our assumption checks, in the next chapter.</p>
+</div>
+<div class="inline-figure"><img src="Images/best%20fit%201.png" width="100%" style="display: block; margin: auto;"></div>
+<p>The purpose of the line of best fit is to <strong>model</strong> the relationship between test performance and number of hours slept.</p>
+<p>What does this model suggest the performance on the test will be if a participant gets 7 hours sleep? <select class="webex-select"><option value="blank"></option>
+<option value="">100</option>
+<option value="">110</option>
+<option value="answer">120</option>
+<option value="">130</option>
+<option value="">140</option></select></p>
+<div class="webex-solution">
+<button>
+Hint
+</button>
+<ol style="list-style-type: decimal">
+<li>Find the point for 7 hours on the x-axis.</li>
+<li>Draw your finger up to the blueline.</li>
+<li>Draw your finger across to the y-axis.</li>
+<li>Take that number.</li>
+</ol>
+<p>That is the test score that our model suggest for a participant that has 7 hours of sleep.</p>
+</div>
+</div>
+<div id="the-equation-of-a-line" class="section level3" number="14.2.2">
+<h3>
+<span class="header-section-number">14.2.2</span> The equation of a line<a class="anchor" aria-label="anchor" href="#the-equation-of-a-line"><i class="fas fa-link"></i></a>
+</h3>
+<p>Every straight line on a scatter plot can be written as a simple formula:</p>
+<p><span class="math display">\[ Y = mX + c \]</span></p>
+<p>Where:</p>
+<ul>
+<li><p><span class="math inline">\(Y\)</span> is the dependent variable.</p></li>
+<li><p><span class="math inline">\(X\)</span> is the independent variable.</p></li>
+<li><p><span class="math inline">\(c\)</span> is where the line intersects the Y-axis, representing the predicted test performance when no hours of sleep are had.</p></li>
+<li><p><span class="math inline">\(m\)</span> is the slope of the line, indicating the predicted change in test performance for each additional hour of sleep.</p></li>
+</ul>
+<p>To make the formula for our previous scatter plot all we need is to work out how much the blue line "goes up" by how far it "goes along", and where the line crosses our y-axis.</p>
+<p>The below scatter plot is the same data but with each axes going to zero this time. This allows us to get our <span class="math inline">\(c\)</span> value, 50, and by taking any two points on the line we can work out our <span class="math inline">\(m\)</span> value, in this case 10 (60/6).</p>
+<div class="inline-figure"><img src="Images/best%20fit%202.png" width="100%" style="display: block; margin: auto;"></div>
+<p>This give us the following equation of our line:</p>
+<p><span class="math display">\[ y = 10x + 50 \]</span></p>
+<p>Look back at the question from before. All we need to do now is sub in the number 7 and we get our predicted test score: (10*7) + 50 = 120</p>
+</div>
+<div id="is-this-a-good-model" class="section level3" number="14.2.3">
+<h3>
+<span class="header-section-number">14.2.3</span> Is this a good model?<a class="anchor" aria-label="anchor" href="#is-this-a-good-model"><i class="fas fa-link"></i></a>
+</h3>
+<div align="center">
+<em>"All models are wrong, but some are useful."</em> - George E. P. Box
+</div>
+<p>This oft-cited quote sums up the a central truth in statistics and data modelling: no model can capture the full intricacy and unpredictability of real-world phenomena. However, that doesn't diminish the value of models. When a model simplifies complex systems and highlights important relationships, it can offer invaluable insights and guide decision-making.</p>
+<p>The line on our sleep and test score scatter plot (above) would appear to be quite representative of our data and therefore is perhaps fairly a good model (so long as our sample is representative of the population we want to use or model on in the future).</p>
+<p>However, if we try and use the relationship between participants height and their test scores as out model, this is likely to be a fairly poor model:</p>
+<div class="inline-figure"><img src="Images/best%20fit%203.png" width="100%" style="display: block; margin: auto;"></div>
+<p>The model derived from this data, <span class="math inline">\(y = -0.05x + 77.89\)</span>, would actually give an answer close to 70 no matter an individuals height. In other words, whether you're taller or shorter, the model essentially shrugs and predicts something close to 70 (the mean of the dataset). I would not describe this as a very useful model, as in, I would not spend an evening on the rack to try and make myself taller for the test.</p>
+<p>While we can see it on the scatter plot, none of the numbers in our equations allow us to gauge how 'useful' or fitting the <strong>sleep</strong> model is compared to the <strong>height</strong> model. To understand model fit we need the final new concept for this week, <strong>shared variance</strong></p>
+</div>
+<div id="shared-variance" class="section level3" number="14.2.4">
+<h3>
+<span class="header-section-number">14.2.4</span> Shared Variance<a class="anchor" aria-label="anchor" href="#shared-variance"><i class="fas fa-link"></i></a>
+</h3>
+<p>When examining the relationship between two variables, the proportion of variation in one variable that can be predicted or explained by the other variable is known as the <strong>shared variance</strong> . In correlational research, this concept is crucial as it tells us how well one variable <em>explains</em> the variation in the other variable. In other word how useful would it be if we used a scores from one variable to <em>predict</em> scores on the other variable.</p>
+<p>A good way to think about this visually is with a Venn diagram.</p>
+<div class="inline-figure"><img src="Images/variance%201.png" width="75%" style="display: block; margin: auto;"></div>
+<div class="inline-figure"><img src="Images/variance%202.png" width="75%" style="display: block; margin: auto;"></div>
+<div class="inline-figure"><img src="Images/variance%203.png" width="75%" style="display: block; margin: auto;"></div>
+<p>This value of shared variance is derived by taking the square of <span class="math inline">\(r\)</span>, the correlation coefficient, giving us our <span class="math inline">\(R^2\)</span> value for the model. Take for instance, for our sleep model, if we run a pearsons correlation test on the data we find the relationship has a correlation coefficient of <span class="math inline">\(r\)</span> = 0.94, squaring this give us a <span class="math inline">\(R^2\)</span> of 0.89 between our predictor (study hours) and the outcome (test scores).</p>
+<p>Another way to talk about <span class="math inline">\(R^2\)</span> is to say that 89% of the variance in test scores can be predicted or explained by the number of hours studied. The remaining 11% of the variance is due to factors not included in our model or random error.</p>
+<div class="inline-figure"><img src="Images/shared%20variance.png" width="75%" style="display: block; margin: auto;"></div>
+<p>When we say two variables share a certain percentage of variance, it's a indication of the strength and utility of the relationship. However, while a high shared variance can be promising, it's essential to remember that correlation does not imply causation. Other underlying factors, third variables, or even coincidences could create correlations.</p>
+<p>In practical terms, understanding shared variance is critical for researchers. When a significant shared variance exists, the predictor variable becomes valuable in understanding, predicting, or even potentially influencing the outcome variable. However, the unexplained variance might also prompt researchers to consider additional predictors or factors that weren't initially in the model.</p>
+<p>Next week we'll start looking at multiple regression modelling, which as the name suggest involves multiple variables sharing variance with a dependent variable.</p>
+</div>
+</div>
+<div id="week-1---test-yourself-mcqs" class="section level2" number="14.3">
+<h2>
+<span class="header-section-number">14.3</span> Week 1 - Test yourself mcq’s<a class="anchor" aria-label="anchor" href="#week-1---test-yourself-mcqs"><i class="fas fa-link"></i></a>
+</h2>
+<strong>1. Which of the following best describes correlation?</strong>
+<div id="radio_FJYPSWWFFB" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_FJYPSWWFFB" value=""><span>The probability of one event occurring given another has occurred.</span></label><label><input type="radio" autocomplete="off" name="radio_FJYPSWWFFB" value=""><span>The relationship between the means of two groups.</span></label><label><input type="radio" autocomplete="off" name="radio_FJYPSWWFFB" value="answer"><span>The strength and direction of a linear relationship between two variables.</span></label><label><input type="radio" autocomplete="off" name="radio_FJYPSWWFFB" value=""><span>A statistical test to determine significance.</span></label>
+</div>
+<strong>2. A negative correlation coefficient between two variables indicates:</strong>
+<div id="radio_HJOCAKQYAA" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_HJOCAKQYAA" value=""><span>there's no relationship between the two variables.</span></label><label><input type="radio" autocomplete="off" name="radio_HJOCAKQYAA" value="answer"><span>as one variable increases, the other decreases.</span></label><label><input type="radio" autocomplete="off" name="radio_HJOCAKQYAA" value=""><span>both variables increase together.</span></label><label><input type="radio" autocomplete="off" name="radio_HJOCAKQYAA" value=""><span>the data is scattered without any clear trend.</span></label>
+</div>
+<strong>3. Which statistical method is used to predict the value of one variable based on the value of another variable?</strong>
+<div id="radio_UXWKTNNDNA" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_UXWKTNNDNA" value=""><span>T-test.</span></label><label><input type="radio" autocomplete="off" name="radio_UXWKTNNDNA" value=""><span>ANOVA.</span></label><label><input type="radio" autocomplete="off" name="radio_UXWKTNNDNA" value="answer"><span>Simple linear regression.</span></label><label><input type="radio" autocomplete="off" name="radio_UXWKTNNDNA" value=""><span>Chi-square test.</span></label>
+</div>
+<strong>4. In the context of a correlation test, the p-value informs us:</strong>
+<div id="radio_VDIWOZEUSA" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_VDIWOZEUSA" value=""><span>about the strength of the correlation.</span></label><label><input type="radio" autocomplete="off" name="radio_VDIWOZEUSA" value=""><span>about the slope of the line of best fit.</span></label><label><input type="radio" autocomplete="off" name="radio_VDIWOZEUSA" value="answer"><span>whether the observed correlation is likely due to random chance.</span></label><label><input type="radio" autocomplete="off" name="radio_VDIWOZEUSA" value=""><span>about the effect size of the relationship.</span></label>
+</div>
+<strong>5. What does the "line of best fit" represent in the scatter plot?</strong>
+<div id="radio_RISFEXDBPT" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_RISFEXDBPT" value=""><span>The line that maximizes the total distance between itself and the data points.</span></label><label><input type="radio" autocomplete="off" name="radio_RISFEXDBPT" value="answer"><span>The line that minimizes the total distance between itself and the data points.</span></label><label><input type="radio" autocomplete="off" name="radio_RISFEXDBPT" value=""><span>The line that represents the mean of the data points.</span></label><label><input type="radio" autocomplete="off" name="radio_RISFEXDBPT" value=""><span>The line that represents the mode of the data points.</span></label>
+</div>
+<strong>6. In the formula <span class="math inline">\(Y=mX+c\)</span>, what does <span class="math inline">\(c\)</span> represent?</strong>
+<div id="radio_GFGYQKQFWV" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_GFGYQKQFWV" value=""><span>The slope of the line.</span></label><label><input type="radio" autocomplete="off" name="radio_GFGYQKQFWV" value=""><span>The predicted change in test performance for each additional hour of sleep.</span></label><label><input type="radio" autocomplete="off" name="radio_GFGYQKQFWV" value="answer"><span>Where the line intersects the Y-axis.</span></label><label><input type="radio" autocomplete="off" name="radio_GFGYQKQFWV" value=""><span>The independent variable.</span></label>
+</div>
+<strong>7. What is the shared variance in a simple linear regression?</strong>
+<div id="radio_BBREORCTTZ" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_BBREORCTTZ" value="answer"><span>The proportion of variation in one variable that can be predicted by another variable.</span></label><label><input type="radio" autocomplete="off" name="radio_BBREORCTTZ" value=""><span>The difference in variance between two variables.</span></label><label><input type="radio" autocomplete="off" name="radio_BBREORCTTZ" value=""><span>The total variance of both variables.</span></label><label><input type="radio" autocomplete="off" name="radio_BBREORCTTZ" value=""><span>The square root of the variance of both variables.</span></label>
+</div>
+<strong>8. How is the shared variance value derived?</strong>
+<div id="radio_JZSAOMEDKT" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_JZSAOMEDKT" value=""><span>By taking the cube of the correlation coefficient.</span></label><label><input type="radio" autocomplete="off" name="radio_JZSAOMEDKT" value=""><span>By taking the square root of the correlation coefficient.</span></label><label><input type="radio" autocomplete="off" name="radio_JZSAOMEDKT" value=""><span>By dividing the correlation coefficient by 2.</span></label><label><input type="radio" autocomplete="off" name="radio_JZSAOMEDKT" value="answer"><span>By taking the square of the correlation coefficient.</span></label>
+</div>
+
+</div>
+</div>
+<script>
+
+/* update total correct if #webex-total_correct exists */
+update_total_correct = function() {
+  console.log("webex: update total_correct");
+
+  if (t = document.getElementById("webex-total_correct")) {
+    var correct = document.getElementsByClassName("webex-correct").length;
+    var solvemes = document.getElementsByClassName("webex-solveme").length;
+    var radiogroups = document.getElementsByClassName("webex-radiogroup").length;
+    var selects = document.getElementsByClassName("webex-select").length;
+    
+    t.innerHTML = correct + " of " + (solvemes + radiogroups + selects) + " correct";
+  }
+}
+
+/* webex-solution button toggling function */
+b_func = function() {
+  console.log("webex: toggle hide");
+  
+  var cl = this.parentElement.classList;
+  if (cl.contains('open')) {
+    cl.remove("open");
+  } else {
+    cl.add("open");
+  }
+}
+
+/* function for checking solveme answers */
+solveme_func = function(e) {
+  console.log("webex: check solveme");
+
+  var real_answers = JSON.parse(this.dataset.answer);
+  var my_answer = this.value;
+  var cl = this.classList;
+  if (cl.contains("ignorecase")) {
+    my_answer = my_answer.toLowerCase();
+  }
+  if (cl.contains("nospaces")) {
+    my_answer = my_answer.replace(/ /g, "")
+  }
+
+  if (my_answer == "") {
+    cl.remove("webex-correct");
+    cl.remove("webex-incorrect");
+  } else if (real_answers.includes(my_answer)) {
+    cl.add("webex-correct");
+    cl.remove("webex-incorrect");
+  } else {
+    cl.add("webex-incorrect");
+    cl.remove("webex-correct");
+  }
+
+  // match numeric answers within a specified tolerance
+  if(this.dataset.tol > 0){
+    var tol = JSON.parse(this.dataset.tol);
+    var matches = real_answers.map(x => Math.abs(x - my_answer) < tol)
+    if (matches.reduce((a, b) => a + b, 0) > 0) {
+      cl.add("webex-correct");
+    } else {
+      cl.remove("webex-correct");
+    }
+  }
+
+  // added regex bit
+  if (cl.contains("regex")){
+    answer_regex = RegExp(real_answers.join("|"))
+    if (answer_regex.test(my_answer)) {
+      cl.add("webex-correct");
+    }
+  }
+
+  update_total_correct();
+}
+
+/* function for checking select answers */
+select_func = function(e) {
+  console.log("webex: check select");
+  
+  var cl = this.classList
+  
+  /* add style */
+  cl.remove("webex-incorrect");
+  cl.remove("webex-correct");
+  if (this.value == "answer") {
+    cl.add("webex-correct");
+  } else if (this.value != "blank") {
+    cl.add("webex-incorrect");
+  }
+  
+  update_total_correct();
+}
+
+/* function for checking radiogroups answers */
+radiogroups_func = function(e) {
+  console.log("webex: check radiogroups");
+
+  var checked_button = document.querySelector('input[name=' + this.id + ']:checked');
+  var cl = checked_button.parentElement.classList;
+  var labels = checked_button.parentElement.parentElement.children;
+  
+  /* get rid of styles */
+  for (i = 0; i < labels.length; i++) {
+    labels[i].classList.remove("webex-incorrect");
+    labels[i].classList.remove("webex-correct");
+  }
+  
+  /* add style */
+  if (checked_button.value == "answer") {
+    cl.add("webex-correct");
+  } else {
+    cl.add("webex-incorrect");
+  }
+  
+  update_total_correct();
+}
+
+window.onload = function() {
+  console.log("onload");
+  /* set up solution buttons */
+  var buttons = document.getElementsByTagName("button");
+
+  for (var i = 0; i < buttons.length; i++) {
+    if (buttons[i].parentElement.classList.contains('webex-solution')) {
+      buttons[i].onclick = b_func;
+    }
+  }
+
+  /* set up webex-solveme inputs */
+  var solveme = document.getElementsByClassName("webex-solveme");
+
+  for (var i = 0; i < solveme.length; i++) {
+    /* make sure input boxes don't auto-anything */
+    solveme[i].setAttribute("autocomplete","off");
+    solveme[i].setAttribute("autocorrect", "off");
+    solveme[i].setAttribute("autocapitalize", "off");
+    solveme[i].setAttribute("spellcheck", "false");
+    solveme[i].value = "";
+
+    /* adjust answer for ignorecase or nospaces */
+    var cl = solveme[i].classList;
+    var real_answer = solveme[i].dataset.answer;
+    if (cl.contains("ignorecase")) {
+      real_answer = real_answer.toLowerCase();
+    }
+    if (cl.contains("nospaces")) {
+      real_answer = real_answer.replace(/ /g, "");
+    }
+    solveme[i].dataset.answer = real_answer;
+
+    /* attach checking function */
+    solveme[i].onkeyup = solveme_func;
+    solveme[i].onchange = solveme_func;
+  }
+  
+  /* set up radiogroups */
+  var radiogroups = document.getElementsByClassName("webex-radiogroup");
+  for (var i = 0; i < radiogroups.length; i++) {
+    radiogroups[i].onchange = radiogroups_func;
+  }
+  
+  /* set up selects */
+  var selects = document.getElementsByClassName("webex-select");
+  for (var i = 0; i < selects.length; i++) {
+    selects[i].onchange = select_func;
+  }
+
+  update_total_correct();
+}
+
+</script><div class="chapter-nav">
+<div class="prev"><a href="introduction-to-regression-analysis.html"><span class="header-section-number">13</span> Introduction to Regression analysis</a></div>
+<div class="next"><a href="jasp-workshop---simple-linear-regression.html"><span class="header-section-number">15</span> JASP Workshop - Simple linear Regression</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#simple-linear-regression"><span class="header-section-number">14</span> Simple linear regression</a></li>
+<li>
+<a class="nav-link" href="#recap-of-correlation"><span class="header-section-number">14.1</span> Recap of correlation</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#correlation-as-a-statistical-test"><span class="header-section-number">14.1.1</span> Correlation as a Statistical Test</a></li>
+<li><a class="nav-link" href="#statistical-assumptions-of-correlation"><span class="header-section-number">14.1.2</span> Statistical assumptions of correlation</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#simple-linear-regression-1"><span class="header-section-number">14.2</span> Simple linear regression</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#the-line-of-best-fit"><span class="header-section-number">14.2.1</span> The line of best fit</a></li>
+<li><a class="nav-link" href="#the-equation-of-a-line"><span class="header-section-number">14.2.2</span> The equation of a line</a></li>
+<li><a class="nav-link" href="#is-this-a-good-model"><span class="header-section-number">14.2.3</span> Is this a good model?</a></li>
+<li><a class="nav-link" href="#shared-variance"><span class="header-section-number">14.2.4</span> Shared Variance</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#week-1---test-yourself-mcqs"><span class="header-section-number">14.3</span> Week 1 - Test yourself mcq’s</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Regression handbook</strong>" was written by Dr Richard Clarke. It was last built on 2024-09-22.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

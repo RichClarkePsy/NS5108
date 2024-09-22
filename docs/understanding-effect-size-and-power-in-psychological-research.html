@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 6 Understanding Effect Size and Power in Psychological Research | Regression handbook</title>
+<meta name="author" content="Dr Richard Clarke">
+<meta name="description" content="In psychological research, understanding not just whether a difference exists, but also how large that difference is, is crucial. This chapter will explore two key concepts that help us do this:...">
+<meta name="generator" content="bookdown 0.40 with bs4_book()">
+<meta property="og:title" content="Chapter 6 Understanding Effect Size and Power in Psychological Research | Regression handbook">
+<meta property="og:type" content="book">
+<meta property="og:description" content="In psychological research, understanding not just whether a difference exists, but also how large that difference is, is crucial. This chapter will explore two key concepts that help us do this:...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 6 Understanding Effect Size and Power in Psychological Research | Regression handbook">
+<meta name="twitter:description" content="In psychological research, understanding not just whether a difference exists, but also how large that difference is, is crucial. This chapter will explore two key concepts that help us do this:...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.6.1/transition.js"></script><script src="libs/bs3compat-0.6.1/tabs.js"></script><script src="libs/bs3compat-0.6.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<link rel="stylesheet" href="www/webex.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">Regression handbook</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> Welcome to the NS5108 quantiatitve methods and analysis handbook</a></li>
+<li><a class="" href="introduction-to-difference-tests.html"><span class="header-section-number">2</span> Introduction to difference tests</a></li>
+<li><a class="" href="t-tests-theory-visualisation-and-calculation-by-hand.html"><span class="header-section-number">3</span> T-Tests: Theory, Visualisation, and Calculation (by hand)</a></li>
+<li><a class="" href="assumption-checks-of-t-tests-and-other-difference-tests.html"><span class="header-section-number">4</span> Assumption checks of t-tests and other difference tests</a></li>
+<li><a class="" href="jasp-workshop---conducting-t-tests-independent-and-paired.html"><span class="header-section-number">5</span> JASP Workshop - Conducting T-Tests (Independent and Paired)</a></li>
+<li><a class="active" href="understanding-effect-size-and-power-in-psychological-research.html"><span class="header-section-number">6</span> Understanding Effect Size and Power in Psychological Research</a></li>
+<li><a class="" href="how-to-conduct-a-power-analysis.html"><span class="header-section-number">7</span> How to Conduct a Power Analysis</a></li>
+<li><a class="" href="introduction-to-anova.html"><span class="header-section-number">8</span> Introduction to ANOVA</a></li>
+<li><a class="" href="jasp-workshop-one-way-anova.html"><span class="header-section-number">9</span> JASP workshop – one way ANOVA</a></li>
+<li><a class="" href="factorial-anova-important-for-your-assignment.html"><span class="header-section-number">10</span> Factorial ANOVA (Important for your assignment)</a></li>
+<li><a class="" href="jasp-workship---factorial-anova.html"><span class="header-section-number">11</span> JASP workship - Factorial ANOVA</a></li>
+<li><a class="" href="advanced-anova-techniques.html"><span class="header-section-number">12</span> Advanced ANOVA techniques</a></li>
+<li><a class="" href="introduction-to-regression-analysis.html"><span class="header-section-number">13</span> Introduction to Regression analysis</a></li>
+<li><a class="" href="simple-linear-regression.html"><span class="header-section-number">14</span> Simple linear regression</a></li>
+<li><a class="" href="jasp-workshop---simple-linear-regression.html"><span class="header-section-number">15</span> JASP Workshop - Simple linear Regression</a></li>
+<li><a class="" href="multiple-regression.html"><span class="header-section-number">16</span> Multiple regression</a></li>
+<li><a class="" href="statistical-assumption-checks-for-multiple-regression.html"><span class="header-section-number">17</span> Statistical assumption checks for multiple regression</a></li>
+<li><a class="" href="jasp-workshop---multiple-regression.html"><span class="header-section-number">18</span> JASP Workshop - Multiple regression</a></li>
+<li><a class="" href="logistic-regression.html"><span class="header-section-number">19</span> Logistic regression</a></li>
+<li><a class="" href="further-reading.html"><span class="header-section-number">20</span> further reading</a></li>
+</ul>
+
+        <div class="book-extra">
+          
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="understanding-effect-size-and-power-in-psychological-research" class="section level1" number="6">
+<h1>
+<span class="header-section-number">6</span> Understanding Effect Size and Power in Psychological Research<a class="anchor" aria-label="anchor" href="#understanding-effect-size-and-power-in-psychological-research"><i class="fas fa-link"></i></a>
+</h1>
+<p>In psychological research, understanding not just whether a difference exists, but also how large that difference is, is crucial. This chapter will explore two key concepts that help us do this: effect size and statistical power. <strong>Effect size</strong> measures the magnitude of a relationship or the difference between groups, providing insight into the practical significance of findings. <strong>Statistical power</strong>, on the other hand, refers to the likelihood that a study will detect an effect when there is one. Together, these concepts allow us to draw more meaningful conclusions from our data, moving beyond simple yes-or-no answers provided by statistical significance.</p>
+<p>By the end of this chapter and the associated exercise, you will understand how to calculate and interpret effect sizes, how to consider the power of a study before data collection begins, and why these factors are just as important—if not more so—than the p-value traditionally used in hypothesis testing.</p>
+<div id="real-world-example-of-effect-size-and-power" class="section level2" number="6.1">
+<h2>
+<span class="header-section-number">6.1</span> Real-World Example of Effect Size and Power<a class="anchor" aria-label="anchor" href="#real-world-example-of-effect-size-and-power"><i class="fas fa-link"></i></a>
+</h2>
+<p>Imagine a scenario where a psychologist is comparing the effectiveness of two types of therapy for reducing anxiety: Cognitive Behavioural Therapy (CBT) and Mindfulness-Based Stress Reduction (MBSR). After conducting a study, they find a statistically significant difference between the two therapies in terms of their impact on anxiety levels.</p>
+<div style="text-align: center;">
+<strong>But what does this significant difference actually mean?</strong>
+</div>
+<div style="text-align: center;">
+<strong>Is one therapy truly better, or is the difference so small that it wouldn't matter in a real-world setting?</strong>
+</div>
+<p>This is where understanding effect size comes in. Effect size will tell us how big the difference between CBT and MBSR is. If the effect size is large, it suggests that one therapy is meaningfully better than the other, and this difference could have important implications for treatment decisions. However, if the effect size is small, even though the difference is statistically significant, it might not be practically important.</p>
+<p>Now, consider statistical power. If the study had a small sample size, the power might be low, meaning there was a higher chance of not detecting a difference even if one existed. In contrast, a study with high power reduces the risk of missing a true effect, giving more confidence in the results.</p>
+<p>In the following sections we’ll look at these concepts in detail, how they are calculated and how we can use those calculations to build on our existing statistical findings.</p>
+</div>
+<div id="what-is-effect-size" class="section level2" number="6.2">
+<h2>
+<span class="header-section-number">6.2</span> What is Effect Size?<a class="anchor" aria-label="anchor" href="#what-is-effect-size"><i class="fas fa-link"></i></a>
+</h2>
+<p>While p-values tell us whether there is evidence of an effect, effect size represents the magnitude or strength of such an effect. It provides a way to understand the <strong>practical significance</strong> of research findings by indicating the size of the difference between groups or the strength of the relationship between variables. In essence, effect size helps us move beyond asking, "Is there difference?" to answering, "How big is the difference?"</p>
+<p>Effect size can be measured in several ways, depending on the type of data and the nature of the analysis. Below are some of the most commonly used effect size measures in psychological research.</p>
+<div id="cohens-d" class="section level3" number="6.2.1">
+<h3>
+<span class="header-section-number">6.2.1</span> Cohen’s <em>d</em><a class="anchor" aria-label="anchor" href="#cohens-d"><i class="fas fa-link"></i></a>
+</h3>
+<p>Cohen’s d is one of the most widely used measures of effect size. It quantifies the difference between the means of two groups in terms of standard deviations. For instance, if we were comparing the average anxiety levels of participants receiving CBT versus those receiving MBSR, Cohen’s d would tell us how much these groups differ, relative to the variability within each group.
+- Small Effect (d ~0.2): A small effect size indicates a modest difference between groups, often noticeable only under certain conditions or in large samples.
+- Medium Effect (d ~ 0.5): A medium effect size suggests a moderate difference, generally visible and meaningful in most contexts.
+- Large Effect (d ~ 0.8): A large effect size indicates a substantial difference, easily noticeable and likely to be of practical importance.</p>
+<p>Below is an illustration of these different effect sizes:</p>
+<div class="inline-figure"><img src="Images/power%20and%20effect%20size%201.png" width="100%" style="display: block; margin: auto;"></div>
+<div class="webex-solution">
+<button>
+Advantages and disadvantages of experimental design choice
+</button>
+<p>Each of the three graphs represents how data from each group is spread out. Think of it as a smoothed version of a histogram (a graph that shows where most of the data points are). The x-axis (horizontal) shows the possible values that participants score, and the y-axis (vertical) shows how likely participants are to score such a score.</p>
+<p>In each graph, the green area represents "Group 1," and the red area represents "Group 2." The dotted lines show the average (mean) value for each group.</p>
+<p>The less the two areas overlap the greater the difference between the two groups and the greater the effect size.</p>
+</div>
+<p>A interactive version of this image can be seen in the automatic t-test generator that I shared in the previous chapter: <a href="https://vr7ney-richard-m0clarke.shinyapps.io/Automatic_T_Test_Generator/?_ga=2.160895037.1038260290.1682173766-1650880128.1679066917">Automatic t-test generator</a></p>
+</div>
+<div id="how-is-cohens-d-calculated" class="section level3" number="6.2.2">
+<h3>
+<span class="header-section-number">6.2.2</span> How is Cohen’s <em>d</em> calculated?<a class="anchor" aria-label="anchor" href="#how-is-cohens-d-calculated"><i class="fas fa-link"></i></a>
+</h3>
+<p>You’ll likely calculate Cohen’s d with a single click of a box in JASP or other statistical software, but it’s helpful to understand where this number comes from and what it represents. So, let’s break down how Cohen’s d is calculated.</p>
+<p>Cohen’s d measures the difference between the means of two groups, relative to the variability within those groups. It’s essentially a way of standardising the difference so that it is possible to compare findings across different studies, even if they used different scales or measurements.</p>
+<p>Here’s the basic formula:</p>
+<p><span class="math display">\[
+d = \frac{M_1 - M_2}{SD_{pooled}}
+\]</span></p>
+<p>Where:</p>
+<ul>
+<li><p><span class="math inline">\(M_1\)</span> and <span class="math inline">\(M_2\)</span> are the means (averages) of the two groups.</p></li>
+<li><p><span class="math inline">\(SD_{pooled}\)</span> is the pooled standard deviation of the two groups, which is a measure of the spread or variability of the data.</p></li>
+</ul>
+</div>
+<div id="breaking-it-down" class="section level3" number="6.2.3">
+<h3>
+<span class="header-section-number">6.2.3</span> Breaking it Down:<a class="anchor" aria-label="anchor" href="#breaking-it-down"><i class="fas fa-link"></i></a>
+</h3>
+<ol style="list-style-type: decimal">
+<li>
+<strong>Difference in Means</strong>
+<ul>
+<li>First, we calculate the difference between the mean values of the two groups. This tells us how far apart the groups are on whatever measure you’re using (e.g. anxiety scores).</li>
+</ul>
+</li>
+<li>
+<strong>Pooled Standard Deviation</strong>
+<ul>
+<li>Pooled SD is a bit more complex, but in simple terms, it’s an average of the standard deviations of the two groups. It gives us a sense of how spread out the scores are in each group.</li>
+<li>The formula for the pooled standard deviation is:</li>
+</ul>
+</li>
+</ol>
+<p><span class="math display">\[
+SD_{pooled} = \sqrt{\frac{(n_1 - 1) SD_1^2 + (n_2 - 1) SD_2^2}{n_1 + n_2 - 2}}
+\]</span></p>
+<p>Where:</p>
+<ul>
+<li><p><span class="math inline">\(SD_1\)</span> and <span class="math inline">\(SD_2\)</span> are the standard deviations of each group.</p></li>
+<li><p><span class="math inline">\(n_1\)</span> and <span class="math inline">\(n_2\)</span> are the sample sizes of each group.</p></li>
+</ul>
+<p>This part of the formula adjusts for the fact that the groups might have different variabilities or different numbers of participants.</p>
+<p>Finally, we divide the difference in means by the pooled standard deviation. This gives us Cohen’s <em>d</em>, which tells us how big the difference is in standard deviation units.</p>
+<p>And, as mentioned previously, Cohen’s <em>d</em> can be interpreted as:</p>
+<p><strong>Small effect</strong> when <em>d</em> is roughly 0.2 or lower. The minimum value is 0.</p>
+<p><strong>Medium effect</strong> when <em>d</em> is roughly 0.5</p>
+<p><strong>Large effect</strong> when <em>d</em> is roughly 0.8 or higher. There is no upper bound, however, if the effect size is above around 2.0, I’d take that as an indication that I’d done something wrong in the analysis or data entry/cleaning as no meaningful, well-designed experiment should have a difference that big.</p>
+</div>
+</div>
+<div id="other-measures-of-effect-size" class="section level2" number="6.3">
+<h2>
+<span class="header-section-number">6.3</span> Other Measures of Effect Size<a class="anchor" aria-label="anchor" href="#other-measures-of-effect-size"><i class="fas fa-link"></i></a>
+</h2>
+<p>Cohen’s <em>d</em> is not the only measure of effect size. In fact, Cohen’s <em>d</em> is mostly just used in t-test comparisons.</p>
+<p>Later in this book we will talk about Eta-Squared (η²) and Partial-Eta Squared (η²p). These are used primarily in ANOVA (Analysis of Variance), but the principle is much the same (with just a slightly different interpretation of the values).</p>
+<p>We will also be looking at r and R-squared in the regression section of this book, these are the correlational equivalent of effect size measurement.</p>
+</div>
+<div id="effect-size-meaning-recap" class="section level2" number="6.4">
+<h2>
+<span class="header-section-number">6.4</span> Effect Size Meaning Recap<a class="anchor" aria-label="anchor" href="#effect-size-meaning-recap"><i class="fas fa-link"></i></a>
+</h2>
+<p>Understanding effect size is critical because it goes beyond statistical significance to address the real-world implications of research findings. A p-value might tell us that a difference between groups is unlikely to be due to chance, but it doesn't tell us if that difference is large enough to be meaningful.</p>
+<p>For example, in a large study, even a tiny difference might yield a significant p-value. However, if the effect size is small, this difference might not be important in practical terms. Conversely, a large effect size in a smaller study could indicate a very meaningful difference, even if it doesn't yield statistical significance due to a small sample size.</p>
+<p>In psychological research, reporting effect size allows for a better understanding of the magnitude of findings and facilitates comparison across studies. It also aids in meta-analyses, where effect sizes from different studies are combined to assess the overall strength of a phenomenon. By considering both statistical significance and effect size, researchers can provide a fuller, more nuanced interpretation of their results, leading to more informed decisions in both research and practice.</p>
+<p>For a deeper understanding of effect size see <a href="https://lakens.github.io/statistical_inferences/06-effectsize.html">Lakens, D. (2022). Improving Your Statistical Inferences. Section 6.1 – 6.6</a></p>
+</div>
+<div id="overview-of-statistical-power" class="section level2" number="6.5">
+<h2>
+<span class="header-section-number">6.5</span> Overview of Statistical Power<a class="anchor" aria-label="anchor" href="#overview-of-statistical-power"><i class="fas fa-link"></i></a>
+</h2>
+<p>Statistical power is a crucial concept in psychological research that is closely related to effect size. While effect size tells us the magnitude of a difference, statistical power tells us how likely we are to detect that magnitude of a difference if that difference actually exists.</p>
+<p>Understanding statistical power is essential in the planning and design stages of your research, as it directly influences the decision on how many participants are needed in a study. Given that participant recruitment can be both costly and time-consuming, assuring adequate power will makes sure your study is sensitive enough to detect meaningful differences, while reducing the risk of overlooking important effects.</p>
+<div id="recap-of-type-i-and-type-ii-error" class="section level3" number="6.5.1">
+<h3>
+<span class="header-section-number">6.5.1</span> Recap of type I and type II error<a class="anchor" aria-label="anchor" href="#recap-of-type-i-and-type-ii-error"><i class="fas fa-link"></i></a>
+</h3>
+<p>When you conduct a study in psychology, the evidence you collect to test your hypotheses is almost guaranteed not to be a perfect representation of reality. Your measures won’t be perfect, your manipulations might be fallible, your participants are unlikely to be truly representative of your population, and/or countless other confounding factors.</p>
+<p>As such, it’s best to think in terms of there being <strong>four</strong> possible outcomes to your research:</p>
+<ol style="list-style-type: decimal">
+<li>You find evidence of a difference, and this difference is a reliable reflection of the difference found in reality (True Positive)</li>
+<li>You find no evidence of a difference, and this difference is a reliable reflection of the difference found in reality (True Negative)</li>
+<li>You find evidence of a difference, however, in reality there is no difference (false positive, Type I error)</li>
+<li>You find no evidence of a difference, however, in reality there is a difference (false negative, Type II error)</li>
+</ol>
+<div class="inline-figure"><img src="Images/power%20and%20effect%20size%202.png" width="75%" style="display: block; margin: auto;"></div>
+<p>A good way to think of this concept is to pretend that you are a judge in a court case. Your role is to decide guilt or innocents based on the evidence presented to you. Underlying that decision is the knowledge that if the evidence is unreliable, you maybe convicting an innocent person or letting a guilty person go free.</p>
+<div class="inline-figure"><img src="Images/power%20and%20effect%20size%203.png" width="75%" style="display: block; margin: auto;"></div>
+<p>Our job in science, just as in the legal system, is to minimize the likelihood of Type I and Type II errors while increasing the chance of correctly identifying the true nature of reality.</p>
+<p>Imagine now that the grid is the full set of possible outcomes from our experiment. Conducting an experiment is much like throwing a dart at this grid. If we start with the simplistic view that each box has an equal area, we’d have a 25% chance of hitting each one of the boxes—meaning there's a 50% chance of our experiment working as designed (landing in the "correct decision" boxes) and a 50% chance of giving an answer that is not representative of reality (landing in one of the error boxes). This scenario illustrates a poorly designed experiment with no mechanisms in place to improve our odds.</p>
+</div>
+<div id="reducing-type-i-errors" class="section level3" number="6.5.2">
+<h3>
+<span class="header-section-number">6.5.2</span> Reducing Type I Errors:<a class="anchor" aria-label="anchor" href="#reducing-type-i-errors"><i class="fas fa-link"></i></a>
+</h3>
+<p>To improve our chances, we need to adjust the likelihood of each outcome. You’ve already encountered one key way we reduce Type I errors: setting an alpha level. In psychology, we typically accept a false positive rate (Type I error) of 5%. This means we are willing to risk concluding that there is an effect (when there isn’t) 5% of the time. In practice, this is controlled by the p-value, which tells us the probability of observing the data (or something more extreme) if the null hypothesis were true. If the p-value falls below the threshold of 0.05 (which represents 5%, or 1 in 20), we reject the null hypothesis, accepting a small chance that we're making a Type I error.</p>
+</div>
+<div id="addressing-type-ii-errors" class="section level3" number="6.5.3">
+<h3>
+<span class="header-section-number">6.5.3</span> Addressing Type II Errors:<a class="anchor" aria-label="anchor" href="#addressing-type-ii-errors"><i class="fas fa-link"></i></a>
+</h3>
+<p>Now, let's consider Type II errors—where we fail to detect a true effect. Unlike Type I errors, which are controlled by setting the alpha level, Type II errors are influenced by the power of the study. Power is the probability of correctly rejecting the null hypothesis when it is false (i.e., avoiding a Type II error). The higher the power, the less likely we are to miss a true effect.</p>
+<p>In psychology, we generally aim for a power of 0.80, meaning there is an 80% chance that our study will detect a true effect if one exists, leaving a 20% chance of making a Type II error.</p>
+<p>Together this is how the hypothetical grid will typically look for a psychology study under the above criteria.</p>
+<div class="inline-figure"><img src="Images/power%20and%20effect%20size%204.png" width="50%" style="display: block; margin: auto;"></div>
+<p>In psychological research, we are generally stricter with Type I errors than Type II errors because the consequences of a false positive (Type I error) are often considered more serious. A Type I error means concluding that an effect or difference exists when it actually does not, which can lead to false theories, wasted resources, and potentially harmful applications in practice, such as the adoption of ineffective treatments. By setting a low alpha level (commonly 0.05), we aim to minimize the risk of making such incorrect claims. While Type II errors (false negatives) are also important, they are often viewed as less critical because they imply that we missed an existing effect, which can be corrected with further research. In contrast, the propagation of a false positive can have far-reaching and lasting impacts on both science and practice. Again, think in terms of convicting an innocent person as compared to not convicting a guilty person.</p>
+</div>
+</div>
+<div id="power-analysis" class="section level2" number="6.6">
+<h2>
+<span class="header-section-number">6.6</span> Power Analysis<a class="anchor" aria-label="anchor" href="#power-analysis"><i class="fas fa-link"></i></a>
+</h2>
+<p>Power analysis helps us determine the necessary sample size for our study to achieve a desired level of power. By conducting a power analysis before collecting data, we can estimate how many participants we need to reliably detect an effect of a given size. The analysis takes into account the alpha level, the effect size we expect, and the desired power.</p>
+<p>For example, if we expect a small effect size, we would need a larger sample to achieve 80% power than we would if we expected a large effect size. Without a sufficient number of participants, our study might be underpowered, increasing the risk of a Type II error.</p>
+<p>In the next chapter I walk you through how to conduct an a-priori power analysis for an independent samples t-test. And later in this book we’ll return to the concept to illustrate how you can plan your intended sample size for more complex studies.</p>
+<p>For a deeper understanding of effect size see <a href="https://lakens.github.io/statistical_inferences/06-effectsize.html">Lakens, D. (2022). Improving Your Statistical Inferences. Section 8</a></p>
+<p>In the next chapter we will run though how to conduct a power analysis for your study design.</p>
+
+</div>
+</div>
+<script>
+
+/* update total correct if #webex-total_correct exists */
+update_total_correct = function() {
+  console.log("webex: update total_correct");
+
+  if (t = document.getElementById("webex-total_correct")) {
+    var correct = document.getElementsByClassName("webex-correct").length;
+    var solvemes = document.getElementsByClassName("webex-solveme").length;
+    var radiogroups = document.getElementsByClassName("webex-radiogroup").length;
+    var selects = document.getElementsByClassName("webex-select").length;
+    
+    t.innerHTML = correct + " of " + (solvemes + radiogroups + selects) + " correct";
+  }
+}
+
+/* webex-solution button toggling function */
+b_func = function() {
+  console.log("webex: toggle hide");
+  
+  var cl = this.parentElement.classList;
+  if (cl.contains('open')) {
+    cl.remove("open");
+  } else {
+    cl.add("open");
+  }
+}
+
+/* function for checking solveme answers */
+solveme_func = function(e) {
+  console.log("webex: check solveme");
+
+  var real_answers = JSON.parse(this.dataset.answer);
+  var my_answer = this.value;
+  var cl = this.classList;
+  if (cl.contains("ignorecase")) {
+    my_answer = my_answer.toLowerCase();
+  }
+  if (cl.contains("nospaces")) {
+    my_answer = my_answer.replace(/ /g, "")
+  }
+
+  if (my_answer == "") {
+    cl.remove("webex-correct");
+    cl.remove("webex-incorrect");
+  } else if (real_answers.includes(my_answer)) {
+    cl.add("webex-correct");
+    cl.remove("webex-incorrect");
+  } else {
+    cl.add("webex-incorrect");
+    cl.remove("webex-correct");
+  }
+
+  // match numeric answers within a specified tolerance
+  if(this.dataset.tol > 0){
+    var tol = JSON.parse(this.dataset.tol);
+    var matches = real_answers.map(x => Math.abs(x - my_answer) < tol)
+    if (matches.reduce((a, b) => a + b, 0) > 0) {
+      cl.add("webex-correct");
+    } else {
+      cl.remove("webex-correct");
+    }
+  }
+
+  // added regex bit
+  if (cl.contains("regex")){
+    answer_regex = RegExp(real_answers.join("|"))
+    if (answer_regex.test(my_answer)) {
+      cl.add("webex-correct");
+    }
+  }
+
+  update_total_correct();
+}
+
+/* function for checking select answers */
+select_func = function(e) {
+  console.log("webex: check select");
+  
+  var cl = this.classList
+  
+  /* add style */
+  cl.remove("webex-incorrect");
+  cl.remove("webex-correct");
+  if (this.value == "answer") {
+    cl.add("webex-correct");
+  } else if (this.value != "blank") {
+    cl.add("webex-incorrect");
+  }
+  
+  update_total_correct();
+}
+
+/* function for checking radiogroups answers */
+radiogroups_func = function(e) {
+  console.log("webex: check radiogroups");
+
+  var checked_button = document.querySelector('input[name=' + this.id + ']:checked');
+  var cl = checked_button.parentElement.classList;
+  var labels = checked_button.parentElement.parentElement.children;
+  
+  /* get rid of styles */
+  for (i = 0; i < labels.length; i++) {
+    labels[i].classList.remove("webex-incorrect");
+    labels[i].classList.remove("webex-correct");
+  }
+  
+  /* add style */
+  if (checked_button.value == "answer") {
+    cl.add("webex-correct");
+  } else {
+    cl.add("webex-incorrect");
+  }
+  
+  update_total_correct();
+}
+
+window.onload = function() {
+  console.log("onload");
+  /* set up solution buttons */
+  var buttons = document.getElementsByTagName("button");
+
+  for (var i = 0; i < buttons.length; i++) {
+    if (buttons[i].parentElement.classList.contains('webex-solution')) {
+      buttons[i].onclick = b_func;
+    }
+  }
+
+  /* set up webex-solveme inputs */
+  var solveme = document.getElementsByClassName("webex-solveme");
+
+  for (var i = 0; i < solveme.length; i++) {
+    /* make sure input boxes don't auto-anything */
+    solveme[i].setAttribute("autocomplete","off");
+    solveme[i].setAttribute("autocorrect", "off");
+    solveme[i].setAttribute("autocapitalize", "off");
+    solveme[i].setAttribute("spellcheck", "false");
+    solveme[i].value = "";
+
+    /* adjust answer for ignorecase or nospaces */
+    var cl = solveme[i].classList;
+    var real_answer = solveme[i].dataset.answer;
+    if (cl.contains("ignorecase")) {
+      real_answer = real_answer.toLowerCase();
+    }
+    if (cl.contains("nospaces")) {
+      real_answer = real_answer.replace(/ /g, "");
+    }
+    solveme[i].dataset.answer = real_answer;
+
+    /* attach checking function */
+    solveme[i].onkeyup = solveme_func;
+    solveme[i].onchange = solveme_func;
+  }
+  
+  /* set up radiogroups */
+  var radiogroups = document.getElementsByClassName("webex-radiogroup");
+  for (var i = 0; i < radiogroups.length; i++) {
+    radiogroups[i].onchange = radiogroups_func;
+  }
+  
+  /* set up selects */
+  var selects = document.getElementsByClassName("webex-select");
+  for (var i = 0; i < selects.length; i++) {
+    selects[i].onchange = select_func;
+  }
+
+  update_total_correct();
+}
+
+</script><div class="chapter-nav">
+<div class="prev"><a href="jasp-workshop---conducting-t-tests-independent-and-paired.html"><span class="header-section-number">5</span> JASP Workshop - Conducting T-Tests (Independent and Paired)</a></div>
+<div class="next"><a href="how-to-conduct-a-power-analysis.html"><span class="header-section-number">7</span> How to Conduct a Power Analysis</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#understanding-effect-size-and-power-in-psychological-research"><span class="header-section-number">6</span> Understanding Effect Size and Power in Psychological Research</a></li>
+<li><a class="nav-link" href="#real-world-example-of-effect-size-and-power"><span class="header-section-number">6.1</span> Real-World Example of Effect Size and Power</a></li>
+<li>
+<a class="nav-link" href="#what-is-effect-size"><span class="header-section-number">6.2</span> What is Effect Size?</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#cohens-d"><span class="header-section-number">6.2.1</span> Cohen’s d</a></li>
+<li><a class="nav-link" href="#how-is-cohens-d-calculated"><span class="header-section-number">6.2.2</span> How is Cohen’s d calculated?</a></li>
+<li><a class="nav-link" href="#breaking-it-down"><span class="header-section-number">6.2.3</span> Breaking it Down:</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#other-measures-of-effect-size"><span class="header-section-number">6.3</span> Other Measures of Effect Size</a></li>
+<li><a class="nav-link" href="#effect-size-meaning-recap"><span class="header-section-number">6.4</span> Effect Size Meaning Recap</a></li>
+<li>
+<a class="nav-link" href="#overview-of-statistical-power"><span class="header-section-number">6.5</span> Overview of Statistical Power</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#recap-of-type-i-and-type-ii-error"><span class="header-section-number">6.5.1</span> Recap of type I and type II error</a></li>
+<li><a class="nav-link" href="#reducing-type-i-errors"><span class="header-section-number">6.5.2</span> Reducing Type I Errors:</a></li>
+<li><a class="nav-link" href="#addressing-type-ii-errors"><span class="header-section-number">6.5.3</span> Addressing Type II Errors:</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#power-analysis"><span class="header-section-number">6.6</span> Power Analysis</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Regression handbook</strong>" was written by Dr Richard Clarke. It was last built on 2024-09-22.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

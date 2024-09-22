@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 3 T-Tests: Theory, Visualisation, and Calculation (by hand) | Regression handbook</title>
+<meta name="author" content="Dr Richard Clarke">
+<meta name="description" content="As mentioned in the previous chapter, t-tests help us answer key questions such as whether a new treatment is more effective than an existing one or if two groups differ significantly on a...">
+<meta name="generator" content="bookdown 0.40 with bs4_book()">
+<meta property="og:title" content="Chapter 3 T-Tests: Theory, Visualisation, and Calculation (by hand) | Regression handbook">
+<meta property="og:type" content="book">
+<meta property="og:description" content="As mentioned in the previous chapter, t-tests help us answer key questions such as whether a new treatment is more effective than an existing one or if two groups differ significantly on a...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 3 T-Tests: Theory, Visualisation, and Calculation (by hand) | Regression handbook">
+<meta name="twitter:description" content="As mentioned in the previous chapter, t-tests help us answer key questions such as whether a new treatment is more effective than an existing one or if two groups differ significantly on a...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.6.1/transition.js"></script><script src="libs/bs3compat-0.6.1/tabs.js"></script><script src="libs/bs3compat-0.6.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<link rel="stylesheet" href="www/webex.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">Regression handbook</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> Welcome to the NS5108 quantiatitve methods and analysis handbook</a></li>
+<li><a class="" href="introduction-to-difference-tests.html"><span class="header-section-number">2</span> Introduction to difference tests</a></li>
+<li><a class="active" href="t-tests-theory-visualisation-and-calculation-by-hand.html"><span class="header-section-number">3</span> T-Tests: Theory, Visualisation, and Calculation (by hand)</a></li>
+<li><a class="" href="assumption-checks-of-t-tests-and-other-difference-tests.html"><span class="header-section-number">4</span> Assumption checks of t-tests and other difference tests</a></li>
+<li><a class="" href="jasp-workshop---conducting-t-tests-independent-and-paired.html"><span class="header-section-number">5</span> JASP Workshop - Conducting T-Tests (Independent and Paired)</a></li>
+<li><a class="" href="understanding-effect-size-and-power-in-psychological-research.html"><span class="header-section-number">6</span> Understanding Effect Size and Power in Psychological Research</a></li>
+<li><a class="" href="how-to-conduct-a-power-analysis.html"><span class="header-section-number">7</span> How to Conduct a Power Analysis</a></li>
+<li><a class="" href="introduction-to-anova.html"><span class="header-section-number">8</span> Introduction to ANOVA</a></li>
+<li><a class="" href="jasp-workshop-one-way-anova.html"><span class="header-section-number">9</span> JASP workshop – one way ANOVA</a></li>
+<li><a class="" href="factorial-anova-important-for-your-assignment.html"><span class="header-section-number">10</span> Factorial ANOVA (Important for your assignment)</a></li>
+<li><a class="" href="jasp-workship---factorial-anova.html"><span class="header-section-number">11</span> JASP workship - Factorial ANOVA</a></li>
+<li><a class="" href="advanced-anova-techniques.html"><span class="header-section-number">12</span> Advanced ANOVA techniques</a></li>
+<li><a class="" href="introduction-to-regression-analysis.html"><span class="header-section-number">13</span> Introduction to Regression analysis</a></li>
+<li><a class="" href="simple-linear-regression.html"><span class="header-section-number">14</span> Simple linear regression</a></li>
+<li><a class="" href="jasp-workshop---simple-linear-regression.html"><span class="header-section-number">15</span> JASP Workshop - Simple linear Regression</a></li>
+<li><a class="" href="multiple-regression.html"><span class="header-section-number">16</span> Multiple regression</a></li>
+<li><a class="" href="statistical-assumption-checks-for-multiple-regression.html"><span class="header-section-number">17</span> Statistical assumption checks for multiple regression</a></li>
+<li><a class="" href="jasp-workshop---multiple-regression.html"><span class="header-section-number">18</span> JASP Workshop - Multiple regression</a></li>
+<li><a class="" href="logistic-regression.html"><span class="header-section-number">19</span> Logistic regression</a></li>
+<li><a class="" href="further-reading.html"><span class="header-section-number">20</span> further reading</a></li>
+</ul>
+
+        <div class="book-extra">
+          
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="t-tests-theory-visualisation-and-calculation-by-hand" class="section level1" number="3">
+<h1>
+<span class="header-section-number">3</span> T-Tests: Theory, Visualisation, and Calculation (by hand)<a class="anchor" aria-label="anchor" href="#t-tests-theory-visualisation-and-calculation-by-hand"><i class="fas fa-link"></i></a>
+</h1>
+<p>As mentioned in the previous chapter, t-tests help us answer key questions such as whether a new treatment is more effective than an existing one or if two groups differ significantly on a psychological measure. The theory behind t-tests is rooted in hypothesis testing, specifically Null Hypothesis Significance Testing (NHST), which helps us determine whether observed differences in data are likely <strong><em>due to chance</em></strong> or reflect <strong><em>true differences</em></strong> in the population.</p>
+<p>When comparing groups, our goal is to determine whether the differences we observe are statistically significant—that is, whether they are unlikely to have occurred by chance. T-tests allow us to test hypotheses about differences between group means, providing a way to infer from sample data about the larger population. In essence, when we conduct a t-test, we are assessing whether the difference in means between two groups is large enough to be considered meaningful given the variability in the data.</p>
+<p>There are two main types of t-tests that are commonly used in research, each suited to different study designs:</p>
+<p><strong>Independent Samples (between-subjects) T-Test:</strong></p>
+<p>This test compares the means of two independent groups to determine if there is a statistically significant difference between them. It is used when the groups are distinct and not related.</p>
+<p>For example, a researcher could compare the average reaction times of two different groups of participants, one receiving caffeine and the other receiving water.</p>
+<div class="inline-figure"><img src="Images/ttest%20image%201.png" width="100%" style="display: block; margin: auto;"></div>
+<p><strong>Paired Samples (within-subjects / repeated measures) T-Test:</strong></p>
+<p>This test compares the means of two <strong><em>related groups</em></strong>, such as the same participants tested under two different conditions (e.g., before and after an intervention). The paired samples t-test is often used when the same subjects are measured more than once, or when pairs of subjects are matched in some way.</p>
+<p>The same experiment from the above independent samples design could be redesigned as a paired samples design. Meaning that each participant takes part in each condition of the experiment.<br><img src="Images/ttest%20image%202.png" width="50%" style="display: block; margin: auto;"></p>
+<p>When designing an experiment, you will likely be choosing between an independent measures design (between-subjects) and a repeated measures design (within-subjects) for each of your IVs. Each choice has distinct advantages and disadvantages that can influence the study's feasibility and data quality. See the blue box below for more detail on these advantages and disadvantages.</p>
+<div class="webex-solution">
+<button>
+Advantages and disadvantages of experimental design choice
+</button>
+<p>In an independent measures design (between-subjects), each participant is assigned to only one condition, which avoids the risk of order effects such as practice, fatigue, or carryover effects that can confound the results. This design is simpler to analyse since each participant provides only one data point, making the setup straightforward. Additionally, because participants are exposed to only one condition, there is less risk of participant fatigue or boredom affecting the data. However, independent measures design typically requires a larger sample size, which increases the cost and time needed for recruitment and testing. There is also greater between-group variability since different participants are in each group, which can introduce differences that are unrelated to the independent variable and may complicate the interpretation of results.</p>
+<p>In a repeated measures design (within-subjects), the same participants are used across all conditions, which significantly reduces the number of participants needed and, therefore, the overall cost and time required for the study. This design also reduces variability due to individual differences, as each participant serves as their own control, leading to increased statistical power. However, repeated measures designs are prone to order effects, which can confound the results. To mitigate these issues, researchers often need to use counterbalancing, which adds complexity to the design and analysis. Additionally, participants may become fatigued or lose focus when completing multiple conditions, which can affect their performance and potentially skew the results.</p>
+</div>
+<div id="what-does-statistical-difference-look-like" class="section level2" number="3.1">
+<h2>
+<span class="header-section-number">3.1</span> What does statistical difference look like?<a class="anchor" aria-label="anchor" href="#what-does-statistical-difference-look-like"><i class="fas fa-link"></i></a>
+</h2>
+<p>Before diving into the mechanics of t-tests, it's important to understand what statistical difference looks like. Even when two groups have different mean values, this difference might not be meaningful unless it exceeds what could be expected by chance. This is where inferential statistics come in, allowing us to determine whether the difference observed in our sample data reflects a true difference in the population.</p>
+<p>Here is an example of reaction time (in milliseconds) data from a N=8 independent samples design of the IV=coffee/water DV=reaction time study from above.</p>
+<div class="inline-figure"><img src="Images/ttest%20image%203.png" width="100%" style="display: block; margin: auto;"></div>
+<p>From this data we can say that, on average, the reaction time in the coffee condition is 7.25ms faster than for those participants in the water condition.</p>
+<div style="text-align: center;">
+<strong>Is this difference meaningful or is this difference likely to be down to chance?</strong>
+</div>
+<p>Well, we could plot the data and see how it looks. Here is the data as a line graph:</p>
+<div class="inline-figure"><img src="Images/ttest%20image%204.png" width="75%" style="display: block; margin: auto;"></div>
+<p>The points represent the mean reaction time for each condition, with the vertical lines indicating the 95% confidence intervals (CIs) around these means. The CIs provide a range where the true mean RT is likely to fall with 95% confidence, based on the mean and the variability within the data. It’s a great concept to use to help determine significance within your data. In this case, the overlap of the CIs suggests that the difference in mean RT between the Caffeine and Water conditions might be small and potentially not statistically significant, although a formal statistical test would be needed to confirm this.</p>
+<p>So, to me, just by looking at the data in this way, I’m not overly convinced. Especially due to the sample size of N=8 (four in each condition). This aspect will likely mean that the study has a particularly low statistical power, a concept that we will cover in more depth later in this handbook.</p>
+<p>Say instead, we run the study on N=100 participants.</p>
+<p>Another way to visualise our data is by looking at our distribution rather than just the mean and 95% CI. The following histograms are based on running the experiment 100 times, with 50 participants in each condition.</p>
+<div class="inline-figure"><img src="Images/ttest%20image%205.png" width="100%" style="display: block; margin: auto;"></div>
+<div class="webex-solution">
+<button>
+How to Read these Histograms
+</button>
+<p>In the histograms shown above, each bar represents a "bin" that covers a range of reaction times (RT) within a 10-unit interval. The height of each bar corresponds to the number of data points (or "count") that fall within that range. For example, in the histogram for the Caffeine condition, the bar at 200 on the x-axis indicates that eight participants had reaction times between 200 and 210 milliseconds. In the water condition, no participants had a reaction time between 170 to 180 milliseconds.</p>
+<p>The red dashed line in each histogram marks the mean reaction time for that condition. By looking at the distribution of bars around this line, you can get a sense of how the data is spread out (as we previously did with the 95% CI).</p>
+</div>
+<p>From this example we can see a difference in the mean RT once again. The caffeine condition participants are, on average, 15.1ms faster than participants in the water conditions.</p>
+<p>If we add a smooth line to the histograms and overlap them, this difference becomes more apparent. When the bars are removed this type of data visualisation is known as a density plot.</p>
+<div class="inline-figure"><img src="Images/ttest%20image%206.png" width="75%" style="display: block; margin: auto;"></div>
+<p>From this density plot we can see the distribution of data in the caffeine condition is shifted to the left of the water condition. You won’t see this type of visualisation in papers as it limits you to the comparison of two conditions (it gets very confusing with three or more overlapping colours). However, you might see these in combination with a box plot. Here is how I would choose to best visually represent this data:</p>
+<div class="inline-figure"><img src="Images/ttest%20image%207.png" width="75%" style="display: block; margin: auto;"></div>
+<div class="webex-solution">
+<button>
+How to read a box plot (with an additional violin plot and points)
+</button>
+<p>A box plot summarises the distribution, central tendency, and variability of data. The box itself represents the interquartile range (IQR), which contains the middle 50% of the data, with the line inside the box marking the median (note: not the mean). The whiskers extend from the box to the smallest and largest values that are not considered outliers, providing a clear view of the spread of the data. Outliers, or values that fall outside 1.5 times the IQR from the quartiles, are displayed as individual points beyond the whiskers (there are no outliers within this data but you might find them in yours, see assumption checks for more on this topic).</p>
+<p>In this visualisation, the box plot is combined with a violin plot, which is essentially a mirrored density plot that shows the distribution of the data. The wider sections of the violin indicate areas where data points are more concentrated, while the narrower sections represent less frequent values. This additional layer helps you understand not just where the central values lie, but also how the data is distributed across the range of reaction times.</p>
+<p>Finally, individual data points are plotted using a technique called jittering, which spreads the points horizontally to avoid overlap, making it easier to see the distribution of values. It’s important to note that jittering does not alter the actual values of the data points; it merely adjusts their horizontal position slightly for clarity. Together, the box plot, violin plot, and jittered points provide a comprehensive view of the differences in reaction times between the Caffeine and Water conditions.</p>
+</div>
+<p>Now that’s a good-looking graph! But we still don’t know if this difference is meaningful, and it’s not immediately noticeable from the image. As such, we should move on to conducting a statistical test.</p>
+<div id="sidenote-on-assumption-checks" class="section level3" number="3.1.1">
+<h3>
+<span class="header-section-number">3.1.1</span> Sidenote on assumption checks<a class="anchor" aria-label="anchor" href="#sidenote-on-assumption-checks"><i class="fas fa-link"></i></a>
+</h3>
+<p>Before running any statistical test, including a t-test, it is crucial to perform assumption checks. Statistical assumption checks are procedures that verify whether the data meet the specific requirements of the test you plan to use. For t-tests, these assumptions typically include the level of measurement, normality of the data, and homogeneity of variances. Ensuring that these assumptions are met is essential for the validity of the test results.</p>
+<p>However, while these checks are fundamental, it can be more conceptually intuitive to first understand how the t-test works and what it aims to achieve. By grasping the basic mechanics of the t-test and its purpose in determining whether differences between groups are statistically significant, you will be better equipped to appreciate why these assumptions matter. After we walk through the process of conducting a t-test, we will then revisit these assumption checks in detail in the next chapter.</p>
+</div>
+</div>
+<div id="what-actually-is-a-t-test" class="section level2" number="3.2">
+<h2>
+<span class="header-section-number">3.2</span> What actually is a t-test?<a class="anchor" aria-label="anchor" href="#what-actually-is-a-t-test"><i class="fas fa-link"></i></a>
+</h2>
+<p>The t-test is a statistical method used to determine whether there is a significant difference between the means of two groups. It compares the observed difference between group means to the variation within each group, taking into account the sample sizes. The result of this comparison is the t-value, which tells us how likely it is that the observed difference could have occurred by chance.</p>
+<p>Here is the formula used to determine the t-statistic (don’t worry it’s not as scary as it looks):</p>
+<p>The formula for the t-statistic is:</p>
+<p><span class="math display">\[
+t = \frac{\bar{X} - \mu}{\frac{s}{\sqrt{n}}}
+\]</span></p>
+<p>Where:</p>
+<ul>
+<li><p><span class="math inline">\(\bar{X}\)</span> is the sample mean,</p></li>
+<li><p><span class="math inline">\(\mu\)</span> is the population mean,</p></li>
+<li><p><span class="math inline">\(s\)</span> is the sample standard deviation,</p></li>
+<li><p><span class="math inline">\(n\)</span> is the sample size.</p></li>
+</ul>
+<p>As such, we actually have everything we need to work out the t-statistics from the basic group descriptives of our data:</p>
+<div class="inline-figure"><img src="Images/ttest%20image%208.png" width="50%" style="display: block; margin: auto;"></div>
+<p><span class="math display">\[
+t = \frac{183.460 - 198.560}{\sqrt{\frac{27.637^2}{50} + \frac{31.022^2}{50}}}
+\]</span></p>
+<p>In this example our data gives us a t-statistic of <strong>2.57</strong>.</p>
+<p>After calculating the t-value, we need to determine whether this value is large enough to indicate a statistically significant difference. This is done by comparing the t-value to a critical value from what is known as the t-distribution. In this case, our critical value (which is based on the desired level of significance, commonly 0.05) and the degrees of freedom (which depend on the sample sizes) guide us to the number that our t-statistics needs to be higher than for the finding to be judged as significant. If the calculated t-value exceeds the critical value, we reject the null hypothesis and conclude that there is a statistically significant difference between the groups. (Note: this value will differ depending on if you have a one-tailed or two-tailed hypothesis)</p>
+<div class="inline-figure"><img src="Images/ttest%20image%209.png" width="100%" style="display: block; margin: auto;"></div>
+<p>In our case, if we take our usual alpha value of 0.05, and find a <a href="https://statisticsbyjim.com/hypothesis-testing/t-distribution-table/">t-distribution table that stretches to our degrees of freedom</a>, which is df = (n1 – 1) + (n2 - 1) = 98</p>
+<p>The distribution says we need to have a t-value of over around 1.98 for our finding to be significant to the 0.05 level and over 2.62 to be significant to the 0.01 level. So, with a t-value of 2.57, we’re a little over the 0.01 level. In fact, when we run this in JASP we see that our exact p-value for the comparison is 0.012.</p>
+<div class="inline-figure"><img src="Images/ttest%20image%2010.png" width="50%" style="display: block; margin: auto;"></div>
+<div class="webex-solution">
+<button>
+But where do all these numbers in the table come from?
+</button>
+<p>That’s certainly a very nerdy question for you to ask, I will try my best to answer it!</p>
+<p>The t-distribution itself is a probability distribution that is similar in shape to the normal distribution (bell curve), but it has heavier tails, meaning it is more spread out.</p>
+<div class="inline-figure"><img src="Images/ttest%20image%2011.png" width="100%" style="display: block; margin: auto;"></div>
+<p>Each number in the t-distribution table corresponds to a specific critical value of the t-distribution for a given confidence level (like 95%) and degrees of freedom (df). Degrees of freedom are calculated as the total number of observations in both groups minus the number of groups.</p>
+<p>When you look up a critical value in the table, you're finding the t-value that cuts off the most extreme 5% (for a 95% confidence level) of the t-distribution. If your calculated t-value exceeds this critical value, it falls within this extreme region, leading you to reject the null hypothesis.</p>
+<p>Here is a good explainer video on the topic: <a href="https://www.youtube.com/watch?v=Uv6nGIgZMVw">link</a></p>
+</div>
+</div>
+<div id="is-all-this-maths-stressing-you-out" class="section level2" number="3.3">
+<h2>
+<span class="header-section-number">3.3</span> Is all this maths stressing you out?<a class="anchor" aria-label="anchor" href="#is-all-this-maths-stressing-you-out"><i class="fas fa-link"></i></a>
+</h2>
+<p>While understanding the formula is valuable, it is important to note that modern statistical software, such as JASP, can perform these calculations automatically. In practice, you will not need to manually compute the t-value; instead, you will simply input your data into JASP, and with a few clicks, the software will provide you with the t-value, degrees of freedom, and the corresponding p-value. This makes conducting t-tests accessible, even if the underlying mathematics may seem complex at first glance.</p>
+</div>
+<div id="writing-up-findings-in-apa-style" class="section level2" number="3.4">
+<h2>
+<span class="header-section-number">3.4</span> Writing up findings in APA style<a class="anchor" aria-label="anchor" href="#writing-up-findings-in-apa-style"><i class="fas fa-link"></i></a>
+</h2>
+<p>Once we put our findings together, this is what we can reliably report (minus our assumption checks):</p>
+<blockquote>
+<p>We conducted an independent samples t-test to compare mean reaction time across levels of caffeine. The results showed a statistically significant difference between the means of the two groups (t(98) = 2.57, p = 0.012). The mean reaction time for participants in the caffeine condition (Mean = 183.5, SD = 27.64) was significantly lower than the mean reaction time for participants in the water condition (Mean = 198.6, SD = 31.02), indicating a quicker reaction time.</p>
+</blockquote>
+<p>And add a graph just to make it easier for participants to interpret:</p>
+<div class="inline-figure"><img src="Images/ttest%20image%2012.png" width="75%" style="display: block; margin: auto;"></div>
+<p>In the next chapter we'll talk through the assumption checks for t-tests and why they are important.</p>
+
+</div>
+</div>
+<script>
+
+/* update total correct if #webex-total_correct exists */
+update_total_correct = function() {
+  console.log("webex: update total_correct");
+
+  if (t = document.getElementById("webex-total_correct")) {
+    var correct = document.getElementsByClassName("webex-correct").length;
+    var solvemes = document.getElementsByClassName("webex-solveme").length;
+    var radiogroups = document.getElementsByClassName("webex-radiogroup").length;
+    var selects = document.getElementsByClassName("webex-select").length;
+    
+    t.innerHTML = correct + " of " + (solvemes + radiogroups + selects) + " correct";
+  }
+}
+
+/* webex-solution button toggling function */
+b_func = function() {
+  console.log("webex: toggle hide");
+  
+  var cl = this.parentElement.classList;
+  if (cl.contains('open')) {
+    cl.remove("open");
+  } else {
+    cl.add("open");
+  }
+}
+
+/* function for checking solveme answers */
+solveme_func = function(e) {
+  console.log("webex: check solveme");
+
+  var real_answers = JSON.parse(this.dataset.answer);
+  var my_answer = this.value;
+  var cl = this.classList;
+  if (cl.contains("ignorecase")) {
+    my_answer = my_answer.toLowerCase();
+  }
+  if (cl.contains("nospaces")) {
+    my_answer = my_answer.replace(/ /g, "")
+  }
+
+  if (my_answer == "") {
+    cl.remove("webex-correct");
+    cl.remove("webex-incorrect");
+  } else if (real_answers.includes(my_answer)) {
+    cl.add("webex-correct");
+    cl.remove("webex-incorrect");
+  } else {
+    cl.add("webex-incorrect");
+    cl.remove("webex-correct");
+  }
+
+  // match numeric answers within a specified tolerance
+  if(this.dataset.tol > 0){
+    var tol = JSON.parse(this.dataset.tol);
+    var matches = real_answers.map(x => Math.abs(x - my_answer) < tol)
+    if (matches.reduce((a, b) => a + b, 0) > 0) {
+      cl.add("webex-correct");
+    } else {
+      cl.remove("webex-correct");
+    }
+  }
+
+  // added regex bit
+  if (cl.contains("regex")){
+    answer_regex = RegExp(real_answers.join("|"))
+    if (answer_regex.test(my_answer)) {
+      cl.add("webex-correct");
+    }
+  }
+
+  update_total_correct();
+}
+
+/* function for checking select answers */
+select_func = function(e) {
+  console.log("webex: check select");
+  
+  var cl = this.classList
+  
+  /* add style */
+  cl.remove("webex-incorrect");
+  cl.remove("webex-correct");
+  if (this.value == "answer") {
+    cl.add("webex-correct");
+  } else if (this.value != "blank") {
+    cl.add("webex-incorrect");
+  }
+  
+  update_total_correct();
+}
+
+/* function for checking radiogroups answers */
+radiogroups_func = function(e) {
+  console.log("webex: check radiogroups");
+
+  var checked_button = document.querySelector('input[name=' + this.id + ']:checked');
+  var cl = checked_button.parentElement.classList;
+  var labels = checked_button.parentElement.parentElement.children;
+  
+  /* get rid of styles */
+  for (i = 0; i < labels.length; i++) {
+    labels[i].classList.remove("webex-incorrect");
+    labels[i].classList.remove("webex-correct");
+  }
+  
+  /* add style */
+  if (checked_button.value == "answer") {
+    cl.add("webex-correct");
+  } else {
+    cl.add("webex-incorrect");
+  }
+  
+  update_total_correct();
+}
+
+window.onload = function() {
+  console.log("onload");
+  /* set up solution buttons */
+  var buttons = document.getElementsByTagName("button");
+
+  for (var i = 0; i < buttons.length; i++) {
+    if (buttons[i].parentElement.classList.contains('webex-solution')) {
+      buttons[i].onclick = b_func;
+    }
+  }
+
+  /* set up webex-solveme inputs */
+  var solveme = document.getElementsByClassName("webex-solveme");
+
+  for (var i = 0; i < solveme.length; i++) {
+    /* make sure input boxes don't auto-anything */
+    solveme[i].setAttribute("autocomplete","off");
+    solveme[i].setAttribute("autocorrect", "off");
+    solveme[i].setAttribute("autocapitalize", "off");
+    solveme[i].setAttribute("spellcheck", "false");
+    solveme[i].value = "";
+
+    /* adjust answer for ignorecase or nospaces */
+    var cl = solveme[i].classList;
+    var real_answer = solveme[i].dataset.answer;
+    if (cl.contains("ignorecase")) {
+      real_answer = real_answer.toLowerCase();
+    }
+    if (cl.contains("nospaces")) {
+      real_answer = real_answer.replace(/ /g, "");
+    }
+    solveme[i].dataset.answer = real_answer;
+
+    /* attach checking function */
+    solveme[i].onkeyup = solveme_func;
+    solveme[i].onchange = solveme_func;
+  }
+  
+  /* set up radiogroups */
+  var radiogroups = document.getElementsByClassName("webex-radiogroup");
+  for (var i = 0; i < radiogroups.length; i++) {
+    radiogroups[i].onchange = radiogroups_func;
+  }
+  
+  /* set up selects */
+  var selects = document.getElementsByClassName("webex-select");
+  for (var i = 0; i < selects.length; i++) {
+    selects[i].onchange = select_func;
+  }
+
+  update_total_correct();
+}
+
+</script><div class="chapter-nav">
+<div class="prev"><a href="introduction-to-difference-tests.html"><span class="header-section-number">2</span> Introduction to difference tests</a></div>
+<div class="next"><a href="assumption-checks-of-t-tests-and-other-difference-tests.html"><span class="header-section-number">4</span> Assumption checks of t-tests and other difference tests</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#t-tests-theory-visualisation-and-calculation-by-hand"><span class="header-section-number">3</span> T-Tests: Theory, Visualisation, and Calculation (by hand)</a></li>
+<li>
+<a class="nav-link" href="#what-does-statistical-difference-look-like"><span class="header-section-number">3.1</span> What does statistical difference look like?</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#sidenote-on-assumption-checks"><span class="header-section-number">3.1.1</span> Sidenote on assumption checks</a></li></ul>
+</li>
+<li><a class="nav-link" href="#what-actually-is-a-t-test"><span class="header-section-number">3.2</span> What actually is a t-test?</a></li>
+<li><a class="nav-link" href="#is-all-this-maths-stressing-you-out"><span class="header-section-number">3.3</span> Is all this maths stressing you out?</a></li>
+<li><a class="nav-link" href="#writing-up-findings-in-apa-style"><span class="header-section-number">3.4</span> Writing up findings in APA style</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Regression handbook</strong>" was written by Dr Richard Clarke. It was last built on 2024-09-22.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

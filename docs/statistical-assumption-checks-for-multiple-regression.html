@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 17 Statistical assumption checks for multiple regression | Regression handbook</title>
+<meta name="author" content="Dr Richard Clarke">
+<meta name="description" content="At this point in your studies, it's important for you to understand how to assess and report the statistical assumptions underlying regression analysis. However, it's not until more advanced...">
+<meta name="generator" content="bookdown 0.40 with bs4_book()">
+<meta property="og:title" content="Chapter 17 Statistical assumption checks for multiple regression | Regression handbook">
+<meta property="og:type" content="book">
+<meta property="og:description" content="At this point in your studies, it's important for you to understand how to assess and report the statistical assumptions underlying regression analysis. However, it's not until more advanced...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 17 Statistical assumption checks for multiple regression | Regression handbook">
+<meta name="twitter:description" content="At this point in your studies, it's important for you to understand how to assess and report the statistical assumptions underlying regression analysis. However, it's not until more advanced...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.6.1/transition.js"></script><script src="libs/bs3compat-0.6.1/tabs.js"></script><script src="libs/bs3compat-0.6.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<link rel="stylesheet" href="www/webex.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">Regression handbook</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> Welcome to the NS5108 quantiatitve methods and analysis handbook</a></li>
+<li><a class="" href="introduction-to-difference-tests.html"><span class="header-section-number">2</span> Introduction to difference tests</a></li>
+<li><a class="" href="t-tests-theory-visualisation-and-calculation-by-hand.html"><span class="header-section-number">3</span> T-Tests: Theory, Visualisation, and Calculation (by hand)</a></li>
+<li><a class="" href="assumption-checks-of-t-tests-and-other-difference-tests.html"><span class="header-section-number">4</span> Assumption checks of t-tests and other difference tests</a></li>
+<li><a class="" href="jasp-workshop---conducting-t-tests-independent-and-paired.html"><span class="header-section-number">5</span> JASP Workshop - Conducting T-Tests (Independent and Paired)</a></li>
+<li><a class="" href="understanding-effect-size-and-power-in-psychological-research.html"><span class="header-section-number">6</span> Understanding Effect Size and Power in Psychological Research</a></li>
+<li><a class="" href="how-to-conduct-a-power-analysis.html"><span class="header-section-number">7</span> How to Conduct a Power Analysis</a></li>
+<li><a class="" href="introduction-to-anova.html"><span class="header-section-number">8</span> Introduction to ANOVA</a></li>
+<li><a class="" href="jasp-workshop-one-way-anova.html"><span class="header-section-number">9</span> JASP workshop – one way ANOVA</a></li>
+<li><a class="" href="factorial-anova-important-for-your-assignment.html"><span class="header-section-number">10</span> Factorial ANOVA (Important for your assignment)</a></li>
+<li><a class="" href="jasp-workship---factorial-anova.html"><span class="header-section-number">11</span> JASP workship - Factorial ANOVA</a></li>
+<li><a class="" href="advanced-anova-techniques.html"><span class="header-section-number">12</span> Advanced ANOVA techniques</a></li>
+<li><a class="" href="introduction-to-regression-analysis.html"><span class="header-section-number">13</span> Introduction to Regression analysis</a></li>
+<li><a class="" href="simple-linear-regression.html"><span class="header-section-number">14</span> Simple linear regression</a></li>
+<li><a class="" href="jasp-workshop---simple-linear-regression.html"><span class="header-section-number">15</span> JASP Workshop - Simple linear Regression</a></li>
+<li><a class="" href="multiple-regression.html"><span class="header-section-number">16</span> Multiple regression</a></li>
+<li><a class="active" href="statistical-assumption-checks-for-multiple-regression.html"><span class="header-section-number">17</span> Statistical assumption checks for multiple regression</a></li>
+<li><a class="" href="jasp-workshop---multiple-regression.html"><span class="header-section-number">18</span> JASP Workshop - Multiple regression</a></li>
+<li><a class="" href="logistic-regression.html"><span class="header-section-number">19</span> Logistic regression</a></li>
+<li><a class="" href="further-reading.html"><span class="header-section-number">20</span> further reading</a></li>
+</ul>
+
+        <div class="book-extra">
+          
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="statistical-assumption-checks-for-multiple-regression" class="section level1" number="17">
+<h1>
+<span class="header-section-number">17</span> Statistical assumption checks for multiple regression<a class="anchor" aria-label="anchor" href="#statistical-assumption-checks-for-multiple-regression"><i class="fas fa-link"></i></a>
+</h1>
+<p>At this point in your studies, it's important for you to understand how to assess and report the statistical assumptions underlying regression analysis. However, it's not until more advanced stages in your career that you'll learn how to address such violations of assumptions.</p>
+<p>For now, just interpret and report these assumptions. If the results deviate greatly from the assumptions, then it's important to report such deviations and state that findings <em>"should be taken with caution"</em>.</p>
+<p>Here are the key assumptions in multiple regression and how to check for them:</p>
+<div id="check-for-linearity" class="section level2" number="17.1">
+<h2>
+<span class="header-section-number">17.1</span> Check for Linearity<a class="anchor" aria-label="anchor" href="#check-for-linearity"><i class="fas fa-link"></i></a>
+</h2>
+<p>The assumption of linearity states that the relationship between the independent and dependent variables is linear. You can check this visually by examining scatter plots of the independent variables against the dependent variable.</p>
+<div class="inline-figure"><img src="Images/regression%20assumptions%201%20&amp;%202.png" width="100%" style="display: block; margin: auto;"></div>
+</div>
+<div id="check-for-multicollinearity" class="section level2" number="17.2">
+<h2>
+<span class="header-section-number">17.2</span> Check for Multicollinearity<a class="anchor" aria-label="anchor" href="#check-for-multicollinearity"><i class="fas fa-link"></i></a>
+</h2>
+<p>Multicollinearity occurs when two or more independent variables in a regression model are closely related, making it difficult to disentangle their individual effects on the dependent variable. This can lead to unstable coefficient estimates, as small changes in the data can result in significant changes in the estimates. You can assess multicollinearity by creating a correlation matrix of the independent variables and looking for variables with a correlation coefficient greater than 0.7 or less than -0.7. However, this is not a strict rule, just an indication of a strong correlation.</p>
+<div class="inline-figure"><img src="Images/Multicollinearity.png" width="100%" style="display: block; margin: auto;"></div>
+<p>In the table above, suppose we use these five personality constructs to predict a behaviour, such as recidivism. Checking the correlation coefficients, the largest value is -0.368, indicating that multicollinearity is not likely an issue in this case. Be mindful not to confuse correlation coefficients with p-values, as it's an easy mistake to make.</p>
+<p>While multicollinearity can make interpretation challenging, it's not necessarily a deal-breaker. In some cases, the focus may be on predicting the outcome rather than interpreting the individual contributions of each predictor. For a more in-depth discussion on multicollinearity and its implications see <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4888898/">Vatcheva et al (2016)</a>.</p>
+</div>
+<div id="check-for-outliers" class="section level2" number="17.3">
+<h2>
+<span class="header-section-number">17.3</span> Check for Outliers<a class="anchor" aria-label="anchor" href="#check-for-outliers"><i class="fas fa-link"></i></a>
+</h2>
+<p>Outliers are data points that differ significantly from other observations. They can be detected through various methods. In a boxplot, outliers are typically displayed as individual points outside the whiskers, which extend from the first and third quartiles (Q1 and Q3) to Q1 - 1.5 * IQR (interquartile range) and Q3 + 1.5 * IQR, respectively (see <a href="https://www.simplypsychology.org/boxplots.html">this link</a> for a full explanation of how read a boxplot).</p>
+<div class="inline-figure"><img src="Images/Outliers.png" width="100%" style="display: block; margin: auto;"></div>
+<p>JASP can automatically identify outliers in boxplots, making it easier to spot them. However, addressing outliers is often a contentious issue because their treatment can have a significant impact on the results of a statistical analysis. The decision to keep or remove outliers depends on multiple factors.</p>
+<p>First, it's important to consider the context of your data. Outliers could be the result of measurement errors, data entry errors, or other random anomalies. However, they could also represent genuine extreme values that offer valuable insights. For example, in a study on wealth distribution, billionaires would be outliers but they are a real-world phenomenon that might be important to the research.</p>
+<p>Secondly, outliers can heavily influence other data assumptions, such as linearity, normality of residuals, and homoscedasticity. It is crucial to evaluate whether outliers are affecting these assumptions and to justify their removal or retention. This, in fact, can be away of addressing the violations of assumptions listed in this chapter.</p>
+<p>Thirdly, outliers can disproportionately affect key statistical measures like the mean and standard deviation. It's very easy to fall into the trap of removing outliers until a significant results appears. This kind of practice may fall into that grey area of academic misconduct that we discussed in first year, known as Questionable Research Practices.</p>
+<p>Ultimately, the decision to handle outliers involves a balance of statistical judgment and domain expertise. It's necessary to ensure that any decision involves transparently reporting and justifying your decisions.</p>
+</div>
+<div id="checks-of-residuals" class="section level2" number="17.4">
+<h2>
+<span class="header-section-number">17.4</span> Checks of residuals<a class="anchor" aria-label="anchor" href="#checks-of-residuals"><i class="fas fa-link"></i></a>
+</h2>
+<p>The last two assumption checks require an examination of the residual. Residuals are a fundamental concept in regression analysis, representing the difference between observed and predicted values of the dependent variable. In a simple regression, we visualised the predicted value with our line of best fit, and the observed value are just the data point in our relationship.</p>
+<p>For each observation, a residual is calculated by subtracting the predicted value from the observed value. In simple linear regression, where there is one independent variable, the residual for each observation is the distance from the data point to the regression line. In multiple regression, it is the distance from the observation to the <a href="https://bio723-class.github.io/Bio723-book/multiple-regression.html">regression plane</a>.</p>
+<div class="inline-figure"><img src="Images/residuals2.png" width="100%" style="display: block; margin: auto;"></div>
+<p>The goal of regression analysis is to minimize the residuals, or in other words, to make the predicted values as close as possible to the observed values. Residuals can be used to evaluate the fit of a regression model, to detect outliers, and to check for any violations of the assumptions of regression.</p>
+<div id="check-for-normality-of-residuals" class="section level3" number="17.4.1">
+<h3>
+<span class="header-section-number">17.4.1</span> Check for Normality of Residuals<a class="anchor" aria-label="anchor" href="#check-for-normality-of-residuals"><i class="fas fa-link"></i></a>
+</h3>
+<p>The assumption of normality of residuals is important for hypothesis testing in linear regression. It ensures that the standard errors of the coefficients are unbiased and that the significant testing for the coefficients are valid. This, in turn, helps us make valid inferences about the relationships between the variables.</p>
+<p>In contrast, checking for <em>normality of the individual variables</em> is <strong>not required</strong> for linear regression. Instead, the focus is on the distribution of the residuals, which should be normally distributed if the model's assumptions are met. The residuals represent the differences between the observed and predicted values of the dependent variable, and their distribution tells us about the model's fit and the relationships between the variables.</p>
+<p>If you're working on a program where you can calculate the residuals, then you can check the normality of the residuals using the Shaperio Wilks test or by assessing the skewness and kurtosis. In JASP the only means of checking the normality of residuals is through the <em>normality of residuals</em> plot option.</p>
+<div class="inline-figure"><img src="Images/residuals3&amp;4.png" width="100%" style="display: block; margin: auto;"></div>
+</div>
+<div id="check-for-homoscedasticity" class="section level3" number="17.4.2">
+<h3>
+<span class="header-section-number">17.4.2</span> Check for Homoscedasticity<a class="anchor" aria-label="anchor" href="#check-for-homoscedasticity"><i class="fas fa-link"></i></a>
+</h3>
+<p>Homoscedasticity, the word that strikes fear into undergrad (and most postgrad) psychology students throughout the land, is not as complicated as it sounds.</p>
+<ul>
+<li><p>"Homos": Greek for "same" or "equal." In the context of homoscedasticity, it refers to the equality or sameness of the variances.</p></li>
+<li><p>"Skedasis": Greek word related to the concept of dispersion or spreading out. In statistics, it is associated with the variance or scatter of data points.</p></li>
+</ul>
+<p>The scatter plots below demonstrate how such data might look. Heteroscedasticity (i.e. different "spreadness") means that the line of best fit becomes less reliable at different points in the model.</p>
+<div class="inline-figure"><img src="Images/residuals5&amp;6.png" width="100%" style="display: block; margin: auto;"></div>
+<p>In this context, what we're looking for an equal distribution of data points along the line of best fit, avoiding a funnel-shaped pattern. When dealing with regression analyses that involve more than two predictor variables, it's often not feasible to visualise the data. In such cases, a plot of predicted variables against residuals can be used to check for homoscedasticity. In this plot, we are, again, looking for the absence of a funnel shape in the points.</p>
+<p>This check can also be performed using z-scores of the predicted values against the residuals; a level line in this context would indicate homoscedasticity (a uniform spread of the residuals). This method is used in software like SPSS for checking homoscedasticity, so you may see some other guides talking about this if you read wider on the topic.</p>
+
+</div>
+</div>
+</div>
+<script>
+
+/* update total correct if #webex-total_correct exists */
+update_total_correct = function() {
+  console.log("webex: update total_correct");
+
+  if (t = document.getElementById("webex-total_correct")) {
+    var correct = document.getElementsByClassName("webex-correct").length;
+    var solvemes = document.getElementsByClassName("webex-solveme").length;
+    var radiogroups = document.getElementsByClassName("webex-radiogroup").length;
+    var selects = document.getElementsByClassName("webex-select").length;
+    
+    t.innerHTML = correct + " of " + (solvemes + radiogroups + selects) + " correct";
+  }
+}
+
+/* webex-solution button toggling function */
+b_func = function() {
+  console.log("webex: toggle hide");
+  
+  var cl = this.parentElement.classList;
+  if (cl.contains('open')) {
+    cl.remove("open");
+  } else {
+    cl.add("open");
+  }
+}
+
+/* function for checking solveme answers */
+solveme_func = function(e) {
+  console.log("webex: check solveme");
+
+  var real_answers = JSON.parse(this.dataset.answer);
+  var my_answer = this.value;
+  var cl = this.classList;
+  if (cl.contains("ignorecase")) {
+    my_answer = my_answer.toLowerCase();
+  }
+  if (cl.contains("nospaces")) {
+    my_answer = my_answer.replace(/ /g, "")
+  }
+
+  if (my_answer == "") {
+    cl.remove("webex-correct");
+    cl.remove("webex-incorrect");
+  } else if (real_answers.includes(my_answer)) {
+    cl.add("webex-correct");
+    cl.remove("webex-incorrect");
+  } else {
+    cl.add("webex-incorrect");
+    cl.remove("webex-correct");
+  }
+
+  // match numeric answers within a specified tolerance
+  if(this.dataset.tol > 0){
+    var tol = JSON.parse(this.dataset.tol);
+    var matches = real_answers.map(x => Math.abs(x - my_answer) < tol)
+    if (matches.reduce((a, b) => a + b, 0) > 0) {
+      cl.add("webex-correct");
+    } else {
+      cl.remove("webex-correct");
+    }
+  }
+
+  // added regex bit
+  if (cl.contains("regex")){
+    answer_regex = RegExp(real_answers.join("|"))
+    if (answer_regex.test(my_answer)) {
+      cl.add("webex-correct");
+    }
+  }
+
+  update_total_correct();
+}
+
+/* function for checking select answers */
+select_func = function(e) {
+  console.log("webex: check select");
+  
+  var cl = this.classList
+  
+  /* add style */
+  cl.remove("webex-incorrect");
+  cl.remove("webex-correct");
+  if (this.value == "answer") {
+    cl.add("webex-correct");
+  } else if (this.value != "blank") {
+    cl.add("webex-incorrect");
+  }
+  
+  update_total_correct();
+}
+
+/* function for checking radiogroups answers */
+radiogroups_func = function(e) {
+  console.log("webex: check radiogroups");
+
+  var checked_button = document.querySelector('input[name=' + this.id + ']:checked');
+  var cl = checked_button.parentElement.classList;
+  var labels = checked_button.parentElement.parentElement.children;
+  
+  /* get rid of styles */
+  for (i = 0; i < labels.length; i++) {
+    labels[i].classList.remove("webex-incorrect");
+    labels[i].classList.remove("webex-correct");
+  }
+  
+  /* add style */
+  if (checked_button.value == "answer") {
+    cl.add("webex-correct");
+  } else {
+    cl.add("webex-incorrect");
+  }
+  
+  update_total_correct();
+}
+
+window.onload = function() {
+  console.log("onload");
+  /* set up solution buttons */
+  var buttons = document.getElementsByTagName("button");
+
+  for (var i = 0; i < buttons.length; i++) {
+    if (buttons[i].parentElement.classList.contains('webex-solution')) {
+      buttons[i].onclick = b_func;
+    }
+  }
+
+  /* set up webex-solveme inputs */
+  var solveme = document.getElementsByClassName("webex-solveme");
+
+  for (var i = 0; i < solveme.length; i++) {
+    /* make sure input boxes don't auto-anything */
+    solveme[i].setAttribute("autocomplete","off");
+    solveme[i].setAttribute("autocorrect", "off");
+    solveme[i].setAttribute("autocapitalize", "off");
+    solveme[i].setAttribute("spellcheck", "false");
+    solveme[i].value = "";
+
+    /* adjust answer for ignorecase or nospaces */
+    var cl = solveme[i].classList;
+    var real_answer = solveme[i].dataset.answer;
+    if (cl.contains("ignorecase")) {
+      real_answer = real_answer.toLowerCase();
+    }
+    if (cl.contains("nospaces")) {
+      real_answer = real_answer.replace(/ /g, "");
+    }
+    solveme[i].dataset.answer = real_answer;
+
+    /* attach checking function */
+    solveme[i].onkeyup = solveme_func;
+    solveme[i].onchange = solveme_func;
+  }
+  
+  /* set up radiogroups */
+  var radiogroups = document.getElementsByClassName("webex-radiogroup");
+  for (var i = 0; i < radiogroups.length; i++) {
+    radiogroups[i].onchange = radiogroups_func;
+  }
+  
+  /* set up selects */
+  var selects = document.getElementsByClassName("webex-select");
+  for (var i = 0; i < selects.length; i++) {
+    selects[i].onchange = select_func;
+  }
+
+  update_total_correct();
+}
+
+</script><div class="chapter-nav">
+<div class="prev"><a href="multiple-regression.html"><span class="header-section-number">16</span> Multiple regression</a></div>
+<div class="next"><a href="jasp-workshop---multiple-regression.html"><span class="header-section-number">18</span> JASP Workshop - Multiple regression</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#statistical-assumption-checks-for-multiple-regression"><span class="header-section-number">17</span> Statistical assumption checks for multiple regression</a></li>
+<li><a class="nav-link" href="#check-for-linearity"><span class="header-section-number">17.1</span> Check for Linearity</a></li>
+<li><a class="nav-link" href="#check-for-multicollinearity"><span class="header-section-number">17.2</span> Check for Multicollinearity</a></li>
+<li><a class="nav-link" href="#check-for-outliers"><span class="header-section-number">17.3</span> Check for Outliers</a></li>
+<li>
+<a class="nav-link" href="#checks-of-residuals"><span class="header-section-number">17.4</span> Checks of residuals</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#check-for-normality-of-residuals"><span class="header-section-number">17.4.1</span> Check for Normality of Residuals</a></li>
+<li><a class="nav-link" href="#check-for-homoscedasticity"><span class="header-section-number">17.4.2</span> Check for Homoscedasticity</a></li>
+</ul>
+</li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Regression handbook</strong>" was written by Dr Richard Clarke. It was last built on 2024-09-22.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>
