@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 5 JASP Workshop - Conducting T-Tests (Independent and Paired) | Regression handbook</title>
+<meta name="author" content="Dr Richard Clarke">
+<meta name="description" content="JASP is a free, open-source statistical software package designed with a user-friendly, point-and-click interface, ideal for research in psychology. It offers a wide range of statistical analyses,...">
+<meta name="generator" content="bookdown 0.40 with bs4_book()">
+<meta property="og:title" content="Chapter 5 JASP Workshop - Conducting T-Tests (Independent and Paired) | Regression handbook">
+<meta property="og:type" content="book">
+<meta property="og:description" content="JASP is a free, open-source statistical software package designed with a user-friendly, point-and-click interface, ideal for research in psychology. It offers a wide range of statistical analyses,...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 5 JASP Workshop - Conducting T-Tests (Independent and Paired) | Regression handbook">
+<meta name="twitter:description" content="JASP is a free, open-source statistical software package designed with a user-friendly, point-and-click interface, ideal for research in psychology. It offers a wide range of statistical analyses,...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.6.1/transition.js"></script><script src="libs/bs3compat-0.6.1/tabs.js"></script><script src="libs/bs3compat-0.6.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<link rel="stylesheet" href="www/webex.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">Regression handbook</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> Welcome to the NS5108 quantiatitve methods and analysis handbook</a></li>
+<li><a class="" href="introduction-to-difference-tests.html"><span class="header-section-number">2</span> Introduction to difference tests</a></li>
+<li><a class="" href="t-tests-theory-visualisation-and-calculation-by-hand.html"><span class="header-section-number">3</span> T-Tests: Theory, Visualisation, and Calculation (by hand)</a></li>
+<li><a class="" href="assumption-checks-of-t-tests-and-other-difference-tests.html"><span class="header-section-number">4</span> Assumption checks of t-tests and other difference tests</a></li>
+<li><a class="active" href="jasp-workshop---conducting-t-tests-independent-and-paired.html"><span class="header-section-number">5</span> JASP Workshop - Conducting T-Tests (Independent and Paired)</a></li>
+<li><a class="" href="understanding-effect-size-and-power-in-psychological-research.html"><span class="header-section-number">6</span> Understanding Effect Size and Power in Psychological Research</a></li>
+<li><a class="" href="how-to-conduct-a-power-analysis.html"><span class="header-section-number">7</span> How to Conduct a Power Analysis</a></li>
+<li><a class="" href="introduction-to-anova.html"><span class="header-section-number">8</span> Introduction to ANOVA</a></li>
+<li><a class="" href="jasp-workshop-one-way-anova.html"><span class="header-section-number">9</span> JASP workshop – one way ANOVA</a></li>
+<li><a class="" href="factorial-anova-important-for-your-assignment.html"><span class="header-section-number">10</span> Factorial ANOVA (Important for your assignment)</a></li>
+<li><a class="" href="jasp-workship---factorial-anova.html"><span class="header-section-number">11</span> JASP workship - Factorial ANOVA</a></li>
+<li><a class="" href="advanced-anova-techniques.html"><span class="header-section-number">12</span> Advanced ANOVA techniques</a></li>
+<li><a class="" href="introduction-to-regression-analysis.html"><span class="header-section-number">13</span> Introduction to Regression analysis</a></li>
+<li><a class="" href="simple-linear-regression.html"><span class="header-section-number">14</span> Simple linear regression</a></li>
+<li><a class="" href="jasp-workshop---simple-linear-regression.html"><span class="header-section-number">15</span> JASP Workshop - Simple linear Regression</a></li>
+<li><a class="" href="multiple-regression.html"><span class="header-section-number">16</span> Multiple regression</a></li>
+<li><a class="" href="statistical-assumption-checks-for-multiple-regression.html"><span class="header-section-number">17</span> Statistical assumption checks for multiple regression</a></li>
+<li><a class="" href="jasp-workshop---multiple-regression.html"><span class="header-section-number">18</span> JASP Workshop - Multiple regression</a></li>
+<li><a class="" href="logistic-regression.html"><span class="header-section-number">19</span> Logistic regression</a></li>
+<li><a class="" href="further-reading.html"><span class="header-section-number">20</span> further reading</a></li>
+</ul>
+
+        <div class="book-extra">
+          
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="jasp-workshop---conducting-t-tests-independent-and-paired" class="section level1" number="5">
+<h1>
+<span class="header-section-number">5</span> JASP Workshop - Conducting T-Tests (Independent and Paired)<a class="anchor" aria-label="anchor" href="#jasp-workshop---conducting-t-tests-independent-and-paired"><i class="fas fa-link"></i></a>
+</h1>
+<p>JASP is a free, open-source statistical software package designed with a user-friendly, point-and-click interface, ideal for research in psychology. It offers a wide range of statistical analyses, including t-tests, ANOVA, regression, and more. This guide will walk you through the steps for conducting independent and paired samples t-tests in JASP, highlighting the critical points to check and report in your analysis.</p>
+<p>JASP is available on most university computers, but we recommend installing it on your personal laptop or desktop to continue learning outside class. You can download JASP here: <a href="www.jasp-stats.org">www.jasp-stats.org</a>.</p>
+<div id="t-test-video-walkthrough" class="section level2" number="5.1">
+<h2>
+<span class="header-section-number">5.1</span> T-Test Video Walkthrough<a class="anchor" aria-label="anchor" href="#t-test-video-walkthrough"><i class="fas fa-link"></i></a>
+</h2>
+<p>In the below video, I work through example analyses of both independent and paired samples t-tests. If you want to follow along, please find the corresponding question sheets and datasets available in the NS5108 module on Moodle.</p>
+<p><strong>[check back later in the semester for video content here]</strong></p>
+</div>
+<div id="where-to-click-guide---conducting-t-tests-in-jasp" class="section level2" number="5.2">
+<h2>
+<span class="header-section-number">5.2</span> "Where to Click" Guide - Conducting T-Tests in JASP<a class="anchor" aria-label="anchor" href="#where-to-click-guide---conducting-t-tests-in-jasp"><i class="fas fa-link"></i></a>
+</h2>
+<p>Sometimes you just want to know where to click to run the test. Below is a step-by-step guide for performing independent and paired samples t-tests in JASP. Refer to the video above for more context regarding these steps.</p>
+<div id="conducting-an-independent-samples-t-test" class="section level3" number="5.2.1">
+<h3>
+<span class="header-section-number">5.2.1</span> Conducting an Independent Samples T-Test<a class="anchor" aria-label="anchor" href="#conducting-an-independent-samples-t-test"><i class="fas fa-link"></i></a>
+</h3>
+<ol style="list-style-type: decimal">
+<li>
+<strong>Open JASP</strong> and load your data: Click on the <strong>File</strong> tab at the top left, select <strong>Open</strong>, and navigate to the folder containing your data file.</li>
+<li>
+<strong>Visualise the Data</strong>: Click <strong>Descriptives</strong> -&gt; <strong>Descriptive Statistics</strong> and move the variables of interest into the <strong>Variables box</strong>. To visualise the distribution, use histograms or boxplots to check the spread and identify potential outliers.</li>
+<li>
+<strong>Check Assumptions</strong>:</li>
+</ol>
+<ul>
+<li>
+<strong>Normality</strong>: Check normality by clicking <strong>Plots</strong> -&gt; <strong>Q-Q plots</strong>. Look for data points that should lie approximately along the diagonal line.</li>
+<li>
+<strong>Homogeneity of Variance</strong>: Conduct Levene’s test by clicking <strong>T-Tests</strong> -&gt; <strong>Independent Samples T-Test</strong>. Move the grouping variable to <strong>Grouping Variable</strong> and your dependent variable to <strong>Dependent Variable</strong>. Ensure the option Equality of variances test (Levene’s) is checked.</li>
+</ul>
+<ol start="4" style="list-style-type: decimal">
+<li>
+<strong>Run the T-Test</strong>: Under <strong>T-Tests</strong> -&gt; <strong>Independent Samples T-Test</strong>, input your dependent and grouping variables (you’ll have already done this if you’ve check for homogeneity of variance). Extract the t-value, degrees of freedom (df), and p-value from the output.</li>
+<li>
+<strong>Interpret the Results</strong>: Determine if there is a statistically significant difference between the groups based on the p-value (<em>p</em> &lt; .05 typically indicates significance).</li>
+</ol>
+</div>
+<div id="conducting-a-paired-samples-t-test" class="section level3" number="5.2.2">
+<h3>
+<span class="header-section-number">5.2.2</span> Conducting a Paired Samples T-Test<a class="anchor" aria-label="anchor" href="#conducting-a-paired-samples-t-test"><i class="fas fa-link"></i></a>
+</h3>
+<ol style="list-style-type: decimal">
+<li>
+<strong>Open JASP</strong> and load your data as before.</li>
+<li>
+<strong>Visualise the Data</strong>: Identify your paired variables and use histograms or boxplots to visualise their distribution. This helps in assessing normality and checking for potential outliers.</li>
+<li>
+<strong>Check Assumptions</strong>:</li>
+</ol>
+<ul>
+<li>
+<strong>Normality</strong>: Use the Q-Q plots to visually check if the paired differences are normally distributed.</li>
+<li>
+<strong>Homogeneity of Variance</strong>: For paired samples t-test, homogeneity of variance is assumed. Due to the same participants providing data for each level of the IV.<br>
+</li>
+</ul>
+<ol start="4" style="list-style-type: decimal">
+<li>
+<strong>Run the Paired Samples T-Test</strong>: Click <strong>T-Tests</strong> -&gt; <strong>Paired Samples T-Test</strong>. Move the paired variables into the <strong>Paired Variables</strong> box. Extract the t-value, degrees of freedom, and p-value from the results.</li>
+<li>
+<strong>Interpret the Results</strong>: Check the p-value to determine if the difference between the paired groups is statistically significant.</li>
+</ol>
+</div>
+</div>
+<div id="apa-style-guide-for-reporting-t-tests" class="section level2" number="5.3">
+<h2>
+<span class="header-section-number">5.3</span> APA Style Guide for Reporting T-Tests<a class="anchor" aria-label="anchor" href="#apa-style-guide-for-reporting-t-tests"><i class="fas fa-link"></i></a>
+</h2>
+<p>Here’s how to format your hypotheses and report results from your t-tests in APA style.</p>
+<p><strong>Hypothesis for an Independent Samples T-Test (two-tail/non-directional)</strong>:
+- <strong>Null Hypothesis (H0)</strong>: There is no significant difference in [the dependent variable] between [the two groups].
+- <strong>Alternative Hypothesis (H1)</strong>: There is a significant difference in [the dependent variable] between [the two groups].</p>
+<p><strong>Hypothesis for an Independent Samples T-Test (One-Tail/Directional)</strong>:
+- Null Hypothesis (H0): There is no significant difference or [Group 1] does not have a higher/lower [dependent variable] than [Group 2].
+- Alternative Hypothesis (H1): [Group 1] has a significantly higher/lower [dependent variable] than [Group 2].</p>
+<p><strong>Example APA Report for an Independent Samples T-Test</strong>:
+&gt; “An independent samples t-test was conducted to compare reaction times between a [variable name] group and a [variable name] group. Assumption checks confirmed normality and equal variances. The results showed a significant difference between the groups, t(df) = t-statistic, p = p-value, indicating that [dependent variable] [greater/lower] in the [condition 1/2] group compared to the [condition 1/2].”</p>
+<p><strong>Hypothesis for a Paired Samples T-Test (Two-Tail/Non-Directional)</strong>:
+- Null Hypothesis (H0): There is no significant difference in [the dependent variable] between [Condition 1] and [Condition 2].
+- Alternative Hypothesis (H1): There is a significant difference in [the dependent variable] between [Condition 1] and [Condition 2].</p>
+<p><strong>Hypothesis for a Paired Samples T-Test (One-Tail/Directional)</strong>:
+- Null Hypothesis (H0): There is no significant difference, or [Condition 1] does not result in a higher/lower [dependent variable] than [Condition 2].
+- Alternative Hypothesis (H1): [Condition 1] results in a significantly higher/lower [dependent variable] than [Condition 2].</p>
+<p><strong>Example APA Report for a Paired Samples T-Test</strong>:
+&gt; “A paired samples t-test was conducted to compare test scores before and after an intervention. Assumption checks confirmed normality of dependent variable within each condition. The results indicated a significant improvement in scores after the intervention, t(df) = t-statistic, p = p-value, suggesting that the intervention was effective.”</p>
+</div>
+<div id="dr-clarkes-automatic-t-test-generator" class="section level2" number="5.4">
+<h2>
+<span class="header-section-number">5.4</span> Dr Clarke’s Automatic t-test Generator<a class="anchor" aria-label="anchor" href="#dr-clarkes-automatic-t-test-generator"><i class="fas fa-link"></i></a>
+</h2>
+Lately, I’ve been learning to code and, well, I’ve made something for you:
+<div style="text-align: center; font-size: 40px;">
+<a href="https://vr7ney-richard-m0clarke.shinyapps.io/Automatic_T_Test_Generator/?_ga=2.160895037.1038260290.1682173766-1650880128.1679066917">Automatic t-test generator</a>
+</div>
+<p>This link takes you to a web application that automatically generated data for an independent samples t-test, performs the analysis and then reports the findings.</p>
+<div class="inline-figure"><img src="Images/auto%20ttest%20generator.png" width="75%" style="display: block; margin: auto;"></div>
+<p>By moving the sliders around you should be able to see how data with different means and SD look and how they affect the assumption checks, choice of test, statistical significance (and observed power, effect size. Both of which are explained in detail in the next chapter).</p>
+
+</div>
+</div>
+<script>
+
+/* update total correct if #webex-total_correct exists */
+update_total_correct = function() {
+  console.log("webex: update total_correct");
+
+  if (t = document.getElementById("webex-total_correct")) {
+    var correct = document.getElementsByClassName("webex-correct").length;
+    var solvemes = document.getElementsByClassName("webex-solveme").length;
+    var radiogroups = document.getElementsByClassName("webex-radiogroup").length;
+    var selects = document.getElementsByClassName("webex-select").length;
+    
+    t.innerHTML = correct + " of " + (solvemes + radiogroups + selects) + " correct";
+  }
+}
+
+/* webex-solution button toggling function */
+b_func = function() {
+  console.log("webex: toggle hide");
+  
+  var cl = this.parentElement.classList;
+  if (cl.contains('open')) {
+    cl.remove("open");
+  } else {
+    cl.add("open");
+  }
+}
+
+/* function for checking solveme answers */
+solveme_func = function(e) {
+  console.log("webex: check solveme");
+
+  var real_answers = JSON.parse(this.dataset.answer);
+  var my_answer = this.value;
+  var cl = this.classList;
+  if (cl.contains("ignorecase")) {
+    my_answer = my_answer.toLowerCase();
+  }
+  if (cl.contains("nospaces")) {
+    my_answer = my_answer.replace(/ /g, "")
+  }
+
+  if (my_answer == "") {
+    cl.remove("webex-correct");
+    cl.remove("webex-incorrect");
+  } else if (real_answers.includes(my_answer)) {
+    cl.add("webex-correct");
+    cl.remove("webex-incorrect");
+  } else {
+    cl.add("webex-incorrect");
+    cl.remove("webex-correct");
+  }
+
+  // match numeric answers within a specified tolerance
+  if(this.dataset.tol > 0){
+    var tol = JSON.parse(this.dataset.tol);
+    var matches = real_answers.map(x => Math.abs(x - my_answer) < tol)
+    if (matches.reduce((a, b) => a + b, 0) > 0) {
+      cl.add("webex-correct");
+    } else {
+      cl.remove("webex-correct");
+    }
+  }
+
+  // added regex bit
+  if (cl.contains("regex")){
+    answer_regex = RegExp(real_answers.join("|"))
+    if (answer_regex.test(my_answer)) {
+      cl.add("webex-correct");
+    }
+  }
+
+  update_total_correct();
+}
+
+/* function for checking select answers */
+select_func = function(e) {
+  console.log("webex: check select");
+  
+  var cl = this.classList
+  
+  /* add style */
+  cl.remove("webex-incorrect");
+  cl.remove("webex-correct");
+  if (this.value == "answer") {
+    cl.add("webex-correct");
+  } else if (this.value != "blank") {
+    cl.add("webex-incorrect");
+  }
+  
+  update_total_correct();
+}
+
+/* function for checking radiogroups answers */
+radiogroups_func = function(e) {
+  console.log("webex: check radiogroups");
+
+  var checked_button = document.querySelector('input[name=' + this.id + ']:checked');
+  var cl = checked_button.parentElement.classList;
+  var labels = checked_button.parentElement.parentElement.children;
+  
+  /* get rid of styles */
+  for (i = 0; i < labels.length; i++) {
+    labels[i].classList.remove("webex-incorrect");
+    labels[i].classList.remove("webex-correct");
+  }
+  
+  /* add style */
+  if (checked_button.value == "answer") {
+    cl.add("webex-correct");
+  } else {
+    cl.add("webex-incorrect");
+  }
+  
+  update_total_correct();
+}
+
+window.onload = function() {
+  console.log("onload");
+  /* set up solution buttons */
+  var buttons = document.getElementsByTagName("button");
+
+  for (var i = 0; i < buttons.length; i++) {
+    if (buttons[i].parentElement.classList.contains('webex-solution')) {
+      buttons[i].onclick = b_func;
+    }
+  }
+
+  /* set up webex-solveme inputs */
+  var solveme = document.getElementsByClassName("webex-solveme");
+
+  for (var i = 0; i < solveme.length; i++) {
+    /* make sure input boxes don't auto-anything */
+    solveme[i].setAttribute("autocomplete","off");
+    solveme[i].setAttribute("autocorrect", "off");
+    solveme[i].setAttribute("autocapitalize", "off");
+    solveme[i].setAttribute("spellcheck", "false");
+    solveme[i].value = "";
+
+    /* adjust answer for ignorecase or nospaces */
+    var cl = solveme[i].classList;
+    var real_answer = solveme[i].dataset.answer;
+    if (cl.contains("ignorecase")) {
+      real_answer = real_answer.toLowerCase();
+    }
+    if (cl.contains("nospaces")) {
+      real_answer = real_answer.replace(/ /g, "");
+    }
+    solveme[i].dataset.answer = real_answer;
+
+    /* attach checking function */
+    solveme[i].onkeyup = solveme_func;
+    solveme[i].onchange = solveme_func;
+  }
+  
+  /* set up radiogroups */
+  var radiogroups = document.getElementsByClassName("webex-radiogroup");
+  for (var i = 0; i < radiogroups.length; i++) {
+    radiogroups[i].onchange = radiogroups_func;
+  }
+  
+  /* set up selects */
+  var selects = document.getElementsByClassName("webex-select");
+  for (var i = 0; i < selects.length; i++) {
+    selects[i].onchange = select_func;
+  }
+
+  update_total_correct();
+}
+
+</script><div class="chapter-nav">
+<div class="prev"><a href="assumption-checks-of-t-tests-and-other-difference-tests.html"><span class="header-section-number">4</span> Assumption checks of t-tests and other difference tests</a></div>
+<div class="next"><a href="understanding-effect-size-and-power-in-psychological-research.html"><span class="header-section-number">6</span> Understanding Effect Size and Power in Psychological Research</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#jasp-workshop---conducting-t-tests-independent-and-paired"><span class="header-section-number">5</span> JASP Workshop - Conducting T-Tests (Independent and Paired)</a></li>
+<li><a class="nav-link" href="#t-test-video-walkthrough"><span class="header-section-number">5.1</span> T-Test Video Walkthrough</a></li>
+<li>
+<a class="nav-link" href="#where-to-click-guide---conducting-t-tests-in-jasp"><span class="header-section-number">5.2</span> "Where to Click" Guide - Conducting T-Tests in JASP</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#conducting-an-independent-samples-t-test"><span class="header-section-number">5.2.1</span> Conducting an Independent Samples T-Test</a></li>
+<li><a class="nav-link" href="#conducting-a-paired-samples-t-test"><span class="header-section-number">5.2.2</span> Conducting a Paired Samples T-Test</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#apa-style-guide-for-reporting-t-tests"><span class="header-section-number">5.3</span> APA Style Guide for Reporting T-Tests</a></li>
+<li><a class="nav-link" href="#dr-clarkes-automatic-t-test-generator"><span class="header-section-number">5.4</span> Dr Clarke’s Automatic t-test Generator</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Regression handbook</strong>" was written by Dr Richard Clarke. It was last built on 2024-09-22.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

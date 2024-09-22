@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 1 Welcome to the NS5108 quantiatitve methods and analysis handbook | Regression handbook</title>
+<meta name="author" content="Dr Richard Clarke">
+<meta name="description" content="&lt;p&gt;This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.&lt;/p&gt;">
+<meta name="generator" content="bookdown 0.40 with bs4_book()">
+<meta property="og:title" content="Chapter 1 Welcome to the NS5108 quantiatitve methods and analysis handbook | Regression handbook">
+<meta property="og:type" content="book">
+<meta property="og:description" content="&lt;p&gt;This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.&lt;/p&gt;">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 1 Welcome to the NS5108 quantiatitve methods and analysis handbook | Regression handbook">
+<meta name="twitter:description" content="&lt;p&gt;This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.&lt;/p&gt;">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.6.1/transition.js"></script><script src="libs/bs3compat-0.6.1/tabs.js"></script><script src="libs/bs3compat-0.6.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<link rel="stylesheet" href="www/webex.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">Regression handbook</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="active" href="index.html"><span class="header-section-number">1</span> Welcome to the NS5108 quantiatitve methods and analysis handbook</a></li>
+<li><a class="" href="introduction-to-difference-tests.html"><span class="header-section-number">2</span> Introduction to difference tests</a></li>
+<li><a class="" href="t-tests-theory-visualisation-and-calculation-by-hand.html"><span class="header-section-number">3</span> T-Tests: Theory, Visualisation, and Calculation (by hand)</a></li>
+<li><a class="" href="assumption-checks-of-t-tests-and-other-difference-tests.html"><span class="header-section-number">4</span> Assumption checks of t-tests and other difference tests</a></li>
+<li><a class="" href="jasp-workshop---conducting-t-tests-independent-and-paired.html"><span class="header-section-number">5</span> JASP Workshop - Conducting T-Tests (Independent and Paired)</a></li>
+<li><a class="" href="understanding-effect-size-and-power-in-psychological-research.html"><span class="header-section-number">6</span> Understanding Effect Size and Power in Psychological Research</a></li>
+<li><a class="" href="how-to-conduct-a-power-analysis.html"><span class="header-section-number">7</span> How to Conduct a Power Analysis</a></li>
+<li><a class="" href="introduction-to-anova.html"><span class="header-section-number">8</span> Introduction to ANOVA</a></li>
+<li><a class="" href="jasp-workshop-one-way-anova.html"><span class="header-section-number">9</span> JASP workshop – one way ANOVA</a></li>
+<li><a class="" href="factorial-anova-important-for-your-assignment.html"><span class="header-section-number">10</span> Factorial ANOVA (Important for your assignment)</a></li>
+<li><a class="" href="jasp-workship---factorial-anova.html"><span class="header-section-number">11</span> JASP workship - Factorial ANOVA</a></li>
+<li><a class="" href="advanced-anova-techniques.html"><span class="header-section-number">12</span> Advanced ANOVA techniques</a></li>
+<li><a class="" href="introduction-to-regression-analysis.html"><span class="header-section-number">13</span> Introduction to Regression analysis</a></li>
+<li><a class="" href="simple-linear-regression.html"><span class="header-section-number">14</span> Simple linear regression</a></li>
+<li><a class="" href="jasp-workshop---simple-linear-regression.html"><span class="header-section-number">15</span> JASP Workshop - Simple linear Regression</a></li>
+<li><a class="" href="multiple-regression.html"><span class="header-section-number">16</span> Multiple regression</a></li>
+<li><a class="" href="statistical-assumption-checks-for-multiple-regression.html"><span class="header-section-number">17</span> Statistical assumption checks for multiple regression</a></li>
+<li><a class="" href="jasp-workshop---multiple-regression.html"><span class="header-section-number">18</span> JASP Workshop - Multiple regression</a></li>
+<li><a class="" href="logistic-regression.html"><span class="header-section-number">19</span> Logistic regression</a></li>
+<li><a class="" href="further-reading.html"><span class="header-section-number">20</span> further reading</a></li>
+</ul>
+
+        <div class="book-extra">
+          
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><!--bookdown:title:end--><!--bookdown:title:start--><div id="welcome-to-the-ns5108-quantiatitve-methods-and-analysis-handbook" class="section level1" number="1">
+<h1>
+<span class="header-section-number">1</span> Welcome to the NS5108 quantiatitve methods and analysis handbook<a class="anchor" aria-label="anchor" href="#welcome-to-the-ns5108-quantiatitve-methods-and-analysis-handbook"><i class="fas fa-link"></i></a>
+</h1>
+<p>This year I have tried to make my half of NS5108 as structured and accessible as possible. Part of this plan was to place all the necessary content together in one place: this book. Here you will find an explanation of all the concepts we will cover this semester, in depth explanations of concepts that we won’t have time to cover in class, relevant video clips from our lectures, and demonstrations of how to perform the various statistical analyses.</p>
+<p>This guide is designed to work alongside your NS5108 lectures, not replace them entirely. Personally, I find that with any topic I need several explanations worded slightly differently before a concept starts to click. Please use this book as a way to consolidate your in class learning.</p>
+<p>Now, before we get started. Yes, there is going to be maths, and yes there are going to be formulas, sorry I can’t teach statistics without these aspects. However, there are different depths to which you can learn statistics. This handbook is here to give you the basics, but it also allows you to delve a little deeper into the theory behind how the various statistical analysis work.</p>
+<p>I've tried to make it so that some of the more terrifying statistical maths is hidden away behind blue boxes (like the one below) that you can click to reveal more information. These blue boxes also contain extra explanation around graphs, and some tangents that I didn’t want to get bogged down into in the main text.</p>
+<div class="webex-solution">
+<button>
+Click here if you have anxiety about statistics
+</button>
+<p>If you're feeling anxious about statistics, know that you're not alone; many people feel the same way.</p>
+<p>Think of learning statistics like learning to drive or ride a bike. Initially, it's full of painful stops and bumps, but after a few lessons, things eventually start to make sense. I struggled a lot when I first encountered this material, but once I realised how incredibly powerful it can be when applied to the topics I care about, my motivation skyrocketed, that got me over the hump and now I’m hooked for life. Just remember that learning is a marathon, and it's perfectly fine to move at your own pace. Our goal is to make this journey as smooth as possible through clear explanations and practical exercises.</p>
+<p>If you find yourself stuck, don't hesitate to ask for help. Both myself and the graduate teaching assistants are more than willing to explain concepts repeatedly and in various ways; in fact, we welcome it—it keeps us on our toes! Asking questions is an integral part of the learning process, and we're here to support you every step of the way. So, take a deep breath, and <strong>be patient and kind with yourself</strong>. The skills you'll acquire here will not only serve you well in your academic journey but hopefully lead you to having a meaningful impact in your future work.</p>
+</div>
+<div id="exercises-and-statistical-software" class="section level2" number="1.1">
+<h2>
+<span class="header-section-number">1.1</span> Exercises and statistical software<a class="anchor" aria-label="anchor" href="#exercises-and-statistical-software"><i class="fas fa-link"></i></a>
+</h2>
+<p>Throughout this workbook there are exercises where I suggest you download data and conduct an analysis with the use of <strong>JASP</strong>. JASP is a simple open source (i.e. free) program that can be used to run statistical tests. Here is a link to the website where you can download JASP.</p>
+<p><a href="https://jasp-stats.org/">Link to download JASP</a></p>
+<p>Data files can be found in the weekly materials of the NS5108 Moodle page.</p>
+</div>
+<div id="note-for-msc-health-psychology-and-msc-forensic-psychology-students" class="section level2" number="1.2">
+<h2>
+<span class="header-section-number">1.2</span> Note for MSc Health Psychology and MSc Forensic Psychology students<a class="anchor" aria-label="anchor" href="#note-for-msc-health-psychology-and-msc-forensic-psychology-students"><i class="fas fa-link"></i></a>
+</h2>
+<p>If you are speed running this module as part of your NS7004 or NS7151 research methods modules you may want to conduct your analysis using SPSS or R. You absolutely can and should do so, all the theoretical content here will still apply, you might just need to do a further search around for additional where to click guides. Feel free to email me (<a href="rclarke8@glos.ac.uk">rclarke8@glos.ac.uk</a>) if you want me to point you in the direction of other good online content to help you with this aspect.</p>
+</div>
+<div id="this-book-is-a-work-in-progress" class="section level2" number="1.3">
+<h2>
+<span class="header-section-number">1.3</span> This book is a work in progress<a class="anchor" aria-label="anchor" href="#this-book-is-a-work-in-progress"><i class="fas fa-link"></i></a>
+</h2>
+<p>This semester, I will be <em>"gromiting"</em> my way through this course.</p>
+<div class="tenor-gif-embed" data-postid="3793283" data-share-method="host" data-aspect-ratio="1.77778" data-width="100%">
+<a href="https://tenor.com/view/wallace-and-gromit-train-tracks-work-swift-fast-gif-3793283">Laying Tracks GIF</a>from <a href="https://tenor.com/search/wallace+and+gromit-gifs">Wallace And Gromit GIFs</a>
+</div>
+<script type="text/javascript" async src="https://tenor.com/embed.js"></script><p>I have a plan, and I have most of the content, but I'll be building out parts of this book during the semester. So, if you've come to this book early and expect to watch video walkthrough guides of the techniques later in the course, apologies, maybe check back in a few weeks.</p>
+<p>Also, if you spot any glaring errors please do contact me on <a href="rclarke8@glos.ac.uk">rclarke8@glos.ac.uk</a> and I'll correct as we go.</p>
+
+</div>
+</div>
+<script>
+
+/* update total correct if #webex-total_correct exists */
+update_total_correct = function() {
+  console.log("webex: update total_correct");
+
+  if (t = document.getElementById("webex-total_correct")) {
+    var correct = document.getElementsByClassName("webex-correct").length;
+    var solvemes = document.getElementsByClassName("webex-solveme").length;
+    var radiogroups = document.getElementsByClassName("webex-radiogroup").length;
+    var selects = document.getElementsByClassName("webex-select").length;
+    
+    t.innerHTML = correct + " of " + (solvemes + radiogroups + selects) + " correct";
+  }
+}
+
+/* webex-solution button toggling function */
+b_func = function() {
+  console.log("webex: toggle hide");
+  
+  var cl = this.parentElement.classList;
+  if (cl.contains('open')) {
+    cl.remove("open");
+  } else {
+    cl.add("open");
+  }
+}
+
+/* function for checking solveme answers */
+solveme_func = function(e) {
+  console.log("webex: check solveme");
+
+  var real_answers = JSON.parse(this.dataset.answer);
+  var my_answer = this.value;
+  var cl = this.classList;
+  if (cl.contains("ignorecase")) {
+    my_answer = my_answer.toLowerCase();
+  }
+  if (cl.contains("nospaces")) {
+    my_answer = my_answer.replace(/ /g, "")
+  }
+
+  if (my_answer == "") {
+    cl.remove("webex-correct");
+    cl.remove("webex-incorrect");
+  } else if (real_answers.includes(my_answer)) {
+    cl.add("webex-correct");
+    cl.remove("webex-incorrect");
+  } else {
+    cl.add("webex-incorrect");
+    cl.remove("webex-correct");
+  }
+
+  // match numeric answers within a specified tolerance
+  if(this.dataset.tol > 0){
+    var tol = JSON.parse(this.dataset.tol);
+    var matches = real_answers.map(x => Math.abs(x - my_answer) < tol)
+    if (matches.reduce((a, b) => a + b, 0) > 0) {
+      cl.add("webex-correct");
+    } else {
+      cl.remove("webex-correct");
+    }
+  }
+
+  // added regex bit
+  if (cl.contains("regex")){
+    answer_regex = RegExp(real_answers.join("|"))
+    if (answer_regex.test(my_answer)) {
+      cl.add("webex-correct");
+    }
+  }
+
+  update_total_correct();
+}
+
+/* function for checking select answers */
+select_func = function(e) {
+  console.log("webex: check select");
+  
+  var cl = this.classList
+  
+  /* add style */
+  cl.remove("webex-incorrect");
+  cl.remove("webex-correct");
+  if (this.value == "answer") {
+    cl.add("webex-correct");
+  } else if (this.value != "blank") {
+    cl.add("webex-incorrect");
+  }
+  
+  update_total_correct();
+}
+
+/* function for checking radiogroups answers */
+radiogroups_func = function(e) {
+  console.log("webex: check radiogroups");
+
+  var checked_button = document.querySelector('input[name=' + this.id + ']:checked');
+  var cl = checked_button.parentElement.classList;
+  var labels = checked_button.parentElement.parentElement.children;
+  
+  /* get rid of styles */
+  for (i = 0; i < labels.length; i++) {
+    labels[i].classList.remove("webex-incorrect");
+    labels[i].classList.remove("webex-correct");
+  }
+  
+  /* add style */
+  if (checked_button.value == "answer") {
+    cl.add("webex-correct");
+  } else {
+    cl.add("webex-incorrect");
+  }
+  
+  update_total_correct();
+}
+
+window.onload = function() {
+  console.log("onload");
+  /* set up solution buttons */
+  var buttons = document.getElementsByTagName("button");
+
+  for (var i = 0; i < buttons.length; i++) {
+    if (buttons[i].parentElement.classList.contains('webex-solution')) {
+      buttons[i].onclick = b_func;
+    }
+  }
+
+  /* set up webex-solveme inputs */
+  var solveme = document.getElementsByClassName("webex-solveme");
+
+  for (var i = 0; i < solveme.length; i++) {
+    /* make sure input boxes don't auto-anything */
+    solveme[i].setAttribute("autocomplete","off");
+    solveme[i].setAttribute("autocorrect", "off");
+    solveme[i].setAttribute("autocapitalize", "off");
+    solveme[i].setAttribute("spellcheck", "false");
+    solveme[i].value = "";
+
+    /* adjust answer for ignorecase or nospaces */
+    var cl = solveme[i].classList;
+    var real_answer = solveme[i].dataset.answer;
+    if (cl.contains("ignorecase")) {
+      real_answer = real_answer.toLowerCase();
+    }
+    if (cl.contains("nospaces")) {
+      real_answer = real_answer.replace(/ /g, "");
+    }
+    solveme[i].dataset.answer = real_answer;
+
+    /* attach checking function */
+    solveme[i].onkeyup = solveme_func;
+    solveme[i].onchange = solveme_func;
+  }
+  
+  /* set up radiogroups */
+  var radiogroups = document.getElementsByClassName("webex-radiogroup");
+  for (var i = 0; i < radiogroups.length; i++) {
+    radiogroups[i].onchange = radiogroups_func;
+  }
+  
+  /* set up selects */
+  var selects = document.getElementsByClassName("webex-select");
+  for (var i = 0; i < selects.length; i++) {
+    selects[i].onchange = select_func;
+  }
+
+  update_total_correct();
+}
+
+</script><div class="chapter-nav">
+<div class="empty"></div>
+<div class="next"><a href="introduction-to-difference-tests.html"><span class="header-section-number">2</span> Introduction to difference tests</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#welcome-to-the-ns5108-quantiatitve-methods-and-analysis-handbook"><span class="header-section-number">1</span> Welcome to the NS5108 quantiatitve methods and analysis handbook</a></li>
+<li><a class="nav-link" href="#exercises-and-statistical-software"><span class="header-section-number">1.1</span> Exercises and statistical software</a></li>
+<li><a class="nav-link" href="#note-for-msc-health-psychology-and-msc-forensic-psychology-students"><span class="header-section-number">1.2</span> Note for MSc Health Psychology and MSc Forensic Psychology students</a></li>
+<li><a class="nav-link" href="#this-book-is-a-work-in-progress"><span class="header-section-number">1.3</span> This book is a work in progress</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Regression handbook</strong>" was written by Dr Richard Clarke. It was last built on 2024-09-22.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

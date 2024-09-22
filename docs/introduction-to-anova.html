@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 8 Introduction to ANOVA | Regression handbook</title>
+<meta name="author" content="Dr Richard Clarke">
+<meta name="description" content="ANOVA, which stands for Analysis of Variance, is a statistical test used when comparing a continuous dependent variable across three or more groups. While it might seem similar to the t-test...">
+<meta name="generator" content="bookdown 0.40 with bs4_book()">
+<meta property="og:title" content="Chapter 8 Introduction to ANOVA | Regression handbook">
+<meta property="og:type" content="book">
+<meta property="og:description" content="ANOVA, which stands for Analysis of Variance, is a statistical test used when comparing a continuous dependent variable across three or more groups. While it might seem similar to the t-test...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 8 Introduction to ANOVA | Regression handbook">
+<meta name="twitter:description" content="ANOVA, which stands for Analysis of Variance, is a statistical test used when comparing a continuous dependent variable across three or more groups. While it might seem similar to the t-test...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.6.1/transition.js"></script><script src="libs/bs3compat-0.6.1/tabs.js"></script><script src="libs/bs3compat-0.6.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<link rel="stylesheet" href="www/webex.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">Regression handbook</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> Welcome to the NS5108 quantiatitve methods and analysis handbook</a></li>
+<li><a class="" href="introduction-to-difference-tests.html"><span class="header-section-number">2</span> Introduction to difference tests</a></li>
+<li><a class="" href="t-tests-theory-visualisation-and-calculation-by-hand.html"><span class="header-section-number">3</span> T-Tests: Theory, Visualisation, and Calculation (by hand)</a></li>
+<li><a class="" href="assumption-checks-of-t-tests-and-other-difference-tests.html"><span class="header-section-number">4</span> Assumption checks of t-tests and other difference tests</a></li>
+<li><a class="" href="jasp-workshop---conducting-t-tests-independent-and-paired.html"><span class="header-section-number">5</span> JASP Workshop - Conducting T-Tests (Independent and Paired)</a></li>
+<li><a class="" href="understanding-effect-size-and-power-in-psychological-research.html"><span class="header-section-number">6</span> Understanding Effect Size and Power in Psychological Research</a></li>
+<li><a class="" href="how-to-conduct-a-power-analysis.html"><span class="header-section-number">7</span> How to Conduct a Power Analysis</a></li>
+<li><a class="active" href="introduction-to-anova.html"><span class="header-section-number">8</span> Introduction to ANOVA</a></li>
+<li><a class="" href="jasp-workshop-one-way-anova.html"><span class="header-section-number">9</span> JASP workshop – one way ANOVA</a></li>
+<li><a class="" href="factorial-anova-important-for-your-assignment.html"><span class="header-section-number">10</span> Factorial ANOVA (Important for your assignment)</a></li>
+<li><a class="" href="jasp-workship---factorial-anova.html"><span class="header-section-number">11</span> JASP workship - Factorial ANOVA</a></li>
+<li><a class="" href="advanced-anova-techniques.html"><span class="header-section-number">12</span> Advanced ANOVA techniques</a></li>
+<li><a class="" href="introduction-to-regression-analysis.html"><span class="header-section-number">13</span> Introduction to Regression analysis</a></li>
+<li><a class="" href="simple-linear-regression.html"><span class="header-section-number">14</span> Simple linear regression</a></li>
+<li><a class="" href="jasp-workshop---simple-linear-regression.html"><span class="header-section-number">15</span> JASP Workshop - Simple linear Regression</a></li>
+<li><a class="" href="multiple-regression.html"><span class="header-section-number">16</span> Multiple regression</a></li>
+<li><a class="" href="statistical-assumption-checks-for-multiple-regression.html"><span class="header-section-number">17</span> Statistical assumption checks for multiple regression</a></li>
+<li><a class="" href="jasp-workshop---multiple-regression.html"><span class="header-section-number">18</span> JASP Workshop - Multiple regression</a></li>
+<li><a class="" href="logistic-regression.html"><span class="header-section-number">19</span> Logistic regression</a></li>
+<li><a class="" href="further-reading.html"><span class="header-section-number">20</span> further reading</a></li>
+</ul>
+
+        <div class="book-extra">
+          
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="introduction-to-anova" class="section level1" number="8">
+<h1>
+<span class="header-section-number">8</span> Introduction to ANOVA<a class="anchor" aria-label="anchor" href="#introduction-to-anova"><i class="fas fa-link"></i></a>
+</h1>
+<p>ANOVA, which stands for <strong>An</strong>alysis <strong>o</strong>f <strong>Va</strong>riance, is a statistical test used when comparing a continuous dependent variable across three or more groups. While it might seem similar to the t-test you've already learnt about, there is a fundamental issue that needs to be overcome when we move from two groups to more than two groups.</p>
+<p>In this chapter we will learn about the basic one-way ANOVA, a design with a single independent variable with 3 or more levels, before moving on to factorial ANOVA, a design with more than one independent variable, in the next chapter.</p>
+<div id="example-of-a-one-way-anova-design" class="section level2" number="8.1">
+<h2>
+<span class="header-section-number">8.1</span> Example of a one-way ANOVA design<a class="anchor" aria-label="anchor" href="#example-of-a-one-way-anova-design"><i class="fas fa-link"></i></a>
+</h2>
+<p>Imagine a study designed to investigate how to best frame an information campaign to prepare residence of a local area for an extreme weather event. In this experiment, participants are randomly assigned to one of four levels of an independent variable (i.e. a between subjects design).</p>
+<p><strong>Messaging (independent variable)</strong>:
+- <strong>Fear-Based Messaging</strong>: Messages that emphasise the severe consequences of not being prepared.
+- <strong>Efficacy-Based Messaging</strong>: Messages that focus on practical steps individuals can take and highlight their ability to effectively prepare.
+- <strong>Community-Focused Messaging</strong>: Messages that highlight the importance of collective preparedness and how working together can improve community resilience.
+- <strong>Control condition</strong>: No message</p>
+<p><strong>Preparedness (Dependent variable)</strong>:
+- Measured using a scale developed for the study. Scored from 0 to 100, with higher scores indicating greater intentions to engage in preparedness behaviours, such as creating an emergency kit or making a family plan.</p>
+<p><strong>Hypothesis</strong>:</p>
+<p><strong>H1</strong>: It is hypothesised that the type of preparedness messaging will significantly affect participants' intentions to prepare for disasters.
+<strong>H2</strong>: Efficacy-based messaging is expected to generate the highest preparedness intentions, followed by community-focused messaging, fear-based messaging generating the lowest intentions.
+<strong>H3</strong>: All forms of messaging will lead to higher preparedness than the control, no messaging, condition.</p>
+<p><strong>Procedure</strong>:
+After a power analysis using G*Power (see below), N= 180 participants are randomly assigned to receive one of the three types of preparedness messages, or no message. After reading the message, participants complete the questionnaire assessing their intentions to engage in preparedness behaviours. A one-way ANOVA is used to compare the mean preparedness intentions across the three messaging conditions.</p>
+<div class="inline-figure"><img src="Images/ANOVA%201.png" width="75%" style="display: block; margin: auto;"></div>
+<p>Here is the (simulated) data from this study design:</p>
+<div class="inline-figure"><img src="Images/ANOVA%202.png" width="75%" style="display: block; margin: auto;"></div>
+<p>The graph shows preparedness intentions across four messaging conditions: Community-Focused, Control, Efficacy-Based, and Fear-Based (N=45 per condition). Violin plots display the distribution of scores, with wider sections indicating more frequent scores. Boxplots within the violins show the median and interquartile range, highlighting the central 50% of scores. Jittered grey dots represent individual scores, and red dots mark outliers. Efficacy-Based messaging shows the highest median and range, followed by Community-Focused, while Fear-Based, and Control conditions show lower scores.</p>
+<div style="text-align: center;">
+<strong>But are these differences meaningful or just random noise in the data?</strong>
+</div>
+<div style="text-align: center;">
+<strong>That’s what we have to use our ANOVA test to find out</strong>
+</div>
+</div>
+<div id="the-omnibus-test" class="section level2" number="8.2">
+<h2>
+<span class="header-section-number">8.2</span> The Omnibus Test<a class="anchor" aria-label="anchor" href="#the-omnibus-test"><i class="fas fa-link"></i></a>
+</h2>
+<p>The ANOVA omnibus test is our first step in determining whether there are significant differences between our four groups.</p>
+<p>The key idea behind the omnibus test is to assess whether at least one group mean differs significantly from the others. In our study, the ANOVA omnibus test evaluates whether the mean preparedness scores differ across the four messaging conditions. However, it does not specify which groups are different; it only tells us if a <strong>significant difference exists somewhere among the groups</strong>. If the omnibus test is significant, post hoc tests are then used to pinpoint where those differences lie.</p>
+<p>ANOVA calculates an F-statistic by comparing two sources of variability in the data: 1. the variance between the group means (between-group variance) and 2. the variance within each group (within-group variance). As with the t-test, it’s possible to work out the F-statistic by hand, but for this course we’ll be using a stats program (JASP/SPSS/R) to perform all of this for us (see blue box below for why I don’t make you do this by hand).</p>
+<div id="basic-maths-behind-the-anova-omnibus-test" class="section level3" number="8.2.1">
+<h3>
+<span class="header-section-number">8.2.1</span> Basic maths behind the ANOVA omnibus test<a class="anchor" aria-label="anchor" href="#basic-maths-behind-the-anova-omnibus-test"><i class="fas fa-link"></i></a>
+</h3>
+<p><strong>Between-Group Variance -</strong> This measures the variability of the group means around the overall mean of all groups combined. It captures how much the different messaging conditions (e.g., Efficacy-Based vs. Fear-Based) affect preparedness intentions. A larger between-group variance indicates that the group means are spread far apart, suggesting a potential effect of the messaging type.</p>
+<p><strong>Within-Group Variance -</strong> This measures the variability within each group around its own group mean. It reflects individual differences in preparedness intentions that are not explained by the messaging condition. High within-group variance suggests that participants' scores vary widely within each messaging condition.</p>
+<p><strong>Calculation of the F-statistic -</strong> The F-ratio is calculated by dividing the between-group variance by the degrees of freedom between and dividing the within-group variance by the degrees of freedom within and then dividing the products of each of those. Mathematically, this is represented as:</p>
+<div style="text-align: center;">
+<strong>F-statistics = (Between-group variance/ df between) / (within group variance/ df within)</strong>
+</div>
+<div class="webex-solution">
+<button>
+Click for more maths
+</button>
+<p>Let’s generate the F-statistics for the above experiment.</p>
+<p>The following formular is used to calculate the between-group variance. In simple terms it tells us to take each group’s mean and compared them to the overall mean (grand mean) of all participants. The difference between each group mean and the overall mean is taken and then squared, weighted by the number of participants in that group (45 in all conditions), and then summed across all groups.</p>
+<p><span class="math display">\[
+SSB = \sum_{i=1}^{k} n_i \left(\bar{X}_i - \bar{X}_{\text{overall}}\right)^2
+\]</span></p>
+<p>Where:</p>
+<ul>
+<li><p><span class="math inline">\(n_i\)</span> is the number of participants in group <span class="math inline">\(i\)</span>.</p></li>
+<li><p><span class="math inline">\(\bar{X}_i\)</span> is the mean of group <span class="math inline">\(i\)</span>.</p></li>
+<li><p><span class="math inline">\(\bar{X}_{\text{overall}}\)</span> is the overall mean of all participants.</p></li>
+</ul>
+<p>For our data we get the following:</p>
+<div class="inline-figure">
+<img src="Images/ANOVA%203.png" width="75%" style="display: block; margin: auto;">
+Next, we need to calculate the within-group variance using the formular below.</div>
+<p>Within each group, each participant’s score is compared to the group’s mean. The difference is squared, and these squared differences are summed for each group and then combined across all groups.</p>
+<p><span class="math display">\[
+SSW = \sum_{i=1}^{k} \sum_{j=1}^{n_i} \left( X_{ij} - \bar{X}_i \right)^2
+\]</span></p>
+<p>Where:</p>
+<ul>
+<li><p><span class="math inline">\(X_{ij}\)</span> is the score of participant <span class="math inline">\(j\)</span> in group <span class="math inline">\(i\)</span>.</p></li>
+<li><p><span class="math inline">\(\bar{X}_i\)</span> is the mean of group <span class="math inline">\(i\)</span>.</p></li>
+<li><p><span class="math inline">\(n_i\)</span> is the number of participants in group <span class="math inline">\(i\)</span>.</p></li>
+</ul>
+<p>So, in other words, for this part I need to find the difference for each participant to the groups mean, square and sum that difference for each group, and then sum the group totals. Here is a snippet of how this works for the first two participants of each group, but in not going to do this by hand for all 180 participants (I do have life some of the time!), so I did the totals with code in R instead.</p>
+<div class="inline-figure">
+<img src="Images/ANOVA%204.png" width="75%" style="display: block; margin: auto;">
+The final step is to take our Between-group variance and divide that by our degrees of freedom between (number of groups – 1 = 3). And divide our within-groups variance by our degrees of freedom within (number of participants – number of groups = 176)</div>
+<p>Between groups value = 4468/ 3 = 1489.3</p>
+<p>Within groups value = 16017 /176 = 91.01</p>
+<p>And then divide the between groups value by the within groups value</p>
+<p>T-statistics = 1489.3 / 91.01 = 16.36</p>
+<div style="text-align: center;">
+<strong>Or you can just click a couple of buttons in JASP, your call!</strong>
+</div>
+</div>
+</div>
+</div>
+<div id="interpreting-the-results-of-an-anova-omnibus-test" class="section level2" number="8.3">
+<h2>
+<span class="header-section-number">8.3</span> Interpreting the results of an ANOVA omnibus test<a class="anchor" aria-label="anchor" href="#interpreting-the-results-of-an-anova-omnibus-test"><i class="fas fa-link"></i></a>
+</h2>
+<p>In our study, if the F-ratio is significantly greater than 1 (which it is, F = 16.365), it suggests that the differences between the messaging conditions are larger than would be expected by chance. A significant F-value (p&lt;0.05, which ours again is, p&lt;0.001) indicates that at least one messaging condition has a different effect on preparedness intentions compared to the others.</p>
+<div class="inline-figure"><img src="Images/ANOVA%205.png" width="75%" style="display: block; margin: auto;"></div>
+<p><em>note: Number in this table differ slightly to my by hand calculation due to my rounding of numbers each step.</em></p>
+</div>
+<div id="post-hoc-testing" class="section level2" number="8.4">
+<h2>
+<span class="header-section-number">8.4</span> Post-Hoc Testing<a class="anchor" aria-label="anchor" href="#post-hoc-testing"><i class="fas fa-link"></i></a>
+</h2>
+<p>While a significant omnibus result tells us that there is a significant difference somewhere among the group means, it does not specify where the differences lie. To identify which groups differ from each other, we need to perform additional “post-hoc” tests, to make comparisons between each individual group. In a way this turns it back into a number of 2 group comparisons, so its tempting to just resort back to running a number of t-tests again. That’s almost what we do, but just running t-test after t-test would cause an issue with our Type I error rate.</p>
+</div>
+<div id="why-we-cant-just-run-multiple-t-tests" class="section level2" number="8.5">
+<h2>
+<span class="header-section-number">8.5</span> Why we can’t just run multiple t-tests<a class="anchor" aria-label="anchor" href="#why-we-cant-just-run-multiple-t-tests"><i class="fas fa-link"></i></a>
+</h2>
+<p>As you likely remember from the previous chapter, when conducting statistical tests, such as t-tests or correlations, each test is associated with a specific error rate, typically set at an alpha level of 0.05. This means that for any single test, there is a 5% chance of making a Type I error (falsely rejecting the null hypothesis). This error rate is known as the “test-wise error rate.” However, when performing multiple tests on the same dataset, the probability of making at least one Type I error increases with <strong>each additional test</strong>. For instance, if you perform 20 comparisons, the likelihood is high* that at least one of the results will be statistically significant by chance alone, even if the null hypothesis is true. This accumulation of error across multiple tests is known as the <strong>multiple comparisons problem</strong>.</p>
+<p>An ANOVA is therefore split into two separate tests. The omnibus test, a test that determines significant difference across all levels of the independent variable, and the post-hoc test, a test that looks at the difference between each individual level of the independent variable controlling for the multiple comparisons.</p>
+<div class="webex-solution">
+<button>
+*Probability of type one error if a study is run 20 times
+</button>
+<p>So, I got distracted and took a bit of a tangent when I wrote this section. Probability is hard and counterintuitive, I originally wanted to give the actual probability of a type 1 error if a study is run 20 times. But I didn’t want you to get bogged down in the value here (as that’s not the main take away) so I’ve relegated the maths to another nerdy blue box.</p>
+<p><strong>Question</strong>: If there is a <strong>5% probability of a false positive</strong> in a study and we run the study <strong>20 times</strong> what is the probability that one or more study results will be a false positive?</p>
+<p>Probability of false positive: p=0.05</p>
+<p>Probability of not a false positive: 1 – p = 0.95</p>
+<p>N = 20</p>
+<p>Probability of no false positives: P(x=0)</p>
+<p>P(x=0) = (20 | 0)x (0.05)^0 x (0.95)^20</p>
+<p>P(x=0) = 0.95^20 = 0.3585</p>
+<p>Probability of more than one false positive: P(x=1)</p>
+<p>P(x=1) = 1 - P(x=0)</p>
+<p>= 1- 0.358 = 0.6415</p>
+<p>This gives us a 64.15% probability that at least one out of 20 studies would produce a false positive result. To say it another way, if we ran our study 20 times and found a significant result, at some point across those 20 studies, it would be more likely than not to be a false positive. i.e. not good science!</p>
+</div>
+</div>
+<div id="interpretation-of-post-hoc-comparisons" class="section level2" number="8.6">
+<h2>
+<span class="header-section-number">8.6</span> Interpretation of post-hoc comparisons<a class="anchor" aria-label="anchor" href="#interpretation-of-post-hoc-comparisons"><i class="fas fa-link"></i></a>
+</h2>
+<p>Once again, your statistics program does the heavy statistical lifting of accounting for multiple tests and should give you a table something like this.</p>
+<div class="inline-figure"><img src="Images/ANOVA%206.png" width="75%" style="display: block; margin: auto;"></div>
+<p>In this table you can see that each group is paired with each other group, if the p-value is less than 0.05 we can say that there is a difference between those two groups. This can take a bit of effort to get your head around in table form, so here is the graph again, this time with the significant differences added.</p>
+<div class="inline-figure"><img src="Images/ANOVA%207.png" width="75%" style="display: block; margin: auto;"></div>
+<div id="test-yourself" class="section level3" number="8.6.1">
+<h3>
+<span class="header-section-number">8.6.1</span> Test yourself<a class="anchor" aria-label="anchor" href="#test-yourself"><i class="fas fa-link"></i></a>
+</h3>
+<p>Look back at the hypotheses from earlier. Are all of them confirmed? See if you can explain the results in real world terms, what have we actually found? Which technique(s) do you suggest we use and why?</p>
+<p>In the next chapter we'll work through the analysis for different types of one-way ANOVA</p>
+
+</div>
+</div>
+</div>
+<script>
+
+/* update total correct if #webex-total_correct exists */
+update_total_correct = function() {
+  console.log("webex: update total_correct");
+
+  if (t = document.getElementById("webex-total_correct")) {
+    var correct = document.getElementsByClassName("webex-correct").length;
+    var solvemes = document.getElementsByClassName("webex-solveme").length;
+    var radiogroups = document.getElementsByClassName("webex-radiogroup").length;
+    var selects = document.getElementsByClassName("webex-select").length;
+    
+    t.innerHTML = correct + " of " + (solvemes + radiogroups + selects) + " correct";
+  }
+}
+
+/* webex-solution button toggling function */
+b_func = function() {
+  console.log("webex: toggle hide");
+  
+  var cl = this.parentElement.classList;
+  if (cl.contains('open')) {
+    cl.remove("open");
+  } else {
+    cl.add("open");
+  }
+}
+
+/* function for checking solveme answers */
+solveme_func = function(e) {
+  console.log("webex: check solveme");
+
+  var real_answers = JSON.parse(this.dataset.answer);
+  var my_answer = this.value;
+  var cl = this.classList;
+  if (cl.contains("ignorecase")) {
+    my_answer = my_answer.toLowerCase();
+  }
+  if (cl.contains("nospaces")) {
+    my_answer = my_answer.replace(/ /g, "")
+  }
+
+  if (my_answer == "") {
+    cl.remove("webex-correct");
+    cl.remove("webex-incorrect");
+  } else if (real_answers.includes(my_answer)) {
+    cl.add("webex-correct");
+    cl.remove("webex-incorrect");
+  } else {
+    cl.add("webex-incorrect");
+    cl.remove("webex-correct");
+  }
+
+  // match numeric answers within a specified tolerance
+  if(this.dataset.tol > 0){
+    var tol = JSON.parse(this.dataset.tol);
+    var matches = real_answers.map(x => Math.abs(x - my_answer) < tol)
+    if (matches.reduce((a, b) => a + b, 0) > 0) {
+      cl.add("webex-correct");
+    } else {
+      cl.remove("webex-correct");
+    }
+  }
+
+  // added regex bit
+  if (cl.contains("regex")){
+    answer_regex = RegExp(real_answers.join("|"))
+    if (answer_regex.test(my_answer)) {
+      cl.add("webex-correct");
+    }
+  }
+
+  update_total_correct();
+}
+
+/* function for checking select answers */
+select_func = function(e) {
+  console.log("webex: check select");
+  
+  var cl = this.classList
+  
+  /* add style */
+  cl.remove("webex-incorrect");
+  cl.remove("webex-correct");
+  if (this.value == "answer") {
+    cl.add("webex-correct");
+  } else if (this.value != "blank") {
+    cl.add("webex-incorrect");
+  }
+  
+  update_total_correct();
+}
+
+/* function for checking radiogroups answers */
+radiogroups_func = function(e) {
+  console.log("webex: check radiogroups");
+
+  var checked_button = document.querySelector('input[name=' + this.id + ']:checked');
+  var cl = checked_button.parentElement.classList;
+  var labels = checked_button.parentElement.parentElement.children;
+  
+  /* get rid of styles */
+  for (i = 0; i < labels.length; i++) {
+    labels[i].classList.remove("webex-incorrect");
+    labels[i].classList.remove("webex-correct");
+  }
+  
+  /* add style */
+  if (checked_button.value == "answer") {
+    cl.add("webex-correct");
+  } else {
+    cl.add("webex-incorrect");
+  }
+  
+  update_total_correct();
+}
+
+window.onload = function() {
+  console.log("onload");
+  /* set up solution buttons */
+  var buttons = document.getElementsByTagName("button");
+
+  for (var i = 0; i < buttons.length; i++) {
+    if (buttons[i].parentElement.classList.contains('webex-solution')) {
+      buttons[i].onclick = b_func;
+    }
+  }
+
+  /* set up webex-solveme inputs */
+  var solveme = document.getElementsByClassName("webex-solveme");
+
+  for (var i = 0; i < solveme.length; i++) {
+    /* make sure input boxes don't auto-anything */
+    solveme[i].setAttribute("autocomplete","off");
+    solveme[i].setAttribute("autocorrect", "off");
+    solveme[i].setAttribute("autocapitalize", "off");
+    solveme[i].setAttribute("spellcheck", "false");
+    solveme[i].value = "";
+
+    /* adjust answer for ignorecase or nospaces */
+    var cl = solveme[i].classList;
+    var real_answer = solveme[i].dataset.answer;
+    if (cl.contains("ignorecase")) {
+      real_answer = real_answer.toLowerCase();
+    }
+    if (cl.contains("nospaces")) {
+      real_answer = real_answer.replace(/ /g, "");
+    }
+    solveme[i].dataset.answer = real_answer;
+
+    /* attach checking function */
+    solveme[i].onkeyup = solveme_func;
+    solveme[i].onchange = solveme_func;
+  }
+  
+  /* set up radiogroups */
+  var radiogroups = document.getElementsByClassName("webex-radiogroup");
+  for (var i = 0; i < radiogroups.length; i++) {
+    radiogroups[i].onchange = radiogroups_func;
+  }
+  
+  /* set up selects */
+  var selects = document.getElementsByClassName("webex-select");
+  for (var i = 0; i < selects.length; i++) {
+    selects[i].onchange = select_func;
+  }
+
+  update_total_correct();
+}
+
+</script><div class="chapter-nav">
+<div class="prev"><a href="how-to-conduct-a-power-analysis.html"><span class="header-section-number">7</span> How to Conduct a Power Analysis</a></div>
+<div class="next"><a href="jasp-workshop-one-way-anova.html"><span class="header-section-number">9</span> JASP workshop – one way ANOVA</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#introduction-to-anova"><span class="header-section-number">8</span> Introduction to ANOVA</a></li>
+<li><a class="nav-link" href="#example-of-a-one-way-anova-design"><span class="header-section-number">8.1</span> Example of a one-way ANOVA design</a></li>
+<li>
+<a class="nav-link" href="#the-omnibus-test"><span class="header-section-number">8.2</span> The Omnibus Test</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#basic-maths-behind-the-anova-omnibus-test"><span class="header-section-number">8.2.1</span> Basic maths behind the ANOVA omnibus test</a></li></ul>
+</li>
+<li><a class="nav-link" href="#interpreting-the-results-of-an-anova-omnibus-test"><span class="header-section-number">8.3</span> Interpreting the results of an ANOVA omnibus test</a></li>
+<li><a class="nav-link" href="#post-hoc-testing"><span class="header-section-number">8.4</span> Post-Hoc Testing</a></li>
+<li><a class="nav-link" href="#why-we-cant-just-run-multiple-t-tests"><span class="header-section-number">8.5</span> Why we can’t just run multiple t-tests</a></li>
+<li>
+<a class="nav-link" href="#interpretation-of-post-hoc-comparisons"><span class="header-section-number">8.6</span> Interpretation of post-hoc comparisons</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#test-yourself"><span class="header-section-number">8.6.1</span> Test yourself</a></li></ul>
+</li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Regression handbook</strong>" was written by Dr Richard Clarke. It was last built on 2024-09-22.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>
