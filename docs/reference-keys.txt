@@ -70,6 +70,12 @@ interaction-effect
 post-hoc-tests-in-factorial-anova
 assumption-checks
 jasp-workship---factorial-anova
+where-to-click-guide---conducting-factorial-anovas-in-jasp
+conducting-a-fully-independent-samples-factorial-anova
+conducting-a-factorial-anova-with-a-repeated-measures-variable
+apa-style-guide-for-reporting-factorial-anovas
+example-apa-report-for-an-independent-samples-factorial-anova
+example-apa-report-for-an-repeated-measures-factorial-anova
 advanced-anova-techniques
 introduction-to-regression-analysis
 data-driven-decision-making

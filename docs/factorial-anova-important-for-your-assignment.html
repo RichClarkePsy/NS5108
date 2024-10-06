@@ -4,15 +4,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 10 Factorial ANOVA (Important for your assignment) | Regression handbook</title>
+<title>Chapter 10 Factorial ANOVA (Important for your assignment) | NS5108 Research Methods Handbook</title>
 <meta name="author" content="Dr Richard Clarke">
 <meta name="description" content="In the previous chapter, we explored one-way ANOVA, a statistical method used to compare means across three or more groups when you have a single independent variable. But sometimes we want to fit...">
 <meta name="generator" content="bookdown 0.40 with bs4_book()">
-<meta property="og:title" content="Chapter 10 Factorial ANOVA (Important for your assignment) | Regression handbook">
+<meta property="og:title" content="Chapter 10 Factorial ANOVA (Important for your assignment) | NS5108 Research Methods Handbook">
 <meta property="og:type" content="book">
 <meta property="og:description" content="In the previous chapter, we explored one-way ANOVA, a statistical method used to compare means across three or more groups when you have a single independent variable. But sometimes we want to fit...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 10 Factorial ANOVA (Important for your assignment) | Regression handbook">
+<meta name="twitter:title" content="Chapter 10 Factorial ANOVA (Important for your assignment) | NS5108 Research Methods Handbook">
 <meta name="twitter:description" content="In the previous chapter, we explored one-way ANOVA, a statistical method used to compare means across three or more groups when you have a single independent variable. But sometimes we want to fit...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
@@ -31,7 +31,7 @@
 
     <div class="d-flex align-items-start justify-content-between">
       <h1>
-        <a href="index.html" title="">Regression handbook</a>
+        <a href="index.html" title="">NS5108 Research Methods Handbook</a>
       </h1>
       <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
     </div>
@@ -74,75 +74,163 @@
 <h1>
 <span class="header-section-number">10</span> Factorial ANOVA (Important for your assignment)<a class="anchor" aria-label="anchor" href="#factorial-anova-important-for-your-assignment"><i class="fas fa-link"></i></a>
 </h1>
-<p>In the previous chapter, we explored one-way ANOVA, a statistical method used to compare means across three or more groups when you have a single independent variable. But sometimes we want to fit more than one independent variables into our research. This is where factorial ANOVA comes into play.</p>
-<p>Factorial ANOVA allows us to examine the effects of multiple independent variables on a dependent variable, as well as the interactions between these factors. In this chapter, we'll work through the basics of factorial ANOVA using a 2x2 (pronounced two-by-two) design as an example. We'll explore how to interpret main effects and interaction effects, and understand how these contribute to our overall understanding of the data.</p>
+<p>In the previous chapter, we explored one-way ANOVA, a statistical method
+used to compare means across three or more groups when you have a single
+independent variable. But sometimes we want to fit more than one
+independent variables into our research. This is where factorial ANOVA
+comes into play.</p>
+<p>Factorial ANOVA allows us to examine the effects of multiple independent
+variables on a dependent variable, as well as the interactions between
+these factors. In this chapter, we'll work through the basics of
+factorial ANOVA using a 2x2 (pronounced two-by-two) design as an
+example. We'll explore how to interpret main effects and interaction
+effects, and understand how these contribute to our overall
+understanding of the data.</p>
 <div id="what-is-a-factorial-anova" class="section level2" number="10.1">
 <h2>
 <span class="header-section-number">10.1</span> What is a Factorial ANOVA?<a class="anchor" aria-label="anchor" href="#what-is-a-factorial-anova"><i class="fas fa-link"></i></a>
 </h2>
-<p>A factorial ANOVA is an extension of the one-way ANOVA that includes two or more independent variables. Each independent variable, or factor, can have multiple levels. When combined, these factors create various conditions or groups. The "factorial" aspect refers to the fact that every level of one factor is combined with every level of the other factors.</p>
-<p>For example, in a 2x2 factorial design, there are two independent variables, each with two levels, resulting in <strong>four unique experimental conditions</strong>.</p>
+<p>A factorial ANOVA is an extension of the one-way ANOVA that includes two
+or more independent variables. Each independent variable, or factor, can
+have multiple levels. When combined, these factors create various
+conditions or groups. The "factorial" aspect refers to the fact that
+every level of one factor is combined with every level of the other
+factors.</p>
+<p>For example, in a 2x2 factorial design, there are two independent
+variables, each with two levels, resulting in <strong>four unique experimental
+conditions</strong>.</p>
 </div>
 <div id="example-of-a-factorial-anova-design" class="section level2" number="10.2">
 <h2>
 <span class="header-section-number">10.2</span> Example of a factorial ANOVA design<a class="anchor" aria-label="anchor" href="#example-of-a-factorial-anova-design"><i class="fas fa-link"></i></a>
 </h2>
-<p>Let's consider a study designed to investigate how the presentation of climate change information across different psychological distances affects changes in risk perception. This experiment employs a 2x2 between-subjects factorial design, manipulating temporal distance (now vs. future) and physical distance (near vs. far). The dependent variable is the change in risk perception, measured as the difference between pre- and post-presentation scores.</p>
-<p><strong>Research Question</strong>: How do temporal and physical distances in the framing of climate change information influence changes in risk perception?</p>
+<p>Let's consider a study designed to investigate how the presentation of
+climate change information across different psychological distances
+affects changes in risk perception. This experiment employs a 2x2
+between-subjects factorial design, manipulating temporal distance (now
+vs. future) and physical distance (near vs. far). The dependent variable
+is the change in risk perception, measured as the difference between
+pre- and post-presentation scores.</p>
+<p><strong>Research Question</strong>: How do temporal and physical distances in the
+framing of climate change information influence changes in risk
+perception?</p>
 <p><strong>Design</strong>: A <strong>2x2 between-subjects factorial design</strong>.</p>
-<p><strong>Independent Variables</strong>:
-1. <strong>Temporal Distance</strong> (Between-Subjects)
-- <strong>Now</strong>: Information presented as an immediate threat.
-- <strong>Future</strong>: Information presented as a distant future threat.
-2. <strong>Physical Distance</strong> (Between-Subjects)
-- <strong>Near</strong>: Information framed as affecting a geographically close location (e.g., within the participant’s country).
-- <strong>Far</strong>: Information framed as affecting a geographically distant location (e.g., another continent).</p>
-<p><strong>Dependent Variabl</strong>e:
-- <strong>Change in Risk Perception</strong>: Calculated as the difference between post-presentation and pre-presentation risk perception scores. Higher values indicate a greater increase in perceived risk.</p>
+<p><strong>Independent Variables</strong>:</p>
+<ol style="list-style-type: decimal">
+<li>
+<p><strong>Temporal Distance</strong> (Between-Subjects)</p>
+<ul>
+<li><p><strong>Now</strong>: Information presented as an immediate threat.</p></li>
+<li><p><strong>Future</strong>: Information presented as a distant future threat.</p></li>
+</ul>
+</li>
+<li>
+<p><strong>Physical Distance</strong> (Between-Subjects)</p>
+<ul>
+<li><p><strong>Near</strong>: Information framed as affecting a geographically close
+location (e.g., within the participant’s country).</p></li>
+<li><p><strong>Far</strong>: Information framed as affecting a geographically
+distant location (e.g., another continent).</p></li>
+</ul>
+</li>
+</ol>
+<p><strong>Dependent Variable</strong>:</p>
+<ul>
+<li>
+<strong>Change in Risk Perception</strong>: Calculated as the difference between
+post-presentation and pre-presentation risk perception scores.
+Higher values indicate a greater increase in perceived risk.</li>
+</ul>
 <p><strong>Hypotheses</strong></p>
-<p><strong>H1</strong>: Temporal distance will have a main effect on the change in risk perception, with information presented as a near-term threat (now) resulting in a greater increase in risk perception compared to information presented as a future threat.
-<strong>H2</strong>: Physical distance will have a main effect on the change in risk perception, with information presented as affecting a near location resulting in a greater increase in risk perception compared to information presented as affecting a far location.
-<strong>H3</strong>: There will be a significant interaction between temporal and physical distance on the change in risk perception, with the combined effect of near-term and near-location presentations leading to the greatest increase in risk perception.</p>
+<p><strong>H1</strong>: Temporal distance will have a main effect on the change in risk
+perception, with information presented as a near-term threat (now)
+resulting in a greater increase in risk perception compared to
+information presented as a future threat.</p>
+<p><strong>H2</strong>: Physical distance will have a main effect on the change in risk
+perception, with information presented as affecting a near location
+resulting in a greater increase in risk perception compared to
+information presented as affecting a far location.</p>
+<p><strong>H3</strong>: There will be a significant interaction between temporal and
+physical distance on the change in risk perception, with the combined
+effect of near-term and near-location presentations leading to the
+greatest increase in risk perception.</p>
 <p><strong>Procedure</strong></p>
 <ol style="list-style-type: decimal">
 <li>
-<strong>Participant Recruitment</strong>: Recruit <strong>N = 128</strong> participants (as specified by an a-priori power analysis) who are randomly assigned to one of the four conditions, ensuring equal group sizes (n = 32 per condition).</li>
+<strong>Participant Recruitment</strong>: Recruit <strong>N = 128</strong> participants (as
+specified by an a-priori power analysis) who are randomly assigned
+to one of the four conditions, ensuring equal group sizes (n = 32
+per condition).</li>
 <li>
-<strong>Pre-Presentation Measure</strong>: All participants complete a baseline measure of risk perception using a standardised risk perception scale.</li>
+<strong>Pre-Presentation Measure</strong>: All participants complete a baseline
+measure of risk perception using a standardised risk perception
+scale.</li>
 <li>
 <strong>Presentation of Information</strong>:</li>
 </ol>
 <ul>
 <li>
-<strong>Now, Near Condition</strong>: Immediate threat affecting a nearby location.</li>
+<strong>Now, Near Condition</strong>: Immediate threat affecting a nearby
+location.</li>
 <li>
-<strong>Now, Far Condition</strong>: Immediate threat affecting a distant location.</li>
+<strong>Now, Far Condition</strong>: Immediate threat affecting a distant
+location.</li>
 <li>
-<strong>Future, Near Condition</strong>: Future threat affecting a nearby location.</li>
+<strong>Future, Near Condition</strong>: Future threat affecting a nearby
+location.</li>
 <li>
-<strong>Future, Far Condition</strong>: Future threat affecting a distant location.</li>
+<strong>Future, Far Condition</strong>: Future threat affecting a distant
+location.</li>
 </ul>
 <ol start="4" style="list-style-type: decimal">
 <li>
-<strong>Post-Presentation Measure</strong>: After the presentation, participants complete the risk perception scale again.</li>
+<strong>Post-Presentation Measure</strong>: After the presentation, participants
+complete the risk perception scale again.</li>
 <li>
-<strong>Calculation of Change Scores</strong>: The change in risk perception is calculated by subtracting pre-presentation scores from post-presentation scores.</li>
+<strong>Calculation of Change Scores</strong>: The change in risk perception is
+calculated by subtracting pre-presentation scores from
+post-presentation scores.</li>
 </ol>
 </div>
 <div id="visualizing-factorial-anova-data" class="section level2" number="10.3">
 <h2>
 <span class="header-section-number">10.3</span> Visualizing Factorial ANOVA Data<a class="anchor" aria-label="anchor" href="#visualizing-factorial-anova-data"><i class="fas fa-link"></i></a>
 </h2>
-<p>With a four-condition setup, it's tempting to visualise the data as we did for the one-way ANOVA—treating each combination of factors as its own separate condition. This approach allows us to compare across the four conditions to see where the differences
-lie.</p>
-<div class="inline-figure">
-<img src="Images/factorial%20ANOVA%201.png" width="75%" style="display: block; margin: auto;">
-And from this, we can already start to see differences between the conditions. However, this method somewhat misses the core aspect of our study design. We have two separate independent variables, each with two levels, and this factorial structure isn't well presented in the previous image. By visualising the data this way, we treat each combination as an isolated condition, neglecting the interactions between the variables.</div>
-<p>To better capture the relationships in our data, it makes more sense to use a line graph with 95% confidence intervals. This type of visualisation reflects both the main effects and the interaction effect between the two variables. It allows us to see how the effect of one independent variable may depend on the level of the other independent variable. Here is the same data presented as a line graph:</p>
+<p>With a four-condition setup, it's tempting to visualise the data as we
+did for the one-way ANOVA—treating each combination of factors as its
+own separate condition. This approach allows us to compare across the
+four conditions to see where the differences lie.</p>
+<div class="inline-figure"><img src="Images/factorial%20ANOVA%201.png" width="75%" style="display: block; margin: auto;"></div>
+<p>And from this, we can already start to see differences between the
+conditions. However, this method somewhat misses the core aspect of our
+study design. We have two separate independent variables, each with two
+levels, and this factorial structure isn't well presented in the
+previous image. By visualising the data this way, we treat each
+combination as an isolated condition, neglecting the interactions
+between the variables.</p>
+<p>To better capture the relationships in our data, it makes more sense to
+use a line graph with 95% confidence intervals. This type of
+visualisation reflects both the main effects and the interaction effect
+between the two variables. It allows us to see how the effect of one
+independent variable may depend on the level of the other independent
+variable. Here is the same data presented as a line graph:</p>
 <div class="inline-figure"><img src="Images/factorial%20ANOVA%202.png" width="75%" style="display: block; margin: auto;"></div>
-<p>From the line graph we can now see that risk perception increases when climate change is presented as an immediate threat ("Now") compared to a future threat ("Future"), this is the <strong>main effect of Temporal Distance</strong>. Additionally, risk perception is higher when the threat is framed as affecting a nearby location ("Near") rather than a distant one ("Far"), this is the <strong>main effect of Physical Distance</strong>.</p>
-<p>Importantly, <strong>the lines are not parallel</strong>, suggesting a significant <strong>interaction effect between Temporal and Physical Distance</strong>. Specifically, the combination of presenting climate change as both immediate and nearby results in the greatest increase in perceived risk, while the effect is less pronounced when either the temporal or physical aspect is framed as distant.</p>
-<p>But as always, we need to check to see if these differences are occurring by chance or if it is likely to be the experimental manipulation that is causing these differences. For that we need to return to statistical analysis.</p>
+<p>From the line graph we can now see that risk perception increases when
+climate change is presented as an immediate threat ("Now") compared to a
+future threat ("Future"), this is the <strong>main effect of Temporal
+Distance</strong>. Additionally, risk perception is higher when the threat is
+framed as affecting a nearby location ("Near") rather than a distant one
+("Far"), this is the <strong>main effect of Physical Distance</strong>.</p>
+<p>Importantly, <strong>the lines are not parallel</strong>, suggesting a significant
+<strong>interaction effect between Temporal and Physical Distance</strong>.
+Specifically, the combination of presenting climate change as both
+immediate and nearby results in the greatest increase in perceived risk,
+while the effect is less pronounced when either the temporal or physical
+aspect is framed as distant.</p>
+<p>But as always, we need to check to see if these differences are
+occurring by chance or if it is likely to be the experimental
+manipulation that is causing these differences. For that we need to
+return to statistical analysis.</p>
 </div>
 <div id="conducting-a-factorial-anova" class="section level2" number="10.4">
 <h2>
@@ -152,33 +240,109 @@ And from this, we can already start to see differences between the conditions. H
 <h3>
 <span class="header-section-number">10.4.1</span> The Omnibus Test<a class="anchor" aria-label="anchor" href="#the-omnibus-test-1"><i class="fas fa-link"></i></a>
 </h3>
-<p>In factorial ANOVA, the omnibus test is our first step in assessing whether there are any statistically significant effects within the data. This test evaluates the main effects of each independent variable as well as any interaction effects between them. The main effects tell us whether each independent variable (e.g., Temporal Distance and Physical Distance) independently influences the dependent variable. The interaction effect, on the other hand, tests whether the impact of one independent variable depends on the level of the other variable. Importantly, the omnibus test does not specify which groups are significantly different from one another; it simply tells us if there is a statistically significant effect present in the data, either in the main effects or in the interaction.</p>
-<div class="inline-figure"><img src="Images/factorial%20ANOVA%203.png" width="50%" style="display: block; margin: auto;"></div>
-<p>In this example we can see that we have a significant main effect for both temporal distance and physical distance, and a significant interaction effect. We can look at the descriptive statistics to determine the direction of each of the main effects.</p>
-<div class="inline-figure"><img src="Images/factorial%20ANOVA%204.png" width="50%" style="display: block; margin: auto;"></div>
-<p>The mean dependent variable value (which is the difference in risk perception before and after the presented information) for the “Now” information framing is significantly higher than that of the “Future” information framing and the mean dependent variable value for the “Near” information framing is significantly higher than the “Far” information framing.</p>
+<p>In factorial ANOVA, the omnibus test is our first step in assessing
+whether there are any statistically significant effects within the data.
+This test evaluates the main effects of each independent variable as
+well as any interaction effects between them. The main effects tell us
+whether each independent variable (e.g., Temporal Distance and Physical
+Distance) independently influences the dependent variable. The
+interaction effect, on the other hand, tests whether the impact of one
+independent variable depends on the level of the other variable.
+Importantly, the omnibus test does not specify which groups are
+significantly different from one another; it simply tells us if there is
+a statistically significant effect present in the data, either in the
+main effects or in the interaction.</p>
+<div class="inline-figure"><img src="Images/factorial%20ANOVA%203.png" width="75%" style="display: block; margin: auto;"></div>
+<p>In this example we can see that we have a significant main effect for
+both temporal distance and physical distance, and a significant
+interaction effect. We can look at the descriptive statistics to
+determine the direction of each of the main effects.</p>
+<div class="inline-figure"><img src="Images/factorial%20ANOVA%204.png" width="75%" style="display: block; margin: auto;"></div>
+<p>The mean dependent variable value (which is the difference in risk
+perception before and after the presented information) for the “Now”
+information framing is significantly higher than that of the “Future”
+information framing and the mean dependent variable value for the “Near”
+information framing is significantly higher than the “Far” information
+framing.</p>
 <p>The interaction effect, however, takes a little more thought.</p>
 </div>
 <div id="interaction-effect" class="section level3" number="10.4.2">
 <h3>
 <span class="header-section-number">10.4.2</span> Interaction Effect<a class="anchor" aria-label="anchor" href="#interaction-effect"><i class="fas fa-link"></i></a>
 </h3>
-<p>The interaction effect shows whether the effect of one independent variable on the dependent variable changes depending on the level of the other independent variable. In our study, for instance, the interaction effect reveals that the impact of Temporal Distance on risk perception varies depending on whether the information is framed as "Near" or "Far." This is crucial because it highlights the combined influence of both factors, providing a deeper understanding than looking at the main effects alone. If an interaction effect is significant, it suggests that the factors do not operate independently of each other but rather interact in a way that influences the outcome variable.</p>
+<p>The interaction effect shows whether the effect of one independent
+variable on the dependent variable changes depending on the level of the
+other independent variable. In our study, for instance, the interaction
+effect reveals that the impact of Temporal Distance on risk perception
+varies depending on whether the information is framed as "Near" or
+"Far." This is crucial because it highlights the combined influence of
+both factors, providing a deeper understanding than looking at the main
+effects alone. If an interaction effect is significant, it suggests that
+the factors do not operate independently of each other but rather
+interact in a way that influences the outcome variable.</p>
 <p>It’s possible to determine this from the breakdowns of means.</p>
 <div class="inline-figure"><img src="Images/factorial%20ANOVA%205.png" width="50%" style="display: block; margin: auto;"></div>
-<p>However, it is far easier to determine this from the line graph, see pervious section.</p>
+<p>However, it is far easier to determine this from the line graph, see
+pervious section.</p>
 </div>
 <div id="post-hoc-tests-in-factorial-anova" class="section level3" number="10.4.3">
 <h3>
 <span class="header-section-number">10.4.3</span> Post-Hoc Tests in Factorial ANOVA<a class="anchor" aria-label="anchor" href="#post-hoc-tests-in-factorial-anova"><i class="fas fa-link"></i></a>
 </h3>
-<p>Once the omnibus test reveals significant effects, particularly interaction effects, post-hoc tests are needed to pinpoint exactly where these differences lie. Post-hoc tests in factorial ANOVA are used to explore the specific group comparisons that are driving the significant findings observed in the interaction or main effects. These tests make pairwise comparisons between the levels of the independent variables while controlling for the increased risk of Type I errors that comes with multiple testing. For example, if the interaction effect is significant, post-hoc tests will help determine whether the difference between “Now” and “Future” is significant at both levels of Physical Distance (“Near” and “Far”), and vice versa. Essentially, post-hoc tests break down the overall effects detected by the omnibus test into specific, interpretable comparisons, allowing for a more detailed understanding of the nature of the effects in the data.</p>
+<p>Once the omnibus test reveals significant effects, particularly
+interaction effects, post-hoc tests are needed to pinpoint exactly where
+these differences lie. Post-hoc tests in factorial ANOVA are used to
+explore the specific group comparisons that are driving the significant
+findings observed in the interaction or main effects. These tests make
+pairwise comparisons between the levels of the independent variables
+while controlling for the increased risk of Type I errors that comes
+with multiple testing. For example, if the interaction effect is
+significant, post-hoc tests will help determine whether the difference
+between “Now” and “Future” is significant at both levels of Physical
+Distance (“Near” and “Far”), and vice versa. Essentially, post-hoc tests
+break down the overall effects detected by the omnibus test into
+specific, interpretable comparisons, allowing for a more detailed
+understanding of the nature of the effects in the data.</p>
 </div>
 <div id="assumption-checks" class="section level3" number="10.4.4">
 <h3>
 <span class="header-section-number">10.4.4</span> Assumption checks<a class="anchor" aria-label="anchor" href="#assumption-checks"><i class="fas fa-link"></i></a>
 </h3>
-<p><strong>[check back for more content later in the semester]</strong></p>
+<p>Before interpreting the results of a factorial ANOVA, it is crucial to
+ensure that the data meet the necessary assumptions for this type of
+analysis. These assumptions are similar to those discussed in the
+chapter on t-tests, specifically the assumptions of homogeneity of
+variance and normality. However, there are some key differences in how
+these assumptions apply when conducting a factorial ANOVA.</p>
+<p>Homogeneity of Variance, refers to the assumption that the variance
+within each group (or condition) is equal. In a factorial ANOVA, this
+assumption must be met not just across the levels of a single
+independent variable (as in a one-way ANOVA or independent samples
+t-test), but across all combinations of levels for both (or more)
+independent variables. For example, if we have a 2x2 design with
+Temporal Distance and Physical Distance as independent variables, we
+must ensure that the variance in each of the four unique conditions
+(e.g., "Now_Near", "Now_Far", "Future_Near", "Future_Far") is similar.
+Violations of this assumption can lead to biased F-statistics, making it
+difficult to trust the results of the ANOVA. The Levene’s Test is
+typically used to check this assumption, and in a factorial ANOVA, it
+assesses variance across all conditions simultaneously.</p>
+<p>Normality refers to the assumption that the dependent variable is
+normally distributed within each group. In factorial designs, we must
+ensure that normality holds within each combination of the independent
+variables. While minor deviations from normality are unlikely to impact
+results significantly, severe violations can lead to incorrect
+inferences. As with the t-test, this assumption can be evaluated using
+visual inspections of histograms or statistical tests like the
+Shapiro-Wilk test. In factorial ANOVA, however, the complexity increases
+with each additional independent variable, as <strong>normality must be
+checked within each subgroup</strong>.</p>
+<p>Factorial ANOVA also assumes that the observations are independent of
+each other, just as in simpler designs. This means that there should be
+no systematic relationship between the scores of participants in
+different conditions. While this assumption may not require statistical
+testing, it should be ensured during the design and data collection
+phases.</p>
 
 </div>
 </div>
@@ -387,7 +551,7 @@ window.onload = function() {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Regression handbook</strong>" was written by Dr Richard Clarke. It was last built on 2024-09-22.</p>
+    <p>"<strong>NS5108 Research Methods Handbook</strong>" was written by Dr Richard Clarke. It was last built on 2024-10-06.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

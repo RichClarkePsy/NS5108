@@ -4,16 +4,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 11 JASP workship - Factorial ANOVA | Regression handbook</title>
+<title>Chapter 11 JASP workship - Factorial ANOVA | NS5108 Research Methods Handbook</title>
 <meta name="author" content="Dr Richard Clarke">
-<meta name="description" content='[check back for more content later in the semester]   /* update total correct if #webex-total_correct exists */ update_total_correct = function() {  console.log("webex: update total_correct");  if...'>
+<meta name="description" content="In the video below, I walk through examples of analysing factorial ANOVAs. If you want to follow along, please find the corresponding question sheets and datasets available in the NS5108 module on...">
 <meta name="generator" content="bookdown 0.40 with bs4_book()">
-<meta property="og:title" content="Chapter 11 JASP workship - Factorial ANOVA | Regression handbook">
+<meta property="og:title" content="Chapter 11 JASP workship - Factorial ANOVA | NS5108 Research Methods Handbook">
 <meta property="og:type" content="book">
-<meta property="og:description" content='[check back for more content later in the semester]   /* update total correct if #webex-total_correct exists */ update_total_correct = function() {  console.log("webex: update total_correct");  if...'>
+<meta property="og:description" content="In the video below, I walk through examples of analysing factorial ANOVAs. If you want to follow along, please find the corresponding question sheets and datasets available in the NS5108 module on...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 11 JASP workship - Factorial ANOVA | Regression handbook">
-<meta name="twitter:description" content='[check back for more content later in the semester]   /* update total correct if #webex-total_correct exists */ update_total_correct = function() {  console.log("webex: update total_correct");  if...'>
+<meta name="twitter:title" content="Chapter 11 JASP workship - Factorial ANOVA | NS5108 Research Methods Handbook">
+<meta name="twitter:description" content="In the video below, I walk through examples of analysing factorial ANOVAs. If you want to follow along, please find the corresponding question sheets and datasets available in the NS5108 module on...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.6.1/transition.js"></script><script src="libs/bs3compat-0.6.1/tabs.js"></script><script src="libs/bs3compat-0.6.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -31,7 +31,7 @@
 
     <div class="d-flex align-items-start justify-content-between">
       <h1>
-        <a href="index.html" title="">Regression handbook</a>
+        <a href="index.html" title="">NS5108 Research Methods Handbook</a>
       </h1>
       <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
     </div>
@@ -74,8 +74,112 @@
 <h1>
 <span class="header-section-number">11</span> JASP workship - Factorial ANOVA<a class="anchor" aria-label="anchor" href="#jasp-workship---factorial-anova"><i class="fas fa-link"></i></a>
 </h1>
-<p><strong>[check back for more content later in the semester]</strong></p>
+<p>In the video below, I walk through examples of analysing factorial ANOVAs. If you want to follow along, please find the corresponding question sheets and datasets available in the NS5108 module on Moodle.</p>
+<p>[Insert Video Here]</p>
+<div id="where-to-click-guide---conducting-factorial-anovas-in-jasp" class="section level2" number="11.1">
+<h2>
+<span class="header-section-number">11.1</span> “Where to Click” Guide - Conducting Factorial ANOVAs in JASP<a class="anchor" aria-label="anchor" href="#where-to-click-guide---conducting-factorial-anovas-in-jasp"><i class="fas fa-link"></i></a>
+</h2>
+<p>Sometimes you just want to know where to click to run the test. Below is a step-by-step guide for performing factorial ANOVAs in JASP. Refer to the video above for more context regarding these steps.</p>
+<div id="conducting-a-fully-independent-samples-factorial-anova" class="section level3" number="11.1.1">
+<h3>
+<span class="header-section-number">11.1.1</span> Conducting a fully Independent Samples Factorial ANOVA<a class="anchor" aria-label="anchor" href="#conducting-a-fully-independent-samples-factorial-anova"><i class="fas fa-link"></i></a>
+</h3>
+<ol style="list-style-type: decimal">
+<li>Open JASP and Load Your Data:</li>
+</ol>
+<ul>
+<li>Click on the File tab at the top left.</li>
+<li>Select Open, and navigate to the folder containing your data file.</li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li>Explore data:</li>
+</ol>
+<ul>
+<li>Due to the factorial design, you will need to filter the data as you are only able to split data by one variable. To filter there is a funnel symbol to click in the top right of the screen.</li>
+<li>Once you have the filter box up you will need to bring in one of your IVs, click “=” and then type one of the levels. Then click “apply pass through filter” After this everything you run will be just on that level of the variable.</li>
+<li>Go to Descriptives -&gt; Descriptive Statistics.</li>
+<li>Move your dependent variable into the Variables box and your independent variables (factors) into the Split box.</li>
+<li>Use Plots to create histograms or boxplots for each combination of factors to check the distribution and identify potential outliers.</li>
+<li>Clear change the filtered level to the other level of the IV and repeat</li>
+<li>Once finished make sure to clear the filter entirely.</li>
+</ul>
+<ol start="3" style="list-style-type: decimal">
+<li>Check Assumptions:</li>
+</ol>
+<ul>
+<li>Normality:</li>
+<li>Check for normality within each combination of the independent variables. Again you will need to filter to account of the design.</li>
+<li>In the Descriptive Statistics window, under Statistics, check Skewness and Kurtosis for each condition.</li>
+<li>Use the Shapiro-Wilk Test to assess normality within each condition if sample sizes are small (typically less than 50 per group).</li>
+<li>Homogeneity of Variance:</li>
+<li>Navigate to ANOVA -&gt; ANOVA.</li>
+<li>Move your dependent variable to Dependent Variable and your independent variables to Fixed Factors.</li>
+<li>Under Assumption Checks, check Homogeneity tests to perform Levene's Test.</li>
+<li>A non-significant p-value (p &gt; .05) in Levene's Test indicates that the assumption of homogeneity of variances is met across all conditions.</li>
+</ul>
+<ol start="4" style="list-style-type: decimal">
+<li>Run the Factorial ANOVA:</li>
+</ol>
+<ul>
+<li>Ensure your dependent variable and independent variables are correctly specified.</li>
+<li>Select to report effect sizes</li>
+<li>Select to create line graphs to illustrate the relationship between variables</li>
+<li>Select to run post hoc tests</li>
+</ul>
+<ol start="5" style="list-style-type: decimal">
+<li>Post Hoc Tests:</li>
+</ol>
+<ul>
+<li>If significant main effects or interactions are found, go to the Post Hoc Tests tab.</li>
+<li>Move your independent variables or interactions into the Post Hoc Tests box.</li>
+<li>Select a correction method (e.g., Bonferroni or Tukey) for multiple comparisons.</li>
+<li>This will help you identify where the significant differences lie among your levels of the independent variables.</li>
+</ul>
+</div>
+<div id="conducting-a-factorial-anova-with-a-repeated-measures-variable" class="section level3" number="11.1.2">
+<h3>
+<span class="header-section-number">11.1.2</span> Conducting a Factorial ANOVA with a repeated measures variable<a class="anchor" aria-label="anchor" href="#conducting-a-factorial-anova-with-a-repeated-measures-variable"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>Name your repeated measures variable by clicking where it says RM Factor 1 and renaming it.</li>
+<li>Bring each of the levels of your repeated measures variable into where it says level 1 and level 2, adding more levels if needed.</li>
+<li>Add new repeated measure IVs in if needed and repeat</li>
+<li>Bring in any independent samples IV in to the between subject factors box</li>
+<li>Repeat all other steps form the independent samples factorial ANOVA</li>
+</ul>
+</div>
+</div>
+<div id="apa-style-guide-for-reporting-factorial-anovas" class="section level2" number="11.2">
+<h2>
+<span class="header-section-number">11.2</span> APA Style Guide for Reporting Factorial ANOVAs<a class="anchor" aria-label="anchor" href="#apa-style-guide-for-reporting-factorial-anovas"><i class="fas fa-link"></i></a>
+</h2>
+<p>Here's how to format your hypotheses and report results from your factorial ANOVAs in APA style.</p>
+<p>Hypotheses for an Independent Samples Factorial ANOVA:</p>
+<ul>
+<li><p>Null Hypothesis (H₀): There wil be no significant main effect of IV1], no significant main effect of [IV2], and no interaction effect between [IV1] and [IV2] on [dependent variable].</p></li>
+<li><p>Alternative Hypothesis (H1): There will be a significant main effect of [IV1] whereby ...</p></li>
+<li><p>Alternative Hypothesis (H2): There will be a significant main effect of [IV2] whereby ...</p></li>
+<li><p>Alternative Hypothesis (H3): There will be a significant interaction effect whereby the change in IV1 will be ... as compared to the change in IV2</p></li>
+</ul>
+</div>
+<div id="example-apa-report-for-an-independent-samples-factorial-anova" class="section level2" number="11.3">
+<h2>
+<span class="header-section-number">11.3</span> Example APA Report for an Independent Samples Factorial ANOVA<a class="anchor" aria-label="anchor" href="#example-apa-report-for-an-independent-samples-factorial-anova"><i class="fas fa-link"></i></a>
+</h2>
+<blockquote>
+<p>"An independent samples factorial ANOVA was conducted to examine the effects of [IV1] and [IV2] on [dependent variable]. Assumption checks confirmed normality and homogeneity of variance. The results revealed a significant main effect of [IV1], F(df_between, df_within) = F-value, p = p-value, η² = effect size, and a significant main effect of [IV2], F(df_between, df_within) = F-value, p = p-value, η² = effect size. Additionally, there was a significant interaction effect between [IV1] and [IV2], F(df_between, df_within) = F-value, p = p-value, η² = effect size. Post hoc analyses using Bonferroni correction indicated that [specific group differences], suggesting that [interpretation of results]."</p>
+</blockquote>
+</div>
+<div id="example-apa-report-for-an-repeated-measures-factorial-anova" class="section level2" number="11.4">
+<h2>
+<span class="header-section-number">11.4</span> Example APA Report for an Repeated Measures Factorial ANOVA<a class="anchor" aria-label="anchor" href="#example-apa-report-for-an-repeated-measures-factorial-anova"><i class="fas fa-link"></i></a>
+</h2>
+<blockquote>
+<p>"A repeated measures factorial ANOVA was conducted to examine the effects of [Repeated Measure IV] and [Between-Subjects IV] on [dependent variable]. Mauchly's Test indicated that the assumption of sphericity had been met/violated (χ²(df) = value, p = p-value). The results showed a significant main effect of [Repeated Measure IV], F(df_between, df_error) = F-value, p = p-value, η² = effect size, and a significant main effect of [Between-Subjects IV], F(df_between, df_error) = F-value, p = p-value, η² = effect size. There was also a significant interaction effect, F(df_between, df_error) = F-value, p = p-value, η² = effect size. Using the Greenhouse-Geisser correction (if sphericity is violated), the effect remained significant/non-significant. Post hoc pairwise comparisons showed that [specific condition differences], indicating that [interpretation of results]."</p>
+</blockquote>
 
+</div>
 </div>
 <script>
 
@@ -252,7 +356,18 @@ window.onload = function() {
 <div class="next"><a href="advanced-anova-techniques.html"><span class="header-section-number">12</span> Advanced ANOVA techniques</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
-      <ul class="nav navbar-nav"><li><a class="nav-link" href="#jasp-workship---factorial-anova"><span class="header-section-number">11</span> JASP workship - Factorial ANOVA</a></li></ul>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#jasp-workship---factorial-anova"><span class="header-section-number">11</span> JASP workship - Factorial ANOVA</a></li>
+<li>
+<a class="nav-link" href="#where-to-click-guide---conducting-factorial-anovas-in-jasp"><span class="header-section-number">11.1</span> “Where to Click” Guide - Conducting Factorial ANOVAs in JASP</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#conducting-a-fully-independent-samples-factorial-anova"><span class="header-section-number">11.1.1</span> Conducting a fully Independent Samples Factorial ANOVA</a></li>
+<li><a class="nav-link" href="#conducting-a-factorial-anova-with-a-repeated-measures-variable"><span class="header-section-number">11.1.2</span> Conducting a Factorial ANOVA with a repeated measures variable</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#apa-style-guide-for-reporting-factorial-anovas"><span class="header-section-number">11.2</span> APA Style Guide for Reporting Factorial ANOVAs</a></li>
+<li><a class="nav-link" href="#example-apa-report-for-an-independent-samples-factorial-anova"><span class="header-section-number">11.3</span> Example APA Report for an Independent Samples Factorial ANOVA</a></li>
+<li><a class="nav-link" href="#example-apa-report-for-an-repeated-measures-factorial-anova"><span class="header-section-number">11.4</span> Example APA Report for an Repeated Measures Factorial ANOVA</a></li>
+</ul>
 
       <div class="book-extra">
         <ul class="list-unstyled">
@@ -268,7 +383,7 @@ window.onload = function() {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Regression handbook</strong>" was written by Dr Richard Clarke. It was last built on 2024-09-22.</p>
+    <p>"<strong>NS5108 Research Methods Handbook</strong>" was written by Dr Richard Clarke. It was last built on 2024-10-06.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
