@@ -7,7 +7,7 @@
 <title>Chapter 8 Introduction to ANOVA | NS5108 Research Methods Handbook</title>
 <meta name="author" content="Dr Richard Clarke">
 <meta name="description" content="ANOVA, which stands for Analysis of Variance, is a statistical test used when comparing a continuous dependent variable across three or more groups. While it might seem similar to the t-test...">
-<meta name="generator" content="bookdown 0.40 with bs4_book()">
+<meta name="generator" content="bookdown 0.35 with bs4_book()">
 <meta property="og:title" content="Chapter 8 Introduction to ANOVA | NS5108 Research Methods Handbook">
 <meta property="og:type" content="book">
 <meta property="og:description" content="ANOVA, which stands for Analysis of Variance, is a statistical test used when comparing a continuous dependent variable across three or more groups. While it might seem similar to the t-test...">
@@ -16,7 +16,7 @@
 <meta name="twitter:description" content="ANOVA, which stands for Analysis of Variance, is a statistical test used when comparing a continuous dependent variable across three or more groups. While it might seem similar to the t-test...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.6.1/transition.js"></script><script src="libs/bs3compat-0.6.1/tabs.js"></script><script src="libs/bs3compat-0.6.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.5.1/transition.js"></script><script src="libs/bs3compat-0.5.1/tabs.js"></script><script src="libs/bs3compat-0.5.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
     
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
@@ -76,22 +76,27 @@
 </h1>
 <p>ANOVA, which stands for <strong>An</strong>alysis <strong>o</strong>f <strong>Va</strong>riance, is a statistical test used when comparing a continuous dependent variable across three or more groups. While it might seem similar to the t-test you've already learnt about, there is a fundamental issue that needs to be overcome when we move from two groups to more than two groups.</p>
 <p>In this chapter we will learn about the basic one-way ANOVA, a design with a single independent variable with 3 or more levels, before moving on to factorial ANOVA, a design with more than one independent variable, in the next chapter.</p>
+<p>This lecture chunk gives an overview of the ANOVA family of tests:</p>
+<iframe allow="autoplay; fullscreen" height="270" width="500" src="https://estream.glos.ac.uk/Embed.aspx?id=107629&amp;code=em~W9F7JHlXI2SuDbNjGntjWFVEhEUTKpqM" frameborder="0" allowfullscreen>
+</iframe>
 <div id="example-of-a-one-way-anova-design" class="section level2" number="8.1">
 <h2>
 <span class="header-section-number">8.1</span> Example of a one-way ANOVA design<a class="anchor" aria-label="anchor" href="#example-of-a-one-way-anova-design"><i class="fas fa-link"></i></a>
 </h2>
 <p>Imagine a study designed to investigate how to best frame an information campaign to prepare residence of a local area for an extreme weather event. In this experiment, participants are randomly assigned to one of four levels of an independent variable (i.e. a between subjects design).</p>
-<p><strong>Messaging (independent variable)</strong>:
-- <strong>Fear-Based Messaging</strong>: Messages that emphasise the severe consequences of not being prepared.
-- <strong>Efficacy-Based Messaging</strong>: Messages that focus on practical steps individuals can take and highlight their ability to effectively prepare.
-- <strong>Community-Focused Messaging</strong>: Messages that highlight the importance of collective preparedness and how working together can improve community resilience.
-- <strong>Control condition</strong>: No message</p>
+<p><strong>Messaging (independent variable)</strong>:</p>
+<ul>
+<li><p><strong>Fear-Based Messaging</strong>: Messages that emphasise the severe consequences of not being prepared.</p></li>
+<li><p><strong>Efficacy-Based Messaging</strong>: Messages that focus on practical steps individuals can take and highlight their ability to effectively prepare.</p></li>
+<li><p><strong>Community-Focused Messaging</strong>: Messages that highlight the importance of collective preparedness and how working together can improve community resilience.</p></li>
+<li><p><strong>Control condition</strong>: No message</p></li>
+</ul>
 <p><strong>Preparedness (Dependent variable)</strong>:
 - Measured using a scale developed for the study. Scored from 0 to 100, with higher scores indicating greater intentions to engage in preparedness behaviours, such as creating an emergency kit or making a family plan.</p>
 <p><strong>Hypothesis</strong>:</p>
-<p><strong>H1</strong>: It is hypothesised that the type of preparedness messaging will significantly affect participants' intentions to prepare for disasters.
-<strong>H2</strong>: Efficacy-based messaging is expected to generate the highest preparedness intentions, followed by community-focused messaging, fear-based messaging generating the lowest intentions.
-<strong>H3</strong>: All forms of messaging will lead to higher preparedness than the control, no messaging, condition.</p>
+<p><strong>H1</strong>: It is hypothesised that the type of preparedness messaging will significantly affect participants' intentions to prepare for disasters.</p>
+<p><strong>H2</strong>: Efficacy-based messaging is expected to generate the highest preparedness intentions, followed by community-focused messaging, fear-based messaging generating the lowest intentions.</p>
+<p><strong>H3</strong>: All forms of messaging will lead to higher preparedness than the control, no messaging, condition.</p>
 <p><strong>Procedure</strong>:
 After a power analysis using G*Power (see below), N= 180 participants are randomly assigned to receive one of the three types of preparedness messages, or no message. After reading the message, participants complete the questionnaire assessing their intentions to engage in preparedness behaviours. A one-way ANOVA is used to compare the mean preparedness intentions across the three messaging conditions.</p>
 <div class="inline-figure"><img src="Images/ANOVA%201.png" width="75%" style="display: block; margin: auto;"></div>
@@ -104,6 +109,9 @@ After a power analysis using G*Power (see below), N= 180 participants are random
 <div style="text-align: center;">
 <strong>That’s what we have to use our ANOVA test to find out</strong>
 </div>
+<p>This lecture chunk explains the above design:</p>
+<iframe allow="autoplay; fullscreen" height="270" width="500" src="https://estream.glos.ac.uk/Embed.aspx?id=107630&amp;code=et~DTHYDZMgQz7AKwnozc6YdSt47FBVF7Kx" frameborder="0" allowfullscreen>
+</iframe>
 </div>
 <div id="the-omnibus-test" class="section level2" number="8.2">
 <h2>
@@ -216,6 +224,9 @@ The final step is to take our Between-group variance and divide that by our degr
 <span class="header-section-number">8.6.1</span> Test yourself<a class="anchor" aria-label="anchor" href="#test-yourself"><i class="fas fa-link"></i></a>
 </h3>
 <p>Look back at the hypotheses from earlier. Are all of them confirmed? See if you can explain the results in real world terms, what have we actually found? Which technique(s) do you suggest we use and why?</p>
+<p>This lecture chunk explains the above analysis:</p>
+<iframe allow="autoplay; fullscreen" height="270" width="500" src="https://estream.glos.ac.uk/Embed.aspx?id=107631&amp;code=eD~PPEuDsTpqKKXiOobLUHwxoiVSeMHF46v" frameborder="0" allowfullscreen>
+</iframe>
 <p>In the next chapter we'll work through the analysis for different types of one-way ANOVA</p>
 
 </div>
@@ -424,7 +435,7 @@ window.onload = function() {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>NS5108 Research Methods Handbook</strong>" was written by Dr Richard Clarke. It was last built on 2024-10-06.</p>
+    <p>"<strong>NS5108 Research Methods Handbook</strong>" was written by Dr Richard Clarke. It was last built on 2024-10-16.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

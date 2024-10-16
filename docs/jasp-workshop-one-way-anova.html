@@ -7,7 +7,7 @@
 <title>Chapter 9 JASP workshop – one way ANOVA | NS5108 Research Methods Handbook</title>
 <meta name="author" content="Dr Richard Clarke">
 <meta name="description" content="In the video below, I work through example analyses of both independent and repeated measures one-way ANOVAs. If you want to follow along, please find the corresponding question sheets and...">
-<meta name="generator" content="bookdown 0.40 with bs4_book()">
+<meta name="generator" content="bookdown 0.35 with bs4_book()">
 <meta property="og:title" content="Chapter 9 JASP workshop – one way ANOVA | NS5108 Research Methods Handbook">
 <meta property="og:type" content="book">
 <meta property="og:description" content="In the video below, I work through example analyses of both independent and repeated measures one-way ANOVAs. If you want to follow along, please find the corresponding question sheets and...">
@@ -16,7 +16,7 @@
 <meta name="twitter:description" content="In the video below, I work through example analyses of both independent and repeated measures one-way ANOVAs. If you want to follow along, please find the corresponding question sheets and...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.6.1/transition.js"></script><script src="libs/bs3compat-0.6.1/tabs.js"></script><script src="libs/bs3compat-0.6.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.5.1/transition.js"></script><script src="libs/bs3compat-0.5.1/tabs.js"></script><script src="libs/bs3compat-0.5.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
     
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
@@ -75,80 +75,12 @@
 <span class="header-section-number">9</span> JASP workshop – one way ANOVA<a class="anchor" aria-label="anchor" href="#jasp-workshop-one-way-anova"><i class="fas fa-link"></i></a>
 </h1>
 <p>In the video below, I work through example analyses of both independent and repeated measures one-way ANOVAs. If you want to follow along, please find the corresponding question sheets and datasets available in the NS5108 module on Moodle.</p>
-<p><strong>[check back later in the semester for video content]</strong></p>
-<div id="where-to-click-guide---conducting-one-way-anovas-in-jasp" class="section level2" number="9.1">
-<h2>
-<span class="header-section-number">9.1</span> “Where to Click” Guide - Conducting One-Way ANOVAs in JASP<a class="anchor" aria-label="anchor" href="#where-to-click-guide---conducting-one-way-anovas-in-jasp"><i class="fas fa-link"></i></a>
-</h2>
-<p>Sometimes you just want to know where to click to run the test. Below is a step-by-step guide for performing independent and repeated measures one-way ANOVAs in JASP. Refer to the video above for more context regarding these steps.</p>
-<p>Conducting an Independent Samples One-Way ANOVA
-### Conducting an Independent Samples One-Way ANOVA</p>
-<ol style="list-style-type: decimal">
-<li>
-<strong>Open JASP and Load Your Data</strong>:
-<ul>
-<li>Click on the <strong>File</strong> tab at the top left.</li>
-<li>Select <strong>Open</strong>, and navigate to the folder containing your data file.</li>
-</ul>
-</li>
-<li>
-<strong>Visualise the Data</strong>:
-<ul>
-<li>Go to <strong>Descriptives</strong> -&gt; <strong>Descriptive Statistics</strong>.</li>
-<li>Move your dependent variable into the <strong>Variables</strong> box and your independent variable (factor) into the <strong>Split</strong> box.</li>
-<li>Use <strong>Plots</strong> to create histograms or boxplots for each group to check the distribution and identify potential outliers.</li>
-</ul>
-</li>
-<li>
-<strong>Check Assumptions</strong>:
-<ul>
-<li>
-<strong>Normality</strong>:
-<ul>
-<li>
-<strong>Skewness and Kurtosis</strong>:
-<ul>
-<li>In the <strong>Descriptive Statistics</strong> window, under <strong>Statistics</strong>, check <strong>Skewness</strong> and <strong>Kurtosis</strong>.</li>
-</ul>
-</li>
-<li>
-<strong>Shapiro-Wilk Test</strong>:
-<ul>
-<li>Under the same <strong>Statistics</strong> tab, check <strong>Shapiro-Wilk</strong> to perform the Shapiro-Wilk test for normality for each group.</li>
-<li>The Shapiro-Wilk test assesses whether the data in each group are normally distributed.</li>
-</ul>
-</li>
-<li>
-<strong>When to Use</strong>:
-<ul>
-<li>Use the Shapiro-Wilk test when your sample size is relatively small (typically less than 50 per group). For larger samples, the test becomes overly sensitive, and minor deviations from normality can lead to significant results.</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<strong>Homogeneity of Variance</strong>:
-<ul>
-<li>Navigate to <strong>ANOVA</strong> -&gt; <strong>ANOVA</strong>.</li>
-<li>Move your dependent variable to <strong>Dependent Variable</strong> and your independent variable to <strong>Fixed Factors</strong>.</li>
-<li>Under <strong>Assumption Checks</strong>, check <strong>Homogeneity tests</strong> to perform Levene's Test.</li>
-<li>A non-significant p-value (p &gt; .05) in Levene's Test indicates that the assumption of homogeneity of variances is met.</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<strong>Post Hoc Tests</strong>:
-<ul>
-<li>Go to the <strong>Post Hoc Tests</strong> tab.</li>
-<li>Move your independent variable into the <strong>Post Hoc Tests</strong> box.</li>
-<li>Select a correction method (e.g. <strong>Bonferroni</strong>) for multiple comparisons.</li>
-</ul>
-</li>
-</ol>
-<div id="conducting-a-repeated-measures-one-way-anova" class="section level3" number="9.1.1">
+<p><strong>This video walks you through an example of a Repeated measures ANOVA in JASP:</strong></p>
+<iframe allow="autoplay; fullscreen" height="270" width="500" src="https://estream.glos.ac.uk/Embed.aspx?id=107683&amp;code=ev~Ghm07YhMLyLkEUntMlKiD5WUryE59g6z" frameborder="0" allowfullscreen>
+</iframe>
+<div id="conducting-a-repeated-measures-anova" class="section level3" number="9.0.1">
 <h3>
-<span class="header-section-number">9.1.1</span> Conducting a Repeated Measures One-Way ANOVA<a class="anchor" aria-label="anchor" href="#conducting-a-repeated-measures-one-way-anova"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.0.1</span> Conducting a Repeated Measures ANOVA<a class="anchor" aria-label="anchor" href="#conducting-a-repeated-measures-anova"><i class="fas fa-link"></i></a>
 </h3>
 <ol style="list-style-type: decimal">
 <li>
@@ -216,7 +148,80 @@
 </ul>
 </li>
 </ol>
+<p>**This video walks you through a one-way independent samples ANOVA in JASP</p>
+<iframe allow="autoplay; fullscreen" height="270" width="500" src="https://estream.glos.ac.uk/Embed.aspx?id=107694&amp;code=eM~zXlnSVPeubDFkxPFRV7qdPkgaVvKV6Dv" frameborder="0" allowfullscreen>
+</iframe>
 </div>
+<div id="where-to-click-guide---conducting-one-way-independent-samples-anovas-in-jasp" class="section level2" number="9.1">
+<h2>
+<span class="header-section-number">9.1</span> “Where to Click” Guide - Conducting One-Way independent samples ANOVAs in JASP<a class="anchor" aria-label="anchor" href="#where-to-click-guide---conducting-one-way-independent-samples-anovas-in-jasp"><i class="fas fa-link"></i></a>
+</h2>
+<p>Sometimes you just want to know where to click to run the test. Below is a step-by-step guide for performing independent and repeated measures one-way ANOVAs in JASP. Refer to the video above for more context regarding these steps.</p>
+<p>Conducting an Independent Samples One-Way ANOVA
+### Conducting an Independent Samples One-Way ANOVA</p>
+<ol style="list-style-type: decimal">
+<li>
+<strong>Open JASP and Load Your Data</strong>:
+<ul>
+<li>Click on the <strong>File</strong> tab at the top left.</li>
+<li>Select <strong>Open</strong>, and navigate to the folder containing your data file.</li>
+</ul>
+</li>
+<li>
+<strong>Visualise the Data</strong>:
+<ul>
+<li>Go to <strong>Descriptives</strong> -&gt; <strong>Descriptive Statistics</strong>.</li>
+<li>Move your dependent variable into the <strong>Variables</strong> box and your independent variable (factor) into the <strong>Split</strong> box.</li>
+<li>Use <strong>Plots</strong> to create histograms or boxplots for each group to check the distribution and identify potential outliers.</li>
+</ul>
+</li>
+<li>
+<strong>Check Assumptions</strong>:
+<ul>
+<li>
+<strong>Normality</strong>:
+<ul>
+<li>
+<strong>Skewness and Kurtosis</strong>:
+<ul>
+<li>In the <strong>Descriptive Statistics</strong> window, under <strong>Statistics</strong>, check <strong>Skewness</strong> and <strong>Kurtosis</strong>.</li>
+</ul>
+</li>
+<li>
+<strong>Shapiro-Wilk Test</strong>:
+<ul>
+<li>Under the same <strong>Statistics</strong> tab, check <strong>Shapiro-Wilk</strong> to perform the Shapiro-Wilk test for normality for each group.</li>
+<li>The Shapiro-Wilk test assesses whether the data in each group are normally distributed.</li>
+</ul>
+</li>
+<li>
+<strong>When to Use</strong>:
+<ul>
+<li>Use the Shapiro-Wilk test when your sample size is relatively small (typically less than 50 per group). For larger samples, the test becomes overly sensitive, and minor deviations from normality can lead to significant results.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<strong>Homogeneity of Variance</strong>:
+<ul>
+<li>Navigate to <strong>ANOVA</strong> -&gt; <strong>ANOVA</strong>.</li>
+<li>Move your dependent variable to <strong>Dependent Variable</strong> and your independent variable to <strong>Fixed Factors</strong>.</li>
+<li>Under <strong>Assumption Checks</strong>, check <strong>Homogeneity tests</strong> to perform Levene's Test.</li>
+<li>A non-significant p-value (p &gt; .05) in Levene's Test indicates that the assumption of homogeneity of variances is met.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<strong>Post Hoc Tests</strong>:
+<ul>
+<li>Go to the <strong>Post Hoc Tests</strong> tab.</li>
+<li>Move your independent variable into the <strong>Post Hoc Tests</strong> box.</li>
+<li>Select a correction method (e.g. <strong>Bonferroni</strong>) for multiple comparisons.</li>
+</ul>
+</li>
+</ol>
 </div>
 <div id="jasp-lab-exercises" class="section level2" number="9.2">
 <h2>
@@ -229,18 +234,6 @@
 <span class="header-section-number">9.3</span> APA Style Guide for Reporting One-Way ANOVAs<a class="anchor" aria-label="anchor" href="#apa-style-guide-for-reporting-one-way-anovas"><i class="fas fa-link"></i></a>
 </h2>
 <p>Here's how to format your hypotheses and report results from your one-way ANOVAs in APA style.</p>
-<p><strong>Hypotheses for an Independent Samples One-Way ANOVA (Two-Tailed/Non-Directional)</strong></p>
-<ul>
-<li>
-<strong>Null Hypothesis (H₀</strong>): There is no significant difference in [dependent variable] among [the different groups].</li>
-<li>
-<strong>Alternative Hypothesis (H₁</strong>): There is a significant difference in [dependent variable] among [the different groups].</li>
-<li><em>Continue to specify specific group difference predictions</em></li>
-</ul>
-<p><strong>Example APA Report for an Independent Samples One-Way ANOVA</strong></p>
-<blockquote>
-<p>"An independent samples one-way ANOVA was conducted to compare the effect of [independent variable] on [dependent variable] across [number] groups. Assumption checks confirmed normality and equal variances. The results showed a significant effect of [independent variable] on [dependent variable], F(df_between, df_within) = F-value, <em>p</em> = <em>p</em>-value, η² = effect size. Post hoc analyses, using a Bonferroni correction, indicated that [specific group differences], suggesting that [interpretation of results]."</p>
-</blockquote>
 <p><strong>Hypotheses for a Repeated Measures One-Way ANOVA (Two-Tailed/Non-Directional)</strong></p>
 <ul>
 <li>
@@ -252,6 +245,18 @@
 <p><strong>Example APA Report for a Repeated Measures One-Way ANOVA</strong></p>
 <blockquote>
 <p>"A repeated measures one-way ANOVA was conducted to examine the effect of [independent variable] on [dependent variable] over [number] conditions. Mauchly's Test indicated that the assumption of sphericity had been met/violated (χ²(df) = value, p = p-value). The results revealed a significant effect of [independent variable] on [dependent variable], F(df_between, df_error) = F-value, p = p-value, η² = effect size. Using the Greenhouse-Geisser correction (if sphericity is violated), the effect remained significant/non-significant. Post hoc pairwise comparisons showed that [specific condition differences], indicating that [interpretation of results]."</p>
+</blockquote>
+<p><strong>Hypotheses for an Independent Samples One-Way ANOVA (Two-Tailed/Non-Directional)</strong></p>
+<ul>
+<li>
+<strong>Null Hypothesis (H₀</strong>): There is no significant difference in [dependent variable] among [the different groups].</li>
+<li>
+<strong>Alternative Hypothesis (H₁</strong>): There is a significant difference in [dependent variable] among [the different groups].</li>
+<li><em>Continue to specify specific group difference predictions</em></li>
+</ul>
+<p><strong>Example APA Report for an Independent Samples One-Way ANOVA</strong></p>
+<blockquote>
+<p>"An independent samples one-way ANOVA was conducted to compare the effect of [independent variable] on [dependent variable] across [number] groups. Assumption checks confirmed normality and equal variances. The results showed a significant effect of [independent variable] on [dependent variable], F(df_between, df_within) = F-value, <em>p</em> = <em>p</em>-value, η² = effect size. Post hoc analyses, using a Bonferroni correction, indicated that [specific group differences], suggesting that [interpretation of results]."</p>
 </blockquote>
 <p><em>Note: Remember to replace placeholders (e.g., [dependent variable], [independent variable], df values, F-values, p-values) with your actual data when reporting your results.</em></p>
 
@@ -433,10 +438,10 @@ window.onload = function() {
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#jasp-workshop-one-way-anova"><span class="header-section-number">9</span> JASP workshop – one way ANOVA</a></li>
 <li>
-<a class="nav-link" href="#where-to-click-guide---conducting-one-way-anovas-in-jasp"><span class="header-section-number">9.1</span> “Where to Click” Guide - Conducting One-Way ANOVAs in JASP</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#conducting-a-repeated-measures-one-way-anova"><span class="header-section-number">9.1.1</span> Conducting a Repeated Measures One-Way ANOVA</a></li></ul>
+<a class="nav-link" href="#jasp-workshop-one-way-anova"><span class="header-section-number">9</span> JASP workshop – one way ANOVA</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#conducting-a-repeated-measures-anova"><span class="header-section-number">9.0.1</span> Conducting a Repeated Measures ANOVA</a></li></ul>
 </li>
+<li><a class="nav-link" href="#where-to-click-guide---conducting-one-way-independent-samples-anovas-in-jasp"><span class="header-section-number">9.1</span> “Where to Click” Guide - Conducting One-Way independent samples ANOVAs in JASP</a></li>
 <li><a class="nav-link" href="#jasp-lab-exercises"><span class="header-section-number">9.2</span> JASP Lab Exercises</a></li>
 <li><a class="nav-link" href="#apa-style-guide-for-reporting-one-way-anovas"><span class="header-section-number">9.3</span> APA Style Guide for Reporting One-Way ANOVAs</a></li>
 </ul>
@@ -455,7 +460,7 @@ window.onload = function() {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>NS5108 Research Methods Handbook</strong>" was written by Dr Richard Clarke. It was last built on 2024-10-06.</p>
+    <p>"<strong>NS5108 Research Methods Handbook</strong>" was written by Dr Richard Clarke. It was last built on 2024-10-16.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

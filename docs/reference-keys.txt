@@ -56,8 +56,8 @@ why-we-cant-just-run-multiple-t-tests
 interpretation-of-post-hoc-comparisons
 test-yourself
 jasp-workshop-one-way-anova
-where-to-click-guide---conducting-one-way-anovas-in-jasp
-conducting-a-repeated-measures-one-way-anova
+conducting-a-repeated-measures-anova
+where-to-click-guide---conducting-one-way-independent-samples-anovas-in-jasp
 jasp-lab-exercises
 apa-style-guide-for-reporting-one-way-anovas
 factorial-anova-important-for-your-assignment
