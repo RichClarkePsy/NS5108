@@ -76,7 +76,7 @@ conducting-a-factorial-anova-with-a-repeated-measures-variable
 apa-style-guide-for-reporting-factorial-anovas
 example-apa-report-for-an-independent-samples-factorial-anova
 example-apa-report-for-an-repeated-measures-factorial-anova
-advanced-anova-techniques
+how-to-ask-good-research-questions
 introduction-to-regression-analysis
 data-driven-decision-making
 further-real-world-examples
