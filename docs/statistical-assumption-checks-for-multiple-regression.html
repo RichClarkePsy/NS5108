@@ -43,7 +43,7 @@
 
       <nav aria-label="Table of contents"><h2>Table of contents</h2>
         <ul class="book-toc list-unstyled">
-<li><a class="" href="index.html"><span class="header-section-number">1</span> Welcome to the NS5108 quantiatitve methods and analysis handbook</a></li>
+<li><a class="" href="index.html"><span class="header-section-number">1</span> Welcome to the NS5108 quantitative methods and analysis handbook</a></li>
 <li><a class="" href="introduction-to-difference-tests.html"><span class="header-section-number">2</span> Introduction to difference tests</a></li>
 <li><a class="" href="t-tests-theory-visualisation-and-calculation-by-hand.html"><span class="header-section-number">3</span> T-Tests: Theory, Visualisation, and Calculation (by hand)</a></li>
 <li><a class="" href="assumption-checks-of-t-tests-and-other-difference-tests.html"><span class="header-section-number">4</span> Assumption checks of t-tests and other difference tests</a></li>
@@ -101,7 +101,7 @@
 <div class="inline-figure"><img src="Images/Outliers.png" width="100%" style="display: block; margin: auto;"></div>
 <p>JASP can automatically identify outliers in boxplots, making it easier to spot them. However, addressing outliers is often a contentious issue because their treatment can have a significant impact on the results of a statistical analysis. The decision to keep or remove outliers depends on multiple factors.</p>
 <p>First, it's important to consider the context of your data. Outliers could be the result of measurement errors, data entry errors, or other random anomalies. However, they could also represent genuine extreme values that offer valuable insights. For example, in a study on wealth distribution, billionaires would be outliers but they are a real-world phenomenon that might be important to the research.</p>
-<p>Secondly, outliers can heavily influence other data assumptions, such as linearity, normality of residuals, and homoscedasticity. It is crucial to evaluate whether outliers are affecting these assumptions and to justify their removal or retention. This, in fact, can be away of addressing the violations of assumptions listed in this chapter.</p>
+<p>Secondly, outliers can heavily influence other data assumptions, such as linearity, normality of residuals, and homoscedasticity. It is crucial to evaluate whether outliers are affecting these assumptions and to justify their removal or retention. This, in fact, can be a way of addressing the violations of assumptions listed in this chapter.</p>
 <p>Thirdly, outliers can disproportionately affect key statistical measures like the mean and standard deviation. It's very easy to fall into the trap of removing outliers until a significant results appears. This kind of practice may fall into that grey area of academic misconduct that we discussed in first year, known as Questionable Research Practices.</p>
 <p>Ultimately, the decision to handle outliers involves a balance of statistical judgment and domain expertise. It's necessary to ensure that any decision involves transparently reporting and justifying your decisions.</p>
 </div>
@@ -109,7 +109,7 @@
 <h2>
 <span class="header-section-number">17.4</span> Checks of residuals<a class="anchor" aria-label="anchor" href="#checks-of-residuals"><i class="fas fa-link"></i></a>
 </h2>
-<p>The last two assumption checks require an examination of the residual. Residuals are a fundamental concept in regression analysis, representing the difference between observed and predicted values of the dependent variable. In a simple regression, we visualised the predicted value with our line of best fit, and the observed value are just the data point in our relationship.</p>
+<p>The last two assumption checks require an examination of the residual. Residuals are a fundamental concept in regression analysis, representing the difference between observed and predicted values of the dependent variable. In a simple regression, we visualised the predicted value with our line of best fit, and the observed values are just the data points in our relationship.</p>
 <p>For each observation, a residual is calculated by subtracting the predicted value from the observed value. In simple linear regression, where there is one independent variable, the residual for each observation is the distance from the data point to the regression line. In multiple regression, it is the distance from the observation to the <a href="https://bio723-class.github.io/Bio723-book/multiple-regression.html">regression plane</a>.</p>
 <div class="inline-figure"><img src="Images/residuals2.png" width="100%" style="display: block; margin: auto;"></div>
 <p>The goal of regression analysis is to minimize the residuals, or in other words, to make the predicted values as close as possible to the observed values. Residuals can be used to evaluate the fit of a regression model, to detect outliers, and to check for any violations of the assumptions of regression.</p>
@@ -119,7 +119,7 @@
 </h3>
 <p>The assumption of normality of residuals is important for hypothesis testing in linear regression. It ensures that the standard errors of the coefficients are unbiased and that the significant testing for the coefficients are valid. This, in turn, helps us make valid inferences about the relationships between the variables.</p>
 <p>In contrast, checking for <em>normality of the individual variables</em> is <strong>not required</strong> for linear regression. Instead, the focus is on the distribution of the residuals, which should be normally distributed if the model's assumptions are met. The residuals represent the differences between the observed and predicted values of the dependent variable, and their distribution tells us about the model's fit and the relationships between the variables.</p>
-<p>If you're working on a program where you can calculate the residuals, then you can check the normality of the residuals using the Shaperio Wilks test or by assessing the skewness and kurtosis. In JASP the only means of checking the normality of residuals is through the <em>normality of residuals</em> plot option.</p>
+<p>If you're working on a program where you can calculate the residuals, then you can check the normality of the residuals using the Shapiro–Wilk test or by assessing the skewness and kurtosis. In JASP the only means of checking the normality of residuals is through the <em>normality of residuals</em> plot option.</p>
 <div class="inline-figure"><img src="Images/residuals3&amp;4.png" width="100%" style="display: block; margin: auto;"></div>
 </div>
 <div id="check-for-homoscedasticity" class="section level3" number="17.4.2">
@@ -133,7 +133,7 @@
 </ul>
 <p>The scatter plots below demonstrate how such data might look. Heteroscedasticity (i.e. different "spreadness") means that the line of best fit becomes less reliable at different points in the model.</p>
 <div class="inline-figure"><img src="Images/residuals5&amp;6.png" width="100%" style="display: block; margin: auto;"></div>
-<p>In this context, what we're looking for an equal distribution of data points along the line of best fit, avoiding a funnel-shaped pattern. When dealing with regression analyses that involve more than two predictor variables, it's often not feasible to visualise the data. In such cases, a plot of predicted variables against residuals can be used to check for homoscedasticity. In this plot, we are, again, looking for the absence of a funnel shape in the points.</p>
+<p>In this context, what we're looking for is an equal distribution of data points along the line of best fit, avoiding a funnel-shaped pattern. When dealing with regression analyses that involve more than two predictor variables, it's often not feasible to visualise the data. In such cases, a plot of predicted variables against residuals can be used to check for homoscedasticity. In this plot, we are, again, looking for the absence of a funnel shape in the points.</p>
 <p>This check can also be performed using z-scores of the predicted values against the residuals; a level line in this context would indicate homoscedasticity (a uniform spread of the residuals). This method is used in software like SPSS for checking homoscedasticity, so you may see some other guides talking about this if you read wider on the topic.</p>
 
 </div>
@@ -341,7 +341,7 @@ window.onload = function() {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>NS5108 Research Methods Handbook</strong>" was written by Dr Richard Clarke. It was last built on 2024-10-29.</p>
+    <p>"<strong>NS5108 Research Methods Handbook</strong>" was written by Dr Richard Clarke. It was last built on 2025-10-02.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

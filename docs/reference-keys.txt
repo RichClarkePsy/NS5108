@@ -1,4 +1,4 @@
-welcome-to-the-ns5108-quantiatitve-methods-and-analysis-handbook
+welcome-to-the-ns5108-quantitative-methods-and-analysis-handbook
 exercises-and-statistical-software
 note-for-msc-health-psychology-and-msc-forensic-psychology-students
 this-book-is-a-work-in-progress
@@ -58,6 +58,7 @@ test-yourself
 jasp-workshop-one-way-anova
 conducting-a-repeated-measures-anova
 where-to-click-guide---conducting-one-way-independent-samples-anovas-in-jasp
+conducting-an-independent-samples-one-way-anova
 jasp-lab-exercises
 apa-style-guide-for-reporting-one-way-anovas
 factorial-anova-important-for-your-assignment

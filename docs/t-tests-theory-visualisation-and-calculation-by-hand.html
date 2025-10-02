@@ -43,7 +43,7 @@
 
       <nav aria-label="Table of contents"><h2>Table of contents</h2>
         <ul class="book-toc list-unstyled">
-<li><a class="" href="index.html"><span class="header-section-number">1</span> Welcome to the NS5108 quantiatitve methods and analysis handbook</a></li>
+<li><a class="" href="index.html"><span class="header-section-number">1</span> Welcome to the NS5108 quantitative methods and analysis handbook</a></li>
 <li><a class="" href="introduction-to-difference-tests.html"><span class="header-section-number">2</span> Introduction to difference tests</a></li>
 <li><a class="active" href="t-tests-theory-visualisation-and-calculation-by-hand.html"><span class="header-section-number">3</span> T-Tests: Theory, Visualisation, and Calculation (by hand)</a></li>
 <li><a class="" href="assumption-checks-of-t-tests-and-other-difference-tests.html"><span class="header-section-number">4</span> Assumption checks of t-tests and other difference tests</a></li>
@@ -149,15 +149,29 @@ How to read a box plot (with an additional violin plot and points)
 <p>The t-test is a statistical method used to determine whether there is a significant difference between the means of two groups. It compares the observed difference between group means to the variation within each group, taking into account the sample sizes. The result of this comparison is the t-value, which tells us how likely it is that the observed difference could have occurred by chance.</p>
 <p>Here is the formula used to determine the t-statistic (don’t worry it’s not as scary as it looks):</p>
 <p>The formula for the t-statistic is:</p>
+<p>The formula for the <em>t</em>-statistic is:</p>
 <p><span class="math display">\[
-t = \frac{\bar{X} - \mu}{\frac{s}{\sqrt{n}}}
+t = \frac{(\bar{X}_1 - \bar{X}_2)}{\sqrt{\frac{(s_1^2)}{n_1} + \frac{(s_2^2)}{n_2}}}
 \]</span></p>
 <p>Where:</p>
 <ul>
-<li><p><span class="math inline">\(\bar{X}\)</span> is the sample mean,</p></li>
-<li><p><span class="math inline">\(\mu\)</span> is the population mean,</p></li>
-<li><p><span class="math inline">\(s\)</span> is the sample standard deviation,</p></li>
-<li><p><span class="math inline">\(n\)</span> is the sample size.</p></li>
+<li>
+<span class="math inline">\(\bar{X}_1\)</span> = the sample mean of group 1<br>
+</li>
+<li>
+<span class="math inline">\(\bar{X}_2\)</span> = the sample mean of group 2<br>
+</li>
+<li>
+<span class="math inline">\(s_1^2\)</span> = the variance of group 1 (square of the standard deviation)<br>
+</li>
+<li>
+<span class="math inline">\(s_2^2\)</span> = the variance of group 2<br>
+</li>
+<li>
+<span class="math inline">\(n_1\)</span> = the sample size of group 1<br>
+</li>
+<li>
+<span class="math inline">\(n_2\)</span> = the sample size of group 2 .</li>
 </ul>
 <p>As such, we actually have everything we need to work out the t-statistics from the basic group descriptives of our data:</p>
 <div class="inline-figure"><img src="Images/ttest%20image%208.png" width="50%" style="display: block; margin: auto;"></div>
@@ -401,7 +415,7 @@ window.onload = function() {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>NS5108 Research Methods Handbook</strong>" was written by Dr Richard Clarke. It was last built on 2024-10-29.</p>
+    <p>"<strong>NS5108 Research Methods Handbook</strong>" was written by Dr Richard Clarke. It was last built on 2025-10-02.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
